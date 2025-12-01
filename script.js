@@ -7,17 +7,14 @@ function sleep(ms) {
 /* TRANSIÇÃO DE IMAGENS DO HERO SECTION */
 {
     let index = 0;
-    let in_out = true;
 
     const texts = document.querySelectorAll('.text-1, .text-2, .text-3');
     const bg_1 = document.getElementById('fundo-1');
     const bg_2 = document.getElementById('fundo-2');
     const bg_3 = document.getElementById('fundo-3');
 
-    bg_2.style.display = 'block';
-    bg_3.style.display = 'block';
-
     function ShowText(){
+        texts[(index + 1) % 3].style.display = 'block';
         texts[(index + 1) % 3].style.opacity = 1;
     }
 
@@ -49,7 +46,6 @@ function sleep(ms) {
             HideText();
             await sleep(600);
 
-            bg_3.style.transform = 'translatex(100%)';
             bg_1.style.transform = 'translatex(0%)';
             await sleep(600);
 
