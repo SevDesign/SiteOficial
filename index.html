@@ -4,52 +4,353 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SevDesign</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-    <style>
-        .fa-spin {
-            animation-duration: 4s;
-        }
-    </style>
 </head>
-<body class="bg-gray-900 text-white flex items-center justify-center p-6">
 
-    <div class=" min-h-screen">
-        
-        <div class="bg-gray-800 p-10 md:p-16 rounded-2xl shadow-2xl max-w-xl w-full text-center border border-gray-700">
-            
-            <!-- Ícone de Engrenagem Animado -->
-            <div class="mb-10">
-                <i class="fa-spin fas fa-cog fa-5x"></i>
+<link rel="stylesheet" href="style.css">
+
+  <!-- Links -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+
+
+<body class="body">
+
+    <!-- Head Section -->
+    <section class="head">
+        <img src="./imagens/fundo-3.png" class="fundo" id="fundo-3" alt="">
+        <img src="./imagens/fundo-2.png" class="fundo" id="fundo-2" alt="">
+        <img src="./imagens/fundo-1.png" class="fundo" id="fundo-1" alt="">
+
+        <div class="nav-bar">  
+            <a id="services-dropdown" class="link" style="cursor: pointer;">Serviços</a>
+            <a href="./paginas_principais/about.html" class="link">Sobre nós</a>
+            <a href="./paginas_principais/contact.html" class="link">Contato</a>
+        </div>
+      
+        <div class="image-dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div class="fa-solid fa-caret-down fa-2x"></div>
+
+        <div class="text-container">
+            <div class="text-1">
+                <h1 class="title">Conteúdo Direcionado</h1>
+                <p class="subtitle">Artes planejadas e prontas para alavancar o seu negócio</p>
+                <!--a href="#services" class="button">Saiba mais</a-->
             </div>
 
-            <!-- Título Principal -->
-            <h1 class="text-4xl font-bold text-white mb-4">
-                Quase lá!
-            </h1>
+            <div class="text-2">
+                <h1 class="title">Branding</h1>
+                <p class="subtitle">Criação de identidade visual completa e chamativa.</p>
+                <!--a class="button" href="./servicos/branding.html">Saiba mais</a-->
+            </div>
 
-            <!-- Mensagem de Subtítulo -->
-            <p class="text-xl text-gray-300 mb-8">
-                Nosso site está em construção.
-            </p>
-
-            <!-- Mensagem Principal -->
-            <p class="text-lg text-gray-400">
-                Estamos trabalhando muito para criar uma experiência incrível para você. Por favor, volte em breve para conferir as novidades!
-            </p>
-
-            <!-- Linha Divisória e Copyright -->
-            <div class="mt-12 pt-6 border-t border-gray-700">
-                <p class="text-sm text-gray-500">
-                    © 2025 SevDesign. Todos os direitos reservados.
-                </p>
+            <div class="text-3">
+                <h1 class="title">Designer Gráfico</h1>
+                <p class="subtitle">Destaque sua marca com uma identidade visual profissional.</p>
+                <!--a class="button" href="./servicos/designer_grafico.html">Saiba mais</a-->
             </div>
 
         </div>
 
-    </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" class="divisor-head">
+            <path fill="#ffffff" fill-opacity="1" d="M0,0 L480,0 C600,0 600,80 720,80 S840,0 960,0 L1440,0 L1440,100 L0,100 Z"></path>
+        </svg>
+    </section>    
+ 
+    <!-- Sessão Sobre nós -->
+    <section id="about" class="section-about">
+        
+        <div class="container">
+            <h1 class="title">SevDesign</h1><br>
+            
+            <div class="content">
+                <div class="texts col-12 col-lg-6">
+                    <p class="highlight">Agência que conecta, transforma e inspira.</p>
+                    <p class="text">Somos uma <span class="text-blue-700 font-bold">agência criativa</span> especializada em redes sociais, identidade visual, design de interfaces e branding. Transformamos ideias em experiências visuais impactantes, com foco em estratégia e desenvolvimento.</p>
+                    <p class="text">Nossa equipe é <span class="text-blue-700 font-bold">completa e profissional</span> pronta para atender as necessidades da sua empresa e leva-la a outro nível.</p>
+                </div>
 
+                <div class="imagem">
+                    <img class="img" src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="divisor-onda text-blue-400">
+            <svg class="onda-animada" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 150" preserveAspectRatio="none">
+                <path class="onda-1" d="M0 75 Q 125 150 250 75 T 500 75 T 750 75 T 1000 75 T 1250 75 T 1500 75 T 1750 75 T 2000 75 V 150 H 0 Z"></path>
+                <path class="onda-2" d="M0 90 Q 125 180 250 90 T 500 90 T 750 90 T 1000 90 T 1250 90 T 1500 90 T 1750 90 T 2000 90 V 150 H 0 Z"></path>
+            </svg>
+    </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services bg-blue-400">
+      	<h1 class="title text-white">Nossos serviços</h1>
+
+        <div class="services-icons">
+            <div class="card">
+                <i class="fa-solid fa-video fa-3x"></i>
+                <p class="text">Social Midia</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-camera fa-3x"></i>
+                <p class="text">Fotos profissionais</p>
+            </div>
+        </div>
+          
+        <h2 class="subtitle text-white">Garanta o real potencial da sua empresa.</h2>
+        <h3 class="subsubtitle text-white">Planos personalizados para você e seu negócio.</h3>
+
+        <div class="services-grid">  
+            <a class="service-card col" href="./servicos/social_midia.html">
+                <h3 class="title">Social Midia</h3>
+                <p class="text">Procurando progredir nas redes sociais? Artes, stories, reels e muito mais conosco!</p>
+                <hr class="linha">
+                <div><i class="fa-solid fa-arrow-right fa-xl"></i></div>
+            </a>
+
+            <a class="service-card col" href="./servicos/branding.html">
+                <h3 class="title">Branding</h3>
+                <p class="text">Logo, cores, fontes e mais. <br>Criação de identidade visual completa da sua marca. </p>
+                <hr class="linha">
+                <div><i class="fa-solid fa-arrow-right fa-xl"></i></div>
+            </a>
+
+            <a class="service-card col" href="./servicos/design_grafico.html">
+                <h3 class="title">Design Gráfico</h3>
+                <p class="text">Criação de peças gráficas como banners, planfetos e cartões.</p>
+                <hr class="linha">
+                <div><i class="fa-solid fa-arrow-right fa-xl"></i></div>
+            </a>
+            
+            <a class="service-card col" href="./servicos/landing_page.html">
+                <h3 class="title">Landing Page</h3>
+                <p class="text">Design de sites responsivos e modernos para seu negócio. <br> Exiba sua marca para todos!</p>
+                <hr class="linha">
+                <div><i class="fa-solid fa-arrow-right fa-xl"></i></div>
+            </a>
+        </div>
+    </section>
+
+    <section class="portfolio">
+        <h2 class="subtitle">Resultados reais para negócios que apostaram na nossa criatividade.</h2>
+        <h1 class="title">Nosso portifólio</h1>
+
+        <div class="container">
+            <div class="container-senction">
+                <div class="fa-solid fa-chevron-left"></div>
+                <div class="container-item">
+                    <div id="item-1">
+                        <div class="item-lg d-lg-flex d-none color-1 bg-lg-1">
+                            <div class="text-part">
+                                <h4 class="item-subtitle">Social Midia</h4>
+                                <h2 class="item-title">Decodificando</h2>
+                                <hr class="line">
+                                <br>
+                                <b>Sobre o Projeto</b>
+                                <p class="description">
+                                    Foi desenvolvido uma serie de postagens e stories nos quais eram postados 
+                                    semanalmente no instagram da decodificando, um blog na rede social focado
+                                    em tecnologia e programação. Suas artes foram planejadas para trasmitirem
+                                    o estilo da marca e suas cores, juntamente com o seu conteudo.
+                                </p>
+                                <a class="button" href="index.html" target="_blank">Ver Projeto Completo</a>
+                            </div>
+        
+                            <div class="image-part d-none d-lg-flex">
+                                <div class="tablet">
+                                    <div class="camera"></div>
+                                    <img class="screen" src="./imagens/projeto1.jpeg" alt="">
+                                    <div class="button"></div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="item-sm d-lg-none color-1 bg-sm-1">
+                            <div class="image-part d-lg-none">
+                                <div class="tablet">
+                                    <div class="camera"></div>
+                                    <img class="screen" src="./imagens/projeto1.jpeg" alt="">
+                                    <div class="button"></div>
+                                </div>
+                            </div>
+        
+                            <div class="text-part">
+                                <h4 class="item-subtitle">Social Midia</h4>
+                                <h2 class="item-title">Decodificando</h2>
+                                <hr class="line">
+                                <a class="button" href="index.html" target="_blank">Ver Projeto Completo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="item-2">
+                        <div class="item-lg d-lg-flex d-none color-2 bg-lg-2">    
+                            <div class="text-part">
+                                <h4 class="item-subtitle">Social Midia</h4>
+                                <h2 class="item-title">Hada modas</h2>
+                                <hr class="line">
+                                <br>
+                                <b>Sobre o Projeto</b>
+                                <p class="description">
+                                    Este trabalho consistiu no desenvolvimento de uma arte 
+                                    para o instagram da Hada Modas. A arte foi postada no feed 
+                                    da rede social com o intuito de divulgar a loja.
+                                </p>
+                                <a class="button" href="index.html" target="_blank">Ver Projeto Completo</a>
+                            </div>
+        
+                            <div class="image-part d-none d-lg-flex">
+                                <div class="tablet">
+                                    <div class="camera"></div>
+                                    <img class="screen" src="./imagens/projeto2.jpeg" alt="">
+                                    <div class="button"></div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="item-sm d-lg-none color-2 bg-sm-2">
+                            <div class="image-part d-lg-none">
+                                <div class="tablet">
+                                    <div class="camera"></div>
+                                    <img class="screen" src="./imagens/projeto2.jpeg" alt="">
+                                    <div class="button"></div>
+                                </div>
+                            </div>
+        
+                            <div class="text-part">
+                                <h4 class="item-subtitle">Social Midia</h4>
+                                <h2 class="item-title">Hada modas</h2>
+                                <hr class="line">
+                                <a class="button" href="index.html" target="_blank">Ver Projeto Completo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="item-3">
+                        <div class="item-lg d-lg-flex d-none color-3 bg-lg-3">    
+                            <div class="text-part">
+                                <h4 class="item-subtitle">Social </h4>
+                                <h2 class="item-title">Decodificando</h2>
+                                <hr class="line">
+                                <br>
+                                <b>Sobre o Projeto</b>
+                                <p class="description">
+                                    Foi desenvolvido uma serie de postagens e stories nos quais eram postados 
+                                    semanalmente no instagram da decodicicando, um blog na rede social focado
+                                    em tecnologia e programação. Suas artes foram planejadas para trasmitirem
+                                    o estilo da marca e suas cores, juntamente com o seu conteudo.
+                                </p>
+                                <a class="button" href="index.html" target="_blank">Ver Projeto Completo</a>
+                            </div>
+        
+                            <div class="image-part d-none d-lg-flex">
+                                <div class="tablet">
+                                    <div class="camera"></div>
+                                    <img class="screen" src="./imagens/projeto1.jpeg" alt="">
+                                    <div class="button"></div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="item-sm d-lg-none color-3 bg-sm-3">
+                            <div class="image-part d-lg-none">
+                                <div class="tablet">
+                                    <div class="camera"></div>
+                                    <img class="screen" src="./imagens/projeto1.jpeg" alt="">
+                                    <div class="button"></div>
+                                </div>
+                            </div>
+        
+                            <div class="text-part">
+                                <h4 class="item-subtitle">Social Midia</h4>
+                                <h2 class="item-title">Decodificando</h2>
+                                <hr class="line">
+                                <a class="button" href="index.html" target="_blank">Ver Projeto Completo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fa-solid fa-chevron-right"></div>
+            </div>
+            <div class="dots-port">
+                <div class="dot-port active" data-index="1"></div>
+                <div class="dot-port" data-index="2"></div>
+                <div class="dot-port" data-index="3"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="contact">
+        <h1 class="title">Entre em contato</h1>
+        <h2 class="subtitle">(88) 9.9483-5808</h2>
+        <form class="form" action="https://formspree.io/f/xldbdqdn" method="POST">
+            <input class="input" type="text" placeholder="Nome" name="name" required> <!-- nome -->
+
+            <div style="width: 100%; display: flex; gap: 20px; flex-wrap: wrap;">
+                <input class="input col" type="email" placeholder="E-mail" name="email" required> <!-- email -->
+                <input class="input col" type="tel" id="telefone" placeholder="Telefone" name="telefone" required> <!-- telefone -->
+            </div>
+
+            <div style="width: 100%; display: flex; gap: 20px; flex-wrap: wrap;">
+                <select class="input col" name="como_conheceu" required> <!-- Como conheceu? -->
+                    <option value="">Como nos conheceu?</option>
+                    <option value="redes_sociais">Redes Sociais</option>
+                    <option value="sites_de_busca">Sites de busca</option>
+                    <option value="indicacao_de_conhecidos">Indicação de conhecidos</option>
+                    <option value="ja_sou_cliente">Já sou cliente</option>
+                    <option value="outro">Outra forma</option>
+                </select>
+
+                <select class="input col" name="motivo_do_contato" required> <!-- Motivo do contato -->
+                    <option value="">Motivo do contato</option>
+                    <option value="solicitar_orcamento">Solicitar orçamento</option>
+                    <option value="landing_page">Landing Page</option>
+                    <option value="redes_sociais">Redes Sociais</option>
+                    <option value="branding">Branding</option>
+                    <option value="design_grafico">Design Gráfico</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+            
+            <textarea class="textarea" placeholder="Mensagem" name="message" required></textarea> <!-- Descrição -->
+
+            <div class="button-container"> <!-- Botões -->
+                <a class="button-whatsapp" href="https://wa.me/5588994835808" target="_blank"> 
+                    <div class="fa-brands fa-whatsapp fa-xl"></div>
+                </a>
+                <button type="submit" class="button">Enviar</button>
+            </div>
+        </form>
+        
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a class="contato" href="mailto:sevdesign7@gmail.com" target="_blank"> 
+                <div class="fa-regular fa-envelope fa-xl"></div>
+            </a>
+            <a class="contato" href="https://www.instagram.com/_sevdesign_/" target="_blank"> 
+                <div class="fa-brands fa-instagram fa-xl"></div>
+            </a>
+            <a class="contato" href="https://wa.me/5588994835808" target="_blank"> 
+                <div class="fa-brands fa-whatsapp fa-xl"></div>
+            </a>
+        </div>
+
+        <p class="copyright">&copy; 2025 SevDesign. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js" type="module"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </body>
 </html>

@@ -4,103 +4,48 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-
-/* BOTÃO DE MENU */
-{
-    const menu_button = document.querySelector('.menu-button');
-    let side_menu_check = false;
-
-    menu_button.addEventListener('click', () => {   // chama as funções de menu quando o botão é clicado
-        AnimateBar();                               // animação das opções na barra de opções
-        ShowSideMenu();                             // mostra ou esconde o menu lateral
-    });
-
-    function AnimateBar(){
-        if (side_menu_check === false) {
-            menu_button.style.right = '1vh';
-            menu_button.style.top = '3vh';      // move o botão para o canto superior direito 
-
-            for (let i = 1; i <= 3; i++){       // anima as linhas da barra formando um 'X'
-                const bar = document.getElementById(`bar-${i}`);
-                if (i === 1)
-                    bar.style.transform = `translateY(1vh) rotate(45deg)`;
-                else if (i === 3)
-                    bar.style.transform = `translateY(-1vh) rotate(-45deg)`;
-                else
-                    bar.style.opacity = 0;
-            }
-        }
-        else {
-            menu_button.style.right = '3vh';
-            menu_button.style.top = '10vh';     // move o botão para a posição inicial
-
-            for (let i = 1; i <= 3; i++){       // anima as linhas da barra para a posição inicial
-                const bar = document.getElementById(`bar-${i}`);
-                bar.style.opacity = 1;
-                bar.style.transform = `translate(0px, 0px) rotate(0deg)`;
-            }
-        }
-    }
-
-    async function ShowSideMenu(){
-        const side_menu_container = document.querySelector('.side-menu-container');
-        const side_menu = document.querySelector('.side-menu');
-        
-        if (side_menu_check === false) {
-            side_menu.style.transitionDuration = '.5s';
-            side_menu.style.pointerEvents = 'auto';
-            side_menu_container.style.display = 'block';
-            side_menu.style.transform = 'translateX(0vh)';
-            side_menu_check = true;
-        }
-        else {
-            side_menu.style.transform = 'translateX(35vh)';
-            await new Promise(resolve => setTimeout(resolve, 500));
-            side_menu_container.style.display = 'none';
-            side_menu.style.pointerEvents = 'none';
-            side_menu_check = false;
-        }
-    }
-}
-
-
-/* DROPDOWN DOS SERVIÇOS */
-{
-    const button = document.getElementById('services-dropdown');
-    const dropdown = document.querySelector('.dropdown-container');
-
-    button.addEventListener('click', () => {
-        dropdown.classList.toggle('active');
-    });
-}
-
-
 /* TRANSIÇÃO DE IMAGENS DO HERO SECTION */
 {
     let index = 0;
     let in_out = true;
 
+    const texts = document.querySelectorAll('.text-1, .text-2, .text-3');
+    const bg_1 = document.getElementById('fundo-1');
+    const bg_2 = document.getElementById('fundo-2');
+    const bg_3 = document.getElementById('fundo-3');
+
+    bg_2.style.display = 'block';
+    bg_3.style.display = 'block';
+
     function ShowText(){
-        const texts = document.querySelectorAll('.text-1, .text-2, .text-3');
-        texts[(index + 1) % 3].style.display = 'block';
+        texts[(index + 1) % 3].style.opacity = 1;
     }
 
-    async function HideText(){
-        const texts = document.querySelectorAll('.text-1, .text-2, .text-3');
-        
+    async function HideText(){        
         texts[index].style.opacity = 0;
         await sleep(600);
-
-        texts[index].style.display = 'none';
-        texts[index].style.opacity = 1;
     }
 
     async function ChangeBackground(){
-        const bg_1 = document.querySelector('.bg-1');
-        const bg_2 = document.querySelector('.bg-2');
-        const bg_3 = document.querySelector('.bg-3');
-
-        if (index == 2) {
+        if (index == 0) {
+            HideText();
+            await sleep(600);
+            
+            bg_1.style.transform = 'translateX(-100%)';
+            await sleep(600);
+            ShowText();
+        }
+        
+        else if (index == 1) {
+            HideText();
+            await sleep(600);
+            
+            bg_2.style.transform = 'translateX(-100%)';
+            await sleep(600);
+            ShowText();
+        }
+        
+        else if (index == 2) {
             HideText();
             await sleep(600);
 
@@ -112,25 +57,6 @@ function sleep(ms) {
             bg_3.style.transform = 'translateX(0%)';
             ShowText();
         }
-        
-        else if (index == 0) {
-            HideText();
-            await sleep(600);
-
-            bg_1.style.transform = 'translateX(-100%)';
-            await sleep(600);
-            ShowText();
-        }
-        
-        else if (index == 1) {
-            HideText();
-            await sleep(600);
-
-            bg_2.style.transform = 'translateX(-100%)';
-            await sleep(600);
-            ShowText();
-        }
-        
     }
 
     function ChangeDots(){
@@ -142,13 +68,13 @@ function sleep(ms) {
     }
 
     async function ExecutarCiclo(){
-        await ChangeBackground();                           // muda a imagem de fundo
-        
+        await ChangeBackground();
+        ChangeDots();
+
         index = (index + 1) % 3;
-        ChangeDots();                                       // muda a cor dos dots
     }
 
-    setInterval(ExecutarCiclo, 10000);
+    setInterval(ExecutarCiclo, 6000);
 }
 
 
