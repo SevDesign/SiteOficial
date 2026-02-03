@@ -1,0 +1,62 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 5rem 2rem;
+  background-color: #ececec;
+}
+.hero .vertical-menu .menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 300px;
+}
+.hero .vertical-menu .menu-buttons button {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: white;
+  color: #444;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  text-align: left;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+.hero .vertical-menu .menu-buttons button:hover {
+  transform: translateX(10px);
+  color: #000;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+.hero .vertical-menu .menu-buttons button.active {
+  background-color: #fff;
+  border-color: #0d6efd;
+  color: #0d6efd;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(13, 110, 253, 0.15);
+}
+.hero .vertical-menu .menu-buttons button.active::before {
+  content: "";
+  width: 4px;
+  height: 20px;
+  background-color: #0d6efd;
+  margin-right: 10px;
+  border-radius: 2px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+}/*# sourceMappingURL=style.css.map */

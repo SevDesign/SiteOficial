@@ -1,0 +1,83 @@
+html, body{
+  margin: 0;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+
+
+.hero {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 3rem; // Aumentei um pouco o respiro
+  align-items: center;
+  padding: 5rem 2rem;
+  background-color: #ececec; // Um fundo leve para o card "saltar"
+
+  .main-view {
+    // Estilo do seu card grande...
+  }
+
+  .vertical-menu {
+    .menu-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      max-width: 300px; // Evita que os botões fiquem largos demais em telas gigantes
+
+      button {
+        display: flex;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        background-color: white;
+        color: #444;
+        border: 1px solid transparent; // Borda invisível para não dar "pulo" no hover
+        border-radius: 0.75rem;
+        font-weight: 500;
+        text-align: left;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); // Sombra bem sutil
+        cursor: pointer;
+
+        // Efeito ao passar o mouse
+        &:hover {
+          transform: translateX(10px); // O botão "sai" levemente para a direita
+          color: #000;
+          box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        // Quando o botão estiver selecionado (via JS)
+        &.active {
+          background-color: #fff;
+          border-color: #0d6efd; // Cor de destaque (ex: Azul Bootstrap)
+          color: #0d6efd;
+          font-weight: 700;
+          box-shadow: 0 10px 20px rgba(13, 110, 253, 0.15);
+          
+          // Uma barrinha lateral para dar charme
+          &::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background-color: #0d6efd;
+            margin-right: 10px;
+            border-radius: 2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+}

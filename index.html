@@ -6,17 +6,13 @@
     <title>SevDesign</title>
     
       <!-- Links (CSS, font-awesome, bootstrap)-->
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="recursos/style.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 </head>    
 
 
 <body class="body">
-
-    <!-- Pesquisar tecnologias para desenvolvimento,
-            como tailwind e bootstrap 
-    -->
 
     <!-- Pesquisar como organizar melhor a estrutura das páginas,
             por exemplo criar pastas para guardar as funcionalidades do site
@@ -30,13 +26,29 @@
         Os botões do lado direito devem ser como a sessão de serviços, com btn de social midia, branding, design gráfico e etc.
         A ideia é inovar no hero, o fundo pode ser branco ou com uma cor clara suave.
     -->
+
+    <section class="hero" id="start">
+        <div class="main-view">
+            <!-- Animações, icons e imagens -->
+
+        </div>
+        <div class="vertical-menu">
+            <div class="menu-buttons">
+                <button>Páginas que Vendem</button>
+                <button>Conteúdo de Alto Impacto</button>
+                <button>Anúncios Estratégicos</button>
+                <button>Identidade de Autoridade</button>
+                <button>Resultados Reais</button> <!-- puxar para a sessão de baixo -->
+            </div>
+        </div>
+    </section>
  
     <!-- Sessão Apresentação -->
     <!-- 
         Sessão de simples portfólio 
         Fazer linha de logos dos clientes que já tivemos
         abaixo alguns cards com imagens de projetos feitos e o texto em cima,
-        que indica e leva para uma outra página com nossas atividades e projetosdo assunto
+        que indica e leva para uma outra página com nossas atividades e projetos do assunto
     -->
     
     <!-- Sessão Sobre nós -->
@@ -82,7 +94,7 @@
     </div>
     </section-->
 
-    <!-- Services Section -->
+    <!-- Services Section --
     <section id="services" class="services bg-blue-400">
       	<h1 class="title text-white">Nossos serviços</h1>
 
@@ -286,15 +298,15 @@
         <h1 class="title">Entre em contato</h1>
         <h2 class="subtitle">(88) 9.9483-5808</h2>
         <form class="form" action="https://formspree.io/f/xldbdqdn" method="POST">
-            <input class="input" type="text" placeholder="Nome" name="name" required> <!-- nome -->
+            <input class="input" type="text" placeholder="Nome" name="name" required>
 
             <div style="width: 100%; display: flex; gap: 20px; flex-wrap: wrap;">
-                <input class="input col" type="email" placeholder="E-mail" name="email" required> <!-- email -->
-                <input class="input col" type="tel" id="telefone" placeholder="Telefone" name="telefone" required> <!-- telefone -->
+                <input class="input col" type="email" placeholder="E-mail" name="email" required>
+                <input class="input col" type="tel" id="telefone" placeholder="Telefone" name="telefone" required> 
             </div>
 
             <div style="width: 100%; display: flex; gap: 20px; flex-wrap: wrap;">
-                <select class="input col" name="como_conheceu" required> <!-- Como conheceu? -->
+                <select class="input col" name="como_conheceu" required> 
                     <option value="">Como nos conheceu?</option>
                     <option value="redes_sociais">Redes Sociais</option>
                     <option value="sites_de_busca">Sites de busca</option>
@@ -303,7 +315,7 @@
                     <option value="outro">Outra forma</option>
                 </select>
 
-                <select class="input col" name="motivo_do_contato" required> <!-- Motivo do contato -->
+                <select class="input col" name="motivo_do_contato" required> 
                     <option value="">Motivo do contato</option>
                     <option value="solicitar_orcamento">Solicitar orçamento</option>
                     <option value="landing_page">Landing Page</option>
@@ -314,9 +326,9 @@
                 </select>
             </div>
             
-            <textarea class="textarea" placeholder="Mensagem" name="message" required></textarea> <!-- Descrição -->
+            <textarea class="textarea" placeholder="Mensagem" name="message" required></textarea>
 
-            <div class="button-container"> <!-- Botões -->
+            <div class="button-container">
                 <a class="button-whatsapp" href="https://wa.me/5588994835808" target="_blank"> 
                     <div class="fa-brands fa-whatsapp fa-xl"></div>
                 </a>
@@ -340,11 +352,11 @@
         </div>
 
         <p class="copyright">&copy; 2025 SevDesign. Todos os direitos reservados.</p>
-    </footer>
+    </footer-->
 
 
     <!-- Scripts (JS, Tailwind, Bootstrap) -->
-    <script src="script.js" type="module"></script>
+    <script src="recursos/script.js" type="module"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
