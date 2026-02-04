@@ -1,17 +1,25 @@
+@charset "UTF-8";
 html, body {
   margin: 0;
   padding: 0;
-  min-width: 100vw;
+  width: 100%;
   min-height: 100vh;
 }
 
+/* --- Variáveis para manter o padrão Agência --- */
 .hero {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   display: grid;
   grid-template-columns: 3fr 2fr;
   gap: 3rem;
   align-items: center;
   padding: 5rem 2rem;
   background-color: #ececec;
+}
+.hero .main-view {
+  display: flex;
 }
 .hero .vertical-menu .menu-buttons {
   display: flex;
@@ -54,9 +62,206 @@ html, body {
   border-radius: 2px;
 }
 
+.portfolio-presentation {
+  position: relative;
+  z-index: 2;
+  background-color: #ffffff;
+  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.05);
+  /* 1. Logo Marquee (Social Proof) */
+  /* 2. Grid de Portfólio */
+}
+.portfolio-presentation .logo-slider {
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem 0;
+  position: relative;
+  background: #fff;
+}
+.portfolio-presentation .logo-slider .logo-track {
+  display: flex;
+  align-items: center;
+  width: -moz-max-content;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+.portfolio-presentation .logo-slider .logo-track img {
+  height: 40px;
+  margin: 0 50px;
+  filter: grayscale(100%);
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+.portfolio-presentation .logo-slider .logo-track img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+.portfolio-presentation .project-card {
+  position: relative;
+  height: 450px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: #000;
+  /* --- Efeitos de Hover (Experiência do Usuário) --- */
+}
+.portfolio-presentation .project-card img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.7;
+  transition: all 0.4s ease;
+}
+.portfolio-presentation .project-card .card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+.portfolio-presentation .project-card .card-overlay .glass-header {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1.25rem;
+  color: white;
+  transition: transform 0.4s ease;
+}
+.portfolio-presentation .project-card .card-overlay .glass-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.portfolio-presentation .project-card .card-overlay .glass-header .view-more {
+  font-size: 0.85rem;
+  opacity: 0;
+  display: block;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+}
+.portfolio-presentation .project-card:hover img {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+.portfolio-presentation .project-card:hover .card-overlay {
+  background: rgba(0, 0, 0, 0.1);
+}
+.portfolio-presentation .project-card:hover .card-overlay .glass-header {
+  transform: translateY(-10px);
+}
+.portfolio-presentation .project-card:hover .card-overlay .glass-header .view-more {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animação do Slider */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.about-us {
+  position: relative;
+  z-index: 2;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+.about-us .text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px #000; /* Cria o efeito de contorno */
+}
+.about-us .image-stack {
+  position: relative;
+  padding: 2rem;
+}
+.about-us .image-stack .image-main {
+  width: 90%;
+  z-index: 1;
+  position: relative;
+}
+.about-us .image-stack .image-floating {
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  width: 45%;
+  z-index: 2;
+  border: 8px solid #fff;
+}
+.about-us .social-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: #f8f9fa;
+  border-radius: 50px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+.about-us .social-badge:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.about-us .social-badge i {
+  font-size: 1.2rem;
+}
+
+.contact-diagnostic {
+  position: relative;
+  z-index: 2;
+}
+.contact-diagnostic .briefing-card {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  /* Estilização dos Chips de Checkbox */
+}
+.contact-diagnostic .briefing-card .form-control {
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.75rem;
+  border: 2px solid #eee;
+}
+.contact-diagnostic .briefing-card .form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: none;
+}
+.contact-diagnostic .briefing-card .btn-check:checked + .btn-outline-secondary {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
+.contact-diagnostic .icon-box {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
 /* MOBILE */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .hero-container {
     grid-template-columns: 1fr;
+  }
+  .about-us .image-stack .image-main {
+    width: 100%;
+  }
+  .text-outline {
+    -webkit-text-stroke: 1px #444;
+    color: #444;
   }
 }/*# sourceMappingURL=style.css.map */
