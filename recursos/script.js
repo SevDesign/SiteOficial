@@ -2,9 +2,20 @@ const buttons = document.querySelectorAll('.menu-buttons button');
 
 buttons.forEach(btn => {
   btn.addEventListener('click', () => {
-    buttons.forEach(b => b.classList.remove('active')); // Limpa todos
-    btn.classList.add('active'); // Ativa o clicado
-    // Aqui entra sua lógica de trocar a imagem/frase do card
+    if (!btn.classList.contains('active')) { // para ativar o botão
+
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.getElementById('main-content').style.display = 'none';
+      // Aqui entra sua lógica de trocar a imagem/frase do card
+    }
+    else{
+      btn.classList.remove('active');
+      
+      document.getElementById('main-content').style.display = 'block';
+      // Aqui entra sua lógica de trocar a imagem/frase do card
+    }
   });
 });
 

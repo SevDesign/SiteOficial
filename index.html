@@ -30,7 +30,19 @@
 
     <section class="hero" id="start">
         <div class="main-view">
-            <!-- Animações, icons e imagens -->
+            <!-- 
+                Mostrar um conteúdo padrão caso nenhum botão seja clicado,
+                caso seja, mostrar conteúdo de acordo com o botão clicado
+            -->
+
+            <div id="main-content" class="content-box p-4">
+                <span class="brand-tag mb-2 d-inline-block">Agência [Nome]</span>
+                
+                <h1 id="hero-title" class="display-4 fw-bold">Páginas que Vendem</h1>
+                <p id="hero-desc">Transformamos cliques em faturamento real.</p>
+                
+                <a href="#" class="btn btn-brand">Ver Portfólio</a>
+            </div>
 
         </div>
         <div class="vertical-menu">
@@ -61,16 +73,18 @@
             
             <div class="logo-slider">
                 <div class="logo-track">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Cliente 1">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Cliente 2">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_with_text.svg" alt="Cliente 3">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Cliente 4">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Cliente 5">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Cliente 1">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Cliente 2">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_with_text.svg" alt="Cliente 3">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Cliente 4">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Cliente 5">
+                    <img src="imagens/logos_decodificando.png" alt="Cliente 1">
+                    <img src="imagens/logo_psi_sandy.png" alt="Cliente 2">
+                    <img src="imagens/logos_arthur_nutri.png" alt="Cliente 3">
+                    <img src="imagens/logos_decodificando.png" alt="Cliente 1">
+                    <img src="imagens/logo_psi_sandy.png" alt="Cliente 2">
+                    <img src="imagens/logos_arthur_nutri.png" alt="Cliente 3">
+                    <img src="imagens/logos_decodificando.png" alt="Cliente 1">
+                    <img src="imagens/logo_psi_sandy.png" alt="Cliente 2">
+                    <img src="imagens/logos_arthur_nutri.png" alt="Cliente 3">
+                    <img src="imagens/logos_decodificando.png" alt="Cliente 1">
+                    <img src="imagens/logo_psi_sandy.png" alt="Cliente 2">
+                    <img src="imagens/logos_arthur_nutri.png" alt="Cliente 3">
                 </div>
             </div>
         </div>
@@ -272,6 +286,111 @@
         Perspectiva de Design: Use um Accordion (sanfona) para manter o layout limpo. 
         É uma excelente oportunidade para usar um código JavaScript elegante e leve.
     -->
+
+    <section class="faq-section py-5 bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold">Dúvidas <span class="text-primary">Comuns</span></h2>
+                        <p class="text-secondary">Tudo o que você precisa saber para dar o próximo passo com segurança.</p>
+                    </div>
+
+                    <div class="accordion accordion-flush" id="accordionFAQ">
+                        
+                        <div class="accordion-item mb-3 border rounded-4 overflow-hidden">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold py-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Em quanto tempo começo a ver resultados reais?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body text-secondary">
+                                    O marketing digital é um processo. Estratégias de tráfego pago podem gerar leads em dias, enquanto o branding e autoridade levam meses. Nosso foco é construir uma base sólida para que o crescimento seja constante e não apenas um pico momentâneo.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border rounded-4 overflow-hidden">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold py-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Preciso investir muito em anúncios logo de cara?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body text-secondary">
+                                    Não. Recomendamos começar com um valor confortável para o seu caixa e escalar conforme o retorno acontece. O segredo não é quanto você gasta, mas como a estratégia otimiza cada centavo investido.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border rounded-4 overflow-hidden">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold py-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Como funciona o suporte e acompanhamento?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body text-secondary">
+                                    Você terá um canal direto conosco via WhatsApp e reuniões mensais de alinhamento. Além disso, enviamos relatórios de performance para que você acompanhe exatamente onde seu investimento está retornando.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Baixe mosso guia -->
+    <!--
+        Uma sessão contento um formulário de contato para receber nosso guia digital de marketing
+    -->
+
+    <section class="lead-magnet py-5 shadow-sm">
+        <div class="container bg-dark rounded-5 p-4 p-md-5 position-relative overflow-hidden">
+            <div class="bg-gradient-decoration"></div>
+
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5 text-center position-relative">
+                    <div class="ebook-mockup">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1974&auto=format&fit=crop" alt="Capa do E-book" class="img-fluid shadow-lg rounded-3">
+                        <span class="badge bg-primary position-absolute top-0 start-0 translate-middle p-3 rounded-circle shadow">GRÁTIS</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 text-white">
+                    <div class="magnet-content">
+                        <h2 class="display-5 fw-bold mb-3">Domine o seu <span class="text-primary">Posicionamento</span></h2>
+                        <p class="lead opacity-75 mb-4">
+                            Baixe o guia prático que ensina como empresas comuns se tornam referências imbatíveis no mercado digital.
+                        </p>
+                        
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i> Estratégias de diferenciação de marca</li>
+                            <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i> Como atrair o cliente certo pelo conteúdo</li>
+                            <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i> O passo a passo para autoridade instantânea</li>
+                        </ul>
+
+                        <form id="ebookForm" class="row g-2">
+                            <div class="col-md-5">
+                                <input type="text" class="form-control form-control-lg border-0" placeholder="Seu melhor e-mail" required>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="tel" class="form-control form-control-lg border-0" placeholder="WhatsApp" required>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold">Baixar <i class="bi bi-download ms-1"></i></button>
+                            </div>
+                        </form>
+                        <small class="d-block mt-3 opacity-50">Respeitamos sua privacidade. Seus dados estão seguros conosco.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Scripts (JS, Tailwind, Bootstrap) -->
     <script src="recursos/script.js" type="module"></script>
