@@ -40,3 +40,5 @@ document.getElementById('briefingForm').addEventListener('submit', function(e) {
     
     window.open(url, '_blank');
 });
+
+

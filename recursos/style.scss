@@ -24,7 +24,9 @@ $transition-speed: 0.4s;
   align-items: center;
   padding: 5rem 2rem;
   background-color: #ececec;
-  overflow: hidden; 
+  overflow: hidden;
+  min-height: 75vh;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 
   &::before {
     content: "";
@@ -74,13 +76,19 @@ $transition-speed: 0.4s;
   }
   
   .vertical-menu {
+    display: flex;
+    justify-content: center;
+    padding-right: 8vw;
+
     .menu-buttons {
+      width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 1.2rem;
-      max-width: 300px; // Evita que os botões fiquem largos demais em telas gigantes
+      gap: 1.6rem;
+      max-width: 700px; // Evita que os botões fiquem largos demais em telas gigantes
 
       button {
+        width: 100%;
         display: flex;
         align-items: center;
         padding: 1rem 1.5rem;
@@ -88,8 +96,9 @@ $transition-speed: 0.4s;
         color: #444;
         border: 1px solid transparent; // Borda invisível para não dar "pulo" no hover
         border-radius: 0.75rem;
-        font-weight: 500;
+        font-weight: 600;
         text-align: left;
+        font-size: 1.1rem;
         transition: all 0.3s ease;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); // Sombra bem sutil
         cursor: pointer;
@@ -129,6 +138,7 @@ $transition-speed: 0.4s;
   z-index: 2;
   background-color: #ffffff;
   box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.05);
+  scroll-snap-align: start;
 
   /* 1. Logo Marquee (Social Proof) */
   .logo-slider {
