@@ -80,9 +80,12 @@ html.lenis, html.lenis body {
   overflow: hidden;
   transition: all 0.3s;
   line-height: 1.4em;
+  margin-top: 1rem;
 }
 .hero .main-view #main-content .btn-brand:hover {
   box-shadow: inset 0 0 5px rgba(27, 117, 253, 0.6), 0 0 9px 3px rgba(76, 168, 211, 0.2);
+  font-size: 1.15rem;
+  padding: 0.65rem 3rem;
 }
 .hero .main-view #main-content .btn-brand:before {
   content: "";
@@ -97,34 +100,34 @@ html.lenis, html.lenis body {
 .hero .main-view #main-content .btn-brand:hover:before {
   transform: translateX(20rem);
 }
-.hero .main-view #content-sites {
+.hero .main-view #content-sites, .hero .main-view #content-impact, .hero .main-view #content-strategy, .hero .main-view #content-authority {
   display: none;
   align-items: center;
   gap: 2rem;
   animation: fadeIn 0.5s ease-out;
 }
-.hero .main-view #content-sites .content {
+.hero .main-view #content-sites .content, .hero .main-view #content-impact .content, .hero .main-view #content-strategy .content, .hero .main-view #content-authority .content {
   flex: 1;
 }
-.hero .main-view #content-sites .content .text-subtitle {
+.hero .main-view #content-sites .content .text-subtitle, .hero .main-view #content-impact .content .text-subtitle, .hero .main-view #content-strategy .content .text-subtitle, .hero .main-view #content-authority .content .text-subtitle {
   font-size: 1.2rem;
+  font-weight: 500;
   margin: 0;
 }
-.hero .main-view #content-sites .content .image {
+.hero .main-view #content-sites .content .image, .hero .main-view #content-impact .content .image, .hero .main-view #content-strategy .content .image, .hero .main-view #content-authority .content .image {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.hero .main-view #content-sites .content .image img {
-  width: 80%;
-  height: auto;
+.hero .main-view #content-sites .content .image img, .hero .main-view #content-impact .content .image img, .hero .main-view #content-strategy .content .image img, .hero .main-view #content-authority .content .image img {
+  height: 50vh;
 }
 @media (max-width: 992px) {
-  .hero .main-view #content-sites {
+  .hero .main-view #content-sites, .hero .main-view #content-impact, .hero .main-view #content-strategy, .hero .main-view #content-authority {
     flex-direction: column-reverse;
     text-align: center;
   }
-  .hero .main-view #content-sites .image-side {
+  .hero .main-view #content-sites .image-side, .hero .main-view #content-impact .image-side, .hero .main-view #content-strategy .image-side, .hero .main-view #content-authority .image-side {
     flex: 0 0 150px;
     margin-bottom: 1rem;
   }
@@ -141,7 +144,7 @@ html.lenis, html.lenis body {
   gap: 1.6rem;
   max-width: 700px;
 }
-.hero .vertical-menu .menu-buttons button {
+.hero .vertical-menu .menu-buttons button, .hero .vertical-menu .menu-buttons a {
   width: 100%;
   display: flex;
   align-items: center;
@@ -155,21 +158,22 @@ html.lenis, html.lenis body {
   font-size: 1.1rem;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
   cursor: pointer;
 }
-.hero .vertical-menu .menu-buttons button:hover {
+.hero .vertical-menu .menu-buttons button:hover, .hero .vertical-menu .menu-buttons a:hover {
   transform: translateX(10px);
   color: #000;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
-.hero .vertical-menu .menu-buttons button.active {
+.hero .vertical-menu .menu-buttons button.active, .hero .vertical-menu .menu-buttons a.active {
   background-color: #fff;
   border-color: #4a7dd6;
   color: #4a7dd6;
   font-weight: 700;
   box-shadow: 0 10px 20px rgba(13, 110, 253, 0.15);
 }
-.hero .vertical-menu .menu-buttons button.active::before {
+.hero .vertical-menu .menu-buttons button.active::before, .hero .vertical-menu .menu-buttons a.active::before {
   content: "";
   width: 4px;
   height: 20px;
