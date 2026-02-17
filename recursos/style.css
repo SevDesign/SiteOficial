@@ -53,21 +53,21 @@ html.lenis, html.lenis body {
   z-index: -1;
   pointer-events: none;
 }
-.hero .main-view #main-content {
+.hero .main-view #hero-default {
   display: block;
 }
-.hero .main-view #main-content .brand-tag {
+.hero .main-view #hero-default .brand-tag {
   color: #4a7dd6;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-.hero .main-view #main-content .text-outline {
+.hero .main-view #hero-default .text-outline {
   color: transparent;
   -webkit-text-stroke: 2px #000; /* Cria o efeito de contorno */
 }
-.hero .main-view #main-content .btn-brand {
+.hero .main-view #hero-default .btn-brand {
   color: #4a7dd6;
   border: #4a7dd6 solid 2px;
   border-radius: 50px;
@@ -82,12 +82,12 @@ html.lenis, html.lenis body {
   line-height: 1.4em;
   margin-top: 1rem;
 }
-.hero .main-view #main-content .btn-brand:hover {
+.hero .main-view #hero-default .btn-brand:hover {
   box-shadow: inset 0 0 5px rgba(27, 117, 253, 0.6), 0 0 9px 3px rgba(76, 168, 211, 0.2);
   font-size: 1.15rem;
   padding: 0.65rem 3rem;
 }
-.hero .main-view #main-content .btn-brand:before {
+.hero .main-view #hero-default .btn-brand:before {
   content: "";
   position: absolute;
   left: -4em;
@@ -97,37 +97,46 @@ html.lenis, html.lenis body {
   transition: transform 0.4s ease-in-out;
   background: linear-gradient(to right, transparent 1%, rgba(227, 230, 255, 0.479) 40%, rgba(255, 255, 255, 0.603) 60%, transparent 100%);
 }
-.hero .main-view #main-content .btn-brand:hover:before {
+.hero .main-view #hero-default .btn-brand:hover:before {
   transform: translateX(20rem);
 }
-.hero .main-view #content-sites, .hero .main-view #content-impact, .hero .main-view #content-strategy, .hero .main-view #content-authority {
+.hero .main-view .hero-tab {
   display: none;
   align-items: center;
   gap: 2rem;
   animation: fadeIn 0.5s ease-out;
 }
-.hero .main-view #content-sites .content, .hero .main-view #content-impact .content, .hero .main-view #content-strategy .content, .hero .main-view #content-authority .content {
+.hero .main-view .hero-tab .content {
   flex: 1;
 }
-.hero .main-view #content-sites .content .text-subtitle, .hero .main-view #content-impact .content .text-subtitle, .hero .main-view #content-strategy .content .text-subtitle, .hero .main-view #content-authority .content .text-subtitle {
+.hero .main-view .hero-tab .content .brand-tag {
+  color: #4a7dd6;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+.hero .main-view .hero-tab .content .text-subtitle {
   font-size: 1.2rem;
   font-weight: 500;
   margin: 0;
 }
-.hero .main-view #content-sites .content .image, .hero .main-view #content-impact .content .image, .hero .main-view #content-strategy .content .image, .hero .main-view #content-authority .content .image {
+.hero .main-view .hero-tab .content .image {
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.hero .main-view #content-sites .content .image img, .hero .main-view #content-impact .content .image img, .hero .main-view #content-strategy .content .image img, .hero .main-view #content-authority .content .image img {
+.hero .main-view .hero-tab .content .image img {
   height: 50vh;
 }
 @media (max-width: 992px) {
-  .hero .main-view #content-sites, .hero .main-view #content-impact, .hero .main-view #content-strategy, .hero .main-view #content-authority {
+  .hero .main-view .hero-tab {
     flex-direction: column-reverse;
     text-align: center;
   }
-  .hero .main-view #content-sites .image-side, .hero .main-view #content-impact .image-side, .hero .main-view #content-strategy .image-side, .hero .main-view #content-authority .image-side {
+  .hero .main-view .hero-tab .image-side {
     flex: 0 0 150px;
     margin-bottom: 1rem;
   }

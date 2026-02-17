@@ -1,5 +1,5 @@
 const buttons = document.querySelectorAll('.menu-buttons button');
-const main_content = document.getElementById('main-content');
+const main_content = document.getElementById('hero-default');
 let activeButton = false;
 let lastActiveContent = null;
 
