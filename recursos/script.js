@@ -1,7 +1,4 @@
 
-
-
-
 /* FORMULARIO DE BRIEFING */
 
 document.getElementById('briefingForm').addEventListener('submit', function(e) {

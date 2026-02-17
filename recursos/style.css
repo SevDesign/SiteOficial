@@ -195,10 +195,13 @@ html.lenis, html.lenis body {
   position: relative;
   z-index: 2;
   background-color: #ffffff;
-  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.05);
-  scroll-snap-align: start;
-  /* 1. Logo Marquee (Social Proof) */
-  /* 2. Grid de Portfólio */
+  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.15);
+  padding: 3rem 0 4rem 0;
+}
+.portfolio-presentation small {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 .portfolio-presentation .logo-slider {
   width: 100%;
@@ -211,7 +214,7 @@ html.lenis, html.lenis body {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: scroll 30s linear infinite;
+  animation: scroll 18s linear infinite;
 }
 .portfolio-presentation .logo-slider .logo-track img {
   height: 65px;
@@ -475,7 +478,7 @@ html.lenis, html.lenis body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-20%);
   }
 }
 @keyframes fadeIn {

@@ -229,10 +229,15 @@ $transition-speed: 0.4s;
   position: relative;
   z-index: 2;
   background-color: #ffffff;
-  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.05);
-  scroll-snap-align: start;
+  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.15);
+  padding: 3rem 0 4rem 0;
 
-  /* 1. Logo Marquee (Social Proof) */
+  small {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+  }
+
   .logo-slider {
     width: 100%;
     overflow: hidden;
@@ -244,7 +249,7 @@ $transition-speed: 0.4s;
       display: flex;
       align-items: center;
       width: max-content; // Garante que a track tenha o tamanho do conteúdo
-      animation: scroll 30s linear infinite;
+      animation: scroll 18s linear infinite;
 
       img {
         height: 65px;
@@ -261,7 +266,6 @@ $transition-speed: 0.4s;
     }
   }
 
-  /* 2. Grid de Portfólio */
   .project-card {
     position: relative;
     height: 450px;
@@ -557,7 +561,7 @@ $transition-speed: 0.4s;
 /* Animação do Slider */
 @keyframes scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } // Move metade do conteúdo para o loop perfeito
+  100% { transform: translateX(-20%); } // Move metade do conteúdo para o loop perfeito
 }
 
 // Animações

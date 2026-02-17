@@ -15,18 +15,7 @@
 
 <body class="body">
 
-    <!-- Pesquisar como organizar melhor a estrutura das páginas,
-            por exemplo criar pastas para guardar as funcionalidades do site
-            como botão fixo de contato com css e js próprio 
-    -->
-
     <!-- Sessão Hero -->
-    <!-- 
-        Refazer com um card grande do lado esquerdo e do lado direito botões que trocam as imagens 
-        O card grande deve ter frases como as do serviços e se inspirar na sessão de portfólio abaixo
-        Os botões do lado direito devem ser como a sessão de serviços, com btn de social midia, branding, design gráfico e etc.
-        A ideia é inovar no hero, o fundo pode ser branco ou com uma cor clara suave.
-    -->
 
     <section class="hero" id="start">
         <div class="main-view">
@@ -109,29 +98,28 @@
             </div>
         </div>
     </section>
- 
-    <!-- Sessão Apresentação -->
-    <!-- 
-        Sessão de simples portfólio 
-        Fazer linha de logos dos clientes que já tivemos
-        abaixo alguns cards com imagens de projetos feitos e o texto em cima,
-        que indica e leva para uma outra página com nossas atividades e projetos do assunto
-    -->
+
+
+
+    <!-- Sessão de portifólio -->
     
-    <section class="portfolio-presentation py-5 bg-white">
+    <section class="portfolio-presentation">
     
         <div class="container-fluid px-0 mb-5">
             <div class="section-title text-center mb-4">
                 <small class="text-uppercase tracking-widest text-muted">Empresas que confiam no nosso trabalho</small>
             </div>
-
-            <!-- Logo Slider -->
-            <!--
-                Colocar links nas logos que levam para o site dos clientes
-            -->
             
-            <div class="logo-slider">
-                <div class="logo-track">
+            <div class="logo-slider">                
+                <div class="logo-track">  <!-- Precisa de 16 para funcionar até em ultrawide -->
+                    <!-- 
+                        Colocar os links de clientes:
+                        https://sevdesign.github.io/LinkPage-PsiSandyBraga/
+                        https://sevdesign.github.io/AragaoNutri/
+                    -->
+                    <img src="imagens/logos_decodificando.png" alt="Cliente 1">
+                    <img src="imagens/logo_psi_sandy.png" alt="Cliente 2">
+                    <img src="imagens/logos_arthur_nutri.png" alt="Cliente 3">
                     <img src="imagens/logos_decodificando.png" alt="Cliente 1">
                     <img src="imagens/logo_psi_sandy.png" alt="Cliente 2">
                     <img src="imagens/logos_arthur_nutri.png" alt="Cliente 3">
@@ -150,9 +138,13 @@
 
         <div class="container">
             <div class="row g-4 portfolio-preview">
-                
+
+                <div class="text-center mb-2">
+                    <h4 class="text-uppercase tracking-widest text-muted" style="font-weight: 700;">nossos projetos</h4>
+                </div>
+
                 <div class="col-md-6 col-lg-4">
-                    <a href="portfolio-web.html" class="project-card d-block text-decoration-none">
+                    <a href="paginas/ecossitemas_digitais.html" class="project-card d-block text-decoration-none">
                         <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1964&auto=format&fit=crop" alt="Ecossistemas Digitais" loading="lazy">
                         <div class="card-overlay">
                             <div class="glass-header">
@@ -164,7 +156,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <a href="portfolio-video.html" class="project-card d-block text-decoration-none">
+                    <a href="paginas/producao_de_autoridade.html" class="project-card d-block text-decoration-none">
                         <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071&auto=format&fit=crop" alt="Produção de Autoridade" loading="lazy">
                         <div class="card-overlay">
                             <div class="glass-header">
@@ -176,7 +168,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <a href="portfolio-branding.html" class="project-card d-block text-decoration-none">
+                    <a href="paginas/performace_de_marca.html" class="project-card d-block text-decoration-none">
                         <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2071&auto=format&fit=crop" alt="Performance de Marca" loading="lazy">
                         <div class="card-overlay">
                             <div class="glass-header">
@@ -190,6 +182,8 @@
             </div>
         </div>
     </section>
+
+
 
     <!-- Sessão Sobre nós -->
     <!--
