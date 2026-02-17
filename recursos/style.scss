@@ -5,6 +5,22 @@ html, body{
   min-height: 100vh;
 }
 
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
 // Cores da marca
 // azul: #4a7dd6
 
@@ -25,7 +41,7 @@ $transition-speed: 0.4s;
   padding: 5rem 2rem;
   background-color: #ececec;
   overflow: hidden;
-  min-height: 75vh;
+  height: 75vh;
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 
   &::before {
@@ -51,28 +67,90 @@ $transition-speed: 0.4s;
       display: block;
 
       .brand-tag {
-        color: var(--cor-primaria-agencia);
+        color: #4a7dd6;
         font-size: 0.75rem;
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
       }
+      
+      .text-outline {
+        color: transparent;
+        -webkit-text-stroke: 2px #000; /* Cria o efeito de contorno */
+      }
 
       .btn-brand {
-        background-color: var(--cor-primaria-agencia);
-        color: white;
+        color: #4a7dd6;
+        border: #4a7dd6 solid 2px;
         border-radius: 50px;
-        padding: 0.7rem 2rem;
+        padding: 0.7rem 2.7rem;
         transition: all 0.3s ease;
-        
-        &:hover {
-          transform: scale(1.05);
-          background-color: var(--cor-secundaria-agencia);
-        }
+        font-size: 1.05rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s;
+        line-height: 1.4em;
+      }
+
+      .btn-brand:hover {
+        box-shadow: inset 0 0 5px rgba(27, 117, 253, 0.6), 0 0 9px 3px rgba(76, 168, 211, 0.2);
+      }
+  
+      .btn-brand:before {
+        content: "";
+        position: absolute;
+        left: -4em;
+        width: 4em;
+        height: 100%;
+        top: 0;
+        transition: transform .4s ease-in-out;
+        background: linear-gradient(to right, transparent 1%, rgba(227, 230, 255, 0.479) 40%,rgba(255, 255, 255, 0.603) 60% , transparent 100%);
+      }
+  
+      .btn-brand:hover:before {
+        transform: translateX(20rem);
       }
     }
   
-    
+    #content-sites {
+      display: none;
+      align-items: center;
+      gap: 2rem;
+      animation: fadeIn 0.5s ease-out;
+
+      .content {
+        flex: 1;
+
+        .text-subtitle{
+          font-size: 1.2rem;
+          margin: 0;
+        }
+        
+        .image {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+            
+          img {
+              width: 80%;
+              height: auto;
+          }
+        }
+      }
+
+      // Responsividade: Em telas menores, a imagem vai para baixo ou some
+      @media (max-width: 992px) {
+          flex-direction: column-reverse; // Imagem em cima, texto embaixo
+          text-align: center;
+          
+          .image-side {
+              flex: 0 0 150px; // Diminui a imagem no mobile
+              margin-bottom: 1rem;
+          }
+      }
+    }
   }
   
   .vertical-menu {
@@ -467,6 +545,19 @@ $transition-speed: 0.4s;
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); } // Move metade do conteúdo para o loop perfeito
 }
+
+// Animações
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); } // Flutua para cima
+    100% { transform: translateY(0px); }
+}
+
 
 
 /* MOBILE */

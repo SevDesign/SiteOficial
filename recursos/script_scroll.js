@@ -1,64 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const heroSection = document.querySelector('.hero');
-    let isAnimating = false;
+    // 1. Inicializa o Lenis (Rolagem suave global)
+    const lenis = new Lenis({
+        duration: 1.2, // Ajuste a "inércia" (padrão é 1.2)
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Easing suave
+        smoothWheel: true
+    });
 
-    // Configuração
-    const heroHeight = () => window.innerHeight * 0.75; // 80vh dinâmico
-    const duration = 1000; // Tempo em ms (ajuste se quiser mais lento/rápido)
+    // Loop de animação obrigatório do Lenis
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
 
-    // Função de Easing (Cubic Ease Out - Suave no final)
-    const easeOutCubic = (t) => (--t) * t * t + 1;
-
-    const customScrollTo = (targetY) => {
-        isAnimating = true;
-        const startY = window.scrollY;
-        const distance = targetY - startY;
-        let startTime = null;
-
-        const animation = (currentTime) => {
-            if (!startTime) startTime = currentTime;
-            const timeElapsed = currentTime - startTime;
-            
-            // Calcula o progresso (0 a 1)
-            let progress = Math.min(timeElapsed / duration, 1);
-            
-            // Aplica a curva matemática (Ease-Out)
-            const ease = easeOutCubic(progress);
-
-            window.scrollTo(0, startY + (distance * ease));
-
-            if (timeElapsed < duration) {
-                requestAnimationFrame(animation);
-            } else {
-                isAnimating = false; // Libera o scroll
-            }
-        };
-
-        requestAnimationFrame(animation);
-    };
+    // 2. Lógica da Hero (Simplificada)
+    const heroHeight = () => window.innerHeight * 0.75; // 75vh
+    let isTransitioning = false;
 
     window.addEventListener('wheel', (e) => {
-        if (isAnimating) {
-            e.preventDefault();
-            return;
-        }
+        if (isTransitioning) return;
 
         const scrollY = window.scrollY;
         const limit = heroHeight();
-        const threshold = 5; // Tolerância para garantir o trigger
+        const threshold = 10; // Sensibilidade
 
-        // Descendo: Do topo (0) para a segunda sessão
+        // Descendo: Topo -> Portfólio
         if (e.deltaY > 0 && scrollY < threshold) {
-            e.preventDefault();
-            customScrollTo(limit);
+            isTransitioning = true;
+            lenis.scrollTo(limit, {
+                duration: 1.5, // Duração da transição da Hero
+                lock: true,    // Trava o usuário durante a animação
+                onComplete: () => isTransitioning = false
+            });
         }
         
-        // Subindo: Da segunda sessão de volta para o topo (0)
-        // Ativa apenas se estivermos EXATAMENTE no ponto de corte ou um pouco antes
+        // Subindo: Portfólio -> Topo
         else if (e.deltaY < 0 && scrollY <= limit && scrollY > limit - 50) {
-            e.preventDefault();
-            customScrollTo(0);
+            isTransitioning = true;
+            lenis.scrollTo(0, {
+                duration: 1.5,
+                lock: true,
+                onComplete: () => isTransitioning = false
+            });
         }
-        
     }, { passive: false });
 });

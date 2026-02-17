@@ -30,29 +30,42 @@
 
     <section class="hero" id="start">
         <div class="main-view">
-            <!-- 
-                Mostrar um conteúdo padrão caso nenhum botão seja clicado,
-                caso seja, mostrar conteúdo de acordo com o botão clicado
-            -->
 
             <div id="main-content" class="content-box p-4">
-                <span class="brand-tag mb-2 d-inline-block">Agência [Nome]</span>
+                <span class="brand-tag mb-2 d-inline-block">Tenha Posicionamento Premium</span>
                 
-                <h1 id="hero-title" class="display-4 fw-bold">Páginas que Vendem</h1>
-                <p id="hero-desc">Transformamos cliques em faturamento real.</p>
+                <h1 id="hero-title" class="display-4 fw-bold">Seja a <span class="text-outline">única</span> escolha</h1>
+                <p id="hero-desc" style="padding-right: 4vw; font-weight: 500;">No mercado atual, quem não se destaca, desaparece. Elevamos o padrão da sua comunicação visual e estratégica para que você pare de brigar por preço e passe a ser escolhido pelo seu valor de mercado.</p>
                 
-                <a href="#" class="btn btn-brand">Ver Portfólio</a>
+                <a href="#" class="btn btn-brand">Quero Vender Mais</a>
+            </div>
+
+            <div id="content-sites">
+                <div class="content">
+                    <h1 class="text-title display-5 fw-bold mb-3">Sua página na internet</h1>
+                    <p class="text-subtitle text-muted">
+                        Não entregamos apenas código. Criamos funis de vendas visuais projetados 
+                        para guiar seu visitante até o botão de compra.
+                    </p>
+                    <div class="image">
+                        <img src="imagens/svg_site.svg" alt="Gráfico de vendas subindo" class="img-fluid floating-animate">
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-impact">
+
             </div>
 
         </div>
         
         <div class="vertical-menu">
             <div class="menu-buttons">
-                <button>Páginas que Vendem</button>
-                <button>Conteúdo de Alto Impacto</button>
-                <button>Anúncios Estratégicos</button>
-                <button>Identidade de Autoridade</button>
-                <button>Resultados Reais</button> <!-- puxar para a sessão de baixo -->
+                <button data-target="content-sites">Páginas que Vendem</button>
+                <button data-target="content-impact">Conteúdo de Alto Impacto</button>
+                <button data-target="content-strategy">Anúncios Estratégicos</button>
+                <button data-target="content-authority">Identidade de Autoridade</button>
+                <button data-target="content-results">Resultados Reais</button> <!-- puxar para a sessão de baixo -->
             </div>
         </div>
     </section>
@@ -398,10 +411,11 @@
         </div>
     </section>
 
-    <!-- Scripts (JS, Tailwind, Bootstrap) -->
+    <!-- Scripts (lenis, JS, Tailwind, Bootstrap) -->
+     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
     <script src="recursos/script.js" type="module"></script>
     <script src="recursos/script_scroll.js" type="module"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!--script src="https://cdn.tailwindcss.com"></script-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
 </html>
