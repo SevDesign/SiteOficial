@@ -62,7 +62,6 @@ $transition-speed: 0.4s;
   }
   
   .main-view {
-
     #hero-default{
       display: block;
 
@@ -148,7 +147,7 @@ $transition-speed: 0.4s;
           justify-content: center;
             
           img {
-              height: 50vh;
+              height: 40vh;
           }
         }
       }
@@ -175,6 +174,7 @@ $transition-speed: 0.4s;
       width: 100%;
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 1.6rem;
       max-width: 700px; // Evita que os botões fiquem largos demais em telas gigantes
 
@@ -248,12 +248,12 @@ $transition-speed: 0.4s;
     .logo-track {
       display: flex;
       align-items: center;
-      width: max-content; // Garante que a track tenha o tamanho do conteúdo
+      width: max-content;
       animation: scroll 18s linear infinite;
 
       img {
         height: 65px;
-        margin: 0 50px; // Espaçamento entre logos
+        margin: 0 50px;
         filter: grayscale(100%);
         opacity: 0.4;
         transition: opacity 0.3s ease;
@@ -561,13 +561,24 @@ $transition-speed: 0.4s;
 /* Animação do Slider */
 @keyframes scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-20%); } // Move metade do conteúdo para o loop perfeito
+  100% { transform: translateX(-20%); }
 }
 
 // Animações
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
+    from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px); // Sobe sumindo
+  }
 }
 
 @keyframes float {
@@ -575,6 +586,8 @@ $transition-speed: 0.4s;
     50% { transform: translateY(-15px); } // Flutua para cima
     100% { transform: translateY(0px); }
 }
+
+
 
 
 
