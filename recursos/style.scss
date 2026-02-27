@@ -382,7 +382,8 @@ $transition-speed: 0.4s;
   z-index: 2;
   background-color: #ffffff;
   overflow: hidden;
-  padding-bottom: 5rem;
+  padding: 5rem 2rem;
+
 
   .text-outline {
     color: transparent;
@@ -391,7 +392,7 @@ $transition-speed: 0.4s;
 
   .image-stack {
     position: relative;
-    padding: 2rem 2rem 2rem 0;
+    padding: 2rem;
 
     .image-main {
       width: 90%;
@@ -439,13 +440,11 @@ $transition-speed: 0.4s;
 .contact-diagnostic {
   position: relative;
   z-index: 2;
-  padding: 5rem 0;
+  padding: 5rem;
   background-color: #f2f2f2;
   box-shadow: inset 0 20px 10px -10px rgba(0, 0, 0, .1);
   
   .container-diagnostic {
-    padding: 0 5rem;
-
     .icon-box {
     width: 60px;
     height: 60px;
@@ -689,6 +688,7 @@ $transition-speed: 0.4s;
 /* MOBILE */
 
 @media (max-width: 991px) {
+  // corrigir código depois, limpar
   .hero {
     grid-template-columns: 1fr;
     padding: 2rem;
@@ -725,24 +725,28 @@ $transition-speed: 0.4s;
     display: flex;
     justify-content: center;
   }
-  
-  
-  
+
+  .about-us .image-stack {
+    padding: 0;
+  }
   .about-us .image-stack .image-main {
     width: 100%;
   }
   .text-outline {
     -webkit-text-stroke: 1px #444;
-    color: #444; // No mobile, melhor deixar preenchido para legibilidade
+    color: #444;
   }
 
-
-
+  .contact-diagnostic{
+    padding: 3rem 2rem;
+  }
 
   .ebook-mockup img {
     max-height: 300px;
     margin-bottom: 2rem;
     transform: none !important;
   }
-
+  .ebook-mockup span {
+    transform: translateX(0) !important;
+  }
 }
