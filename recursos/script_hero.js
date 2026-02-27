@@ -1,5 +1,10 @@
-const buttons = document.querySelectorAll('.menu-buttons button');
+const larguraDaTela = window.innerWidth
 const main_content = document.getElementById('hero-default');
+
+const buttons = larguraDaTela < 992
+? document.querySelectorAll('.mobile-buttons button')
+: document.querySelectorAll('.menu-buttons button');
+
 let activeButton = false;
 let lastActiveContent = null;
 

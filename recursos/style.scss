@@ -65,6 +65,9 @@ $transition-speed: 0.4s;
   }
   
   .main-view {
+    height: 58vh;
+    overflow: hidden;
+
     #hero-default{
       display: block;
 
@@ -148,22 +151,12 @@ $transition-speed: 0.4s;
           width: 100%;
           display: flex;
           justify-content: center;
+          animation: float 3s ease-in-out infinite;
             
           img {
               height: 40vh;
           }
         }
-      }
-
-      // Responsividade: Em telas menores, a imagem vai para baixo ou some
-      @media (max-width: 992px) {
-          flex-direction: column-reverse; // Imagem em cima, texto embaixo
-          text-align: center;
-          
-          .image-side {
-              flex: 0 0 150px; // Diminui a imagem no mobile
-              margin-bottom: 1rem;
-          }
       }
     }
   }
@@ -222,6 +215,42 @@ $transition-speed: 0.4s;
             margin-right: 10px;
             border-radius: 2px;
           }
+        }
+      }
+    }
+  }
+
+  .mobile-menu{
+    display: none;
+
+    .mobile-buttons{
+      width: 85%;
+      display: flex;
+      justify-content: space-between;
+
+      button, a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1/1;
+        background-color: white;
+        border: none;
+        border-radius: 50%;
+        color: #4a7dd6;
+        font-size: 1.2rem;
+        padding: .5rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: #fff;
+          transform: scale(1.1);
+          background-color: #4a7dd6;
+        }
+
+        &.active {
+          background-color: #4a7dd6;
+          color: #fff;
+          box-shadow: 0 0 5px 5px rgb(74, 125, 214, 0.5);
         }
       }
     }
@@ -608,6 +637,7 @@ $transition-speed: 0.4s;
     100% { transform: translateY(0px); }
 }
 
+
 /* PEQUENOS MONITORES */
 @media (min-width: 991px) and (max-width: 1400px)  {
   .hero{
@@ -656,13 +686,48 @@ $transition-speed: 0.4s;
 }
 
 
-
 /* MOBILE */
 
 @media (max-width: 991px) {
-  .hero-container {
+  .hero {
     grid-template-columns: 1fr;
+    padding: 2rem;
+    gap: 0;
   }
+  .brand-tag {
+    width: 100%;
+    text-align: center;
+  }
+  #hero-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .main-view .hero-tab .content .text-title {
+    width: 100%;
+    text-align: center;
+    font-size: 1.7rem;
+  }
+  .main-view #hero-default #hero-desc, .hero .main-view .hero-tab .content .text-subtitle {
+    font-size: .9rem;
+  }
+  .main-view #hero-default .btn-brand:hover {
+    padding: 0.7rem 2.7rem;
+  }
+  .hero .main-view .hero-tab .content .image img {
+    height: 35vh;
+  }
+  .hero .vertical-menu {
+    display: none;
+  }
+  .hero .mobile-menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  
   .about-us .image-stack .image-main {
     width: 100%;
   }
@@ -670,6 +735,10 @@ $transition-speed: 0.4s;
     -webkit-text-stroke: 1px #444;
     color: #444; // No mobile, melhor deixar preenchido para legibilidade
   }
+
+
+
+
   .ebook-mockup img {
     max-height: 300px;
     margin-bottom: 2rem;
