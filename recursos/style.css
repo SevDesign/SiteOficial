@@ -298,6 +298,7 @@ html.lenis, html.lenis body {
   z-index: 2;
   background-color: #ffffff;
   overflow: hidden;
+  padding-bottom: 5rem;
 }
 .about-us .text-outline {
   color: transparent;
@@ -347,26 +348,14 @@ html.lenis, html.lenis body {
 .contact-diagnostic {
   position: relative;
   z-index: 2;
+  padding: 5rem 0;
+  background-color: #f2f2f2;
+  box-shadow: inset 0 20px 10px -10px rgba(0, 0, 0, 0.1);
 }
-.contact-diagnostic .briefing-card {
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  /* Estilização dos Chips de Checkbox */
+.contact-diagnostic .container-diagnostic {
+  padding: 0 5rem;
 }
-.contact-diagnostic .briefing-card .form-control {
-  padding: 0.8rem 1.2rem;
-  border-radius: 0.75rem;
-  border: 2px solid #eee;
-}
-.contact-diagnostic .briefing-card .form-control:focus {
-  border-color: #4a7dd6;
-  box-shadow: none;
-}
-.contact-diagnostic .briefing-card .btn-check:checked + .btn-outline-secondary {
-  background-color: #000;
-  color: #fff;
-  border-color: #000;
-}
-.contact-diagnostic .icon-box {
+.contact-diagnostic .container-diagnostic .icon-box {
   width: 60px;
   height: 60px;
   display: flex;
@@ -374,11 +363,34 @@ html.lenis, html.lenis body {
   justify-content: center;
   font-size: 1.5rem;
 }
+.contact-diagnostic .container-diagnostic .icon-box .color-instagram {
+  color: #e1306c;
+}
+.contact-diagnostic .container-diagnostic .briefing-card {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  /* Estilização dos Chips de Checkbox */
+}
+.contact-diagnostic .container-diagnostic .briefing-card .form-control {
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.75rem;
+  border: 2px solid #eee;
+}
+.contact-diagnostic .container-diagnostic .briefing-card .form-control:focus {
+  border-color: #4a7dd6;
+  box-shadow: none;
+}
+.contact-diagnostic .container-diagnostic .briefing-card .btn-check:checked + .btn-outline-secondary {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
 
 .faq-section {
   position: relative;
   z-index: 2;
-  background-color: #ffffff;
+  background-color: #f2f2f2;
+  box-shadow: inset 0 -20px 10px -10px rgba(0, 0, 0, 0.1);
 }
 .faq-section .accordion-item {
   border: 1px solid rgba(0, 0, 0, 0.1) !important;

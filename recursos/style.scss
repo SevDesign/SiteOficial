@@ -348,6 +348,7 @@ $transition-speed: 0.4s;
   z-index: 2;
   background-color: #ffffff;
   overflow: hidden;
+  padding-bottom: 5rem;
 
   .text-outline {
     color: transparent;
@@ -404,42 +405,56 @@ $transition-speed: 0.4s;
 .contact-diagnostic {
   position: relative;
   z-index: 2;
+  padding: 5rem 0;
+  background-color: #f2f2f2;
+  box-shadow: inset 0 20px 10px -10px rgba(0, 0, 0, .1);
+  
+  .container-diagnostic {
+    padding: 0 5rem;
 
-  .briefing-card {
-    border: 1px solid rgba(0,0,0,0.05);
-
-    .form-control {
-      padding: 0.8rem 1.2rem;
-      border-radius: 0.75rem;
-      border: 2px solid #eee;
-      &:focus {
-        border-color: #4a7dd6;
-        box-shadow: none;
-      }
-    }
-
-    /* Estilização dos Chips de Checkbox */
-    .btn-check:checked + .btn-outline-secondary {
-      background-color: #000;
-      color: #fff;
-      border-color: #000;
-    }
-  }
-
-  .icon-box {
+    .icon-box {
     width: 60px;
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
+
+		.color-instagram{
+			color: #e1306c;
+		}
+    }
+    
+    .briefing-card {
+      border: 1px solid rgba(0,0,0,0.05);
+			max-width: 800px;
+        
+			.form-control {
+				padding: 0.8rem 1.2rem;
+				border-radius: 0.75rem;
+				border: 2px solid #eee;
+
+				&:focus {
+					border-color: #4a7dd6;
+					box-shadow: none;
+				}
+      }
+  
+      /* Estilização dos Chips de Checkbox */
+      .btn-check:checked + .btn-outline-secondary {
+        background-color: #000;
+        color: #fff;
+        border-color: #000;
+      }
+    }
   }
 }
 
 .faq-section {
   position: relative;
   z-index: 2;
-  background-color: #ffffff;
+  background-color: #f2f2f2;
+	box-shadow: inset 0 -20px 10px -10px rgba(0, 0, 0, .1);
 
   .accordion-item {
     border: 1px solid rgba(0, 0, 0, 0.1) !important;
