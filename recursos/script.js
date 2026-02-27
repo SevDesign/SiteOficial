@@ -1,7 +1,6 @@
 document.getElementById('briefingForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Impede o recarregamento da página
 
-    // 1. Captura os valores dos campos (certifique-se de que os IDs existam no HTML)
     const nome = document.getElementById('nome').value;
     const telefone = document.getElementById('telefone').value;
     const nicho = document.getElementById('nicho').value;
@@ -19,7 +18,6 @@ document.getElementById('briefingForm').addEventListener('submit', function(e) {
         ? servicosSelecionados.join(', ') 
         : 'Ainda não tenho certeza';
 
-    // 3. Monta a mensagem formatada para vendas
     const mensagem = `
 Olá, equipe da Agência! 🚀
 Gostaria de solicitar uma Sessão Estratégica.
@@ -36,11 +34,8 @@ Gostaria de solicitar uma Sessão Estratégica.
 Aguardo o retorno para agendarmos!
     `.trim();
 
-    // 4. Codifica a mensagem para o formato de URL e cria o link do WhatsApp
-    // Substitua o '5588999999999' pelo número da sua agência (com código do país 55 e DDD)
-    const numeroAgencia = "5588999999999"; 
+    const numeroAgencia = "558894654939"; 
     const urlWhatsApp = `https://wa.me/${numeroAgencia}?text=${encodeURIComponent(mensagem)}`;
 
-    // 5. Redireciona o cliente para o WhatsApp
     window.open(urlWhatsApp, '_blank');
 });

@@ -144,7 +144,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <a href="paginas/ecossitemas_digitais.html" class="project-card d-block text-decoration-none">
+                    <a href="#" class="project-card d-block text-decoration-none"> <!-- href="paginas/ecossistemas_digitais.html" -->
                         <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1964&auto=format&fit=crop" alt="Ecossistemas Digitais" loading="lazy">
                         <div class="card-overlay">
                             <div class="glass-header">
@@ -156,7 +156,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-4">
-                    <a href="paginas/producao_de_autoridade.html" class="project-card d-block text-decoration-none">
+                    <a href="#" class="project-card d-block text-decoration-none"> <!-- href="paginas/producao_de_autoridade.html" -->
                         <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071&auto=format&fit=crop" alt="Produção de Autoridade" loading="lazy">
                         <div class="card-overlay">
                             <div class="glass-header">
@@ -168,7 +168,7 @@
                 </div>
 
                 <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-0">
-                    <a href="paginas/performace_de_marca.html" class="project-card d-block text-decoration-none">
+                    <a href="#" class="project-card d-block text-decoration-none"> <!-- href="paginas/performace_de_marca.html" -->
                         <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=2071&auto=format&fit=crop" alt="Performance de Marca" loading="lazy">
                         <div class="card-overlay">
                             <div class="glass-header">
@@ -179,6 +179,13 @@
                     </a>
                 </div>
 
+                <script>
+                    document.querySelectorAll('.project-card').forEach((card) => {
+                        card.addEventListener('click', () => {
+                        alert('Site ainda em construção');    
+                        })
+                    });
+                </script>
             </div>
         </div>
     </section>
@@ -197,7 +204,7 @@
                             <img src="imagens/faxada_da_empresa.png" alt="Nosso ecossistema" class="img-fluid rounded-4 shadow-lg">
                         </div>
                         <div class="image-floating d-none d-md-block">
-                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop" alt="Foco no detalhe" class="img-fluid rounded-3 shadow">
+                            <img src="imagens/caderno_da_empresa.png" alt="Foco no detalhe" class="img-fluid rounded-3 shadow">
                         </div>
                     </div>
                 </div>
@@ -215,7 +222,7 @@
                         </p>
 
                         <div class="social-links-about d-flex gap-3">
-                            <a href="#" class="social-badge">
+                            <a href="https://www.instagram.com/sev.market/" target="_blank" class="social-badge">
                                 <i class="bi bi-instagram"></i> <span>Veja nossa vitrine</span>
                             </a>
                             <!--a href="#" class="social-badge">
@@ -283,22 +290,22 @@
                                 
                                 <div class="col-md-12">
                                     <label class="form-label fw-bold"><span style="color: blue;">*</span>Como podemos te chamar?</label>
-                                    <input type="text" class="form-control bg-light border-0" placeholder="Seu nome" required>
+                                    <input type="text" id="nome" class="form-control bg-light border-0" placeholder="Seu nome" required>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class="form-label fw-bold"><span style="color: blue;">*</span>Seu melhor WhatsApp</label>
-                                    <input type="tel" class="form-control bg-light border-0" placeholder="(00) 00000-0000" required>
+                                    <input type="tel" id="telefone" class="form-control bg-light border-0" placeholder="(00) 00000-0000" required>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class="form-label fw-bold"><span style="color: blue;">*</span>Seu Nicho de Atuação</label>
-                                    <input type="text" class="form-control bg-light border-0" placeholder="Ex: Clínica Médica" required>
+                                    <input type="text" id="nicho" class="form-control bg-light border-0" placeholder="Ex: Clínica Médica" required>
                                 </div>
 
                                 <div class="col-md-12">
                                     <label class="form-label fw-bold">Qual o seu Instagram ou Site atual?</label>
-                                    <input type="text" class="form-control bg-light border-0" placeholder="@seu.instagram ou www.seusite.com.br">
+                                    <input type="text" id="insta" class="form-control bg-light border-0" placeholder="@seu.instagram ou www.seusite.com.br">
                                 </div>
 
                                 <div class="col-md-12 mt-3">
@@ -441,10 +448,17 @@
                                 <input type="tel" class="form-control form-control-lg border-0" placeholder="WhatsApp" required>
                             </div>
                             <div class="col-md-3">
-                                <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold">Baixar <i class="bi bi-download ms-1"></i></button>
+                                <button type="none" class="btn btn-primary btn-lg w-100 fw-bold">Baixar <i class="bi bi-download ms-1"></i></button>
                             </div>
                         </form>
                         <small class="d-block mt-3 opacity-50">Respeitamos sua privacidade. Seus dados estão seguros conosco.</small>
+
+                        <script>
+                            document.getElementById('ebookForm').addEventListener('submit', function(e) {
+                                e.preventDefault();
+                                alert('Site em desenvolvimento, logo teremos o e-book disponível!');
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
