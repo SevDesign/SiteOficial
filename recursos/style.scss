@@ -59,7 +59,7 @@ $transition-speed: 0.4s;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    opacity: 0.08;
+    opacity: 0.1;
     z-index: -1;
     pointer-events: none;
   }
@@ -70,6 +70,7 @@ $transition-speed: 0.4s;
 
     #hero-default{
       display: block;
+      animation: fadeIn 0.5s ease-out;
 
       .brand-tag {
         color: #3461ae;
@@ -191,14 +192,12 @@ $transition-speed: 0.4s;
         text-decoration: none;
         cursor: pointer;
 
-        // Efeito ao passar o mouse
         &:hover {
           transform: translateX(10px); // O botão "sai" levemente para a direita
           color: #000;
           box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
 
-        // Quando o botão estiver selecionado (via JS)
         &.active {
           background-color: #fff;
           border-color: #3461ae; // Cor de destaque (ex: Azul Bootstrap)
@@ -216,6 +215,10 @@ $transition-speed: 0.4s;
             border-radius: 2px;
           }
         }
+
+        .bi{
+          margin-right: 0.8rem;
+        }
       }
     }
   }
@@ -229,16 +232,16 @@ $transition-speed: 0.4s;
       justify-content: space-between;
 
       button, a {
+        width: 2.6rem;
+        height: 2.6rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        aspect-ratio: 1/1;
         background-color: white;
         border: none;
         border-radius: 50%;
         color: #4a7dd6;
         font-size: 1.2rem;
-        padding: .5rem;
         transition: all 0.3s ease;
 
         &:hover {
@@ -441,6 +444,7 @@ $transition-speed: 0.4s;
   position: relative;
   z-index: 2;
   padding: 5rem;
+  padding-bottom: 2rem;
   background-color: #f2f2f2;
   box-shadow: inset 0 20px 10px -10px rgba(0, 0, 0, .1);
   
@@ -483,12 +487,31 @@ $transition-speed: 0.4s;
   }
 }
 
+.division{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
+  padding: 2rem 0;
+  z-index: 2;
+  
+  
+  .line{
+    width: 80%;
+    background-color: #000;
+    height: 1.2px;
+    margin: 0;
+    opacity: .7;
+  }
+
+}
+
 .faq-section {
   position: relative;
   z-index: 2;
   background-color: #f2f2f2;
   box-shadow: inset 0 -20px 10px -10px rgba(0, 0, 0, .1);
-  padding-bottom: 5rem;
+  padding: 1rem 0 5rem 0;
 
   .accordion-item {
     border: 1px solid rgba(0, 0, 0, 0.1) !important;
@@ -532,7 +555,6 @@ $transition-speed: 0.4s;
     }
   }
 
-  // --- A correção para o texto não sumir ---
   .accordion-collapse {
     border: none;
     // Garante que o conteúdo seja exibido corretamente durante e após a animação
