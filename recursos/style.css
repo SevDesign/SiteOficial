@@ -50,7 +50,7 @@ html.lenis, html.lenis body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  opacity: 0.08;
+  opacity: 0.1;
   z-index: -1;
   pointer-events: none;
 }
@@ -60,6 +60,7 @@ html.lenis, html.lenis body {
 }
 .hero .main-view #hero-default {
   display: block;
+  animation: fadeIn 0.5s ease-out;
 }
 .hero .main-view #hero-default .brand-tag {
   color: #3461ae;
@@ -187,6 +188,9 @@ html.lenis, html.lenis body {
   margin-right: 10px;
   border-radius: 2px;
 }
+.hero .vertical-menu .menu-buttons button .bi, .hero .vertical-menu .menu-buttons a .bi {
+  margin-right: 0.8rem;
+}
 .hero .mobile-menu {
   display: none;
 }
@@ -196,16 +200,16 @@ html.lenis, html.lenis body {
   justify-content: space-between;
 }
 .hero .mobile-menu .mobile-buttons button, .hero .mobile-menu .mobile-buttons a {
+  width: 2.6rem;
+  height: 2.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 1/1;
   background-color: white;
   border: none;
   border-radius: 50%;
   color: #4a7dd6;
   font-size: 1.2rem;
-  padding: 0.5rem;
   transition: all 0.3s ease;
 }
 .hero .mobile-menu .mobile-buttons button:hover, .hero .mobile-menu .mobile-buttons a:hover {
@@ -241,7 +245,6 @@ html.lenis, html.lenis body {
 .portfolio-presentation .logo-slider .logo-track {
   display: flex;
   align-items: center;
-  width: -moz-max-content;
   width: max-content;
   animation: scroll 18s linear infinite;
 }
@@ -264,12 +267,12 @@ html.lenis, html.lenis body {
   border-radius: 1.5rem;
   overflow: hidden;
   background: #000;
+  /* --- Efeitos de Hover (Experiência do Usuário) --- */
 }
 .portfolio-presentation .project-card img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   opacity: 0.7;
   transition: all 0.4s ease;
 }
@@ -307,9 +310,6 @@ html.lenis, html.lenis body {
   display: block;
   transition: all 0.3s ease;
   transform: translateY(10px);
-}
-.portfolio-presentation .project-card {
-  /* --- Efeitos de Hover (Experiência do Usuário) --- */
 }
 .portfolio-presentation .project-card:hover img {
   transform: scale(1.05);
@@ -382,6 +382,7 @@ html.lenis, html.lenis body {
   position: relative;
   z-index: 2;
   padding: 5rem;
+  padding-bottom: 2rem;
   background-color: #f2f2f2;
   box-shadow: inset 0 20px 10px -10px rgba(0, 0, 0, 0.1);
 }
@@ -399,6 +400,7 @@ html.lenis, html.lenis body {
 .contact-diagnostic .container-diagnostic .briefing-card {
   border: 1px solid rgba(0, 0, 0, 0.05);
   max-width: 800px;
+  /* Estilização dos Chips de Checkbox */
 }
 .contact-diagnostic .container-diagnostic .briefing-card .form-control {
   padding: 0.8rem 1.2rem;
@@ -409,13 +411,26 @@ html.lenis, html.lenis body {
   border-color: #4a7dd6;
   box-shadow: none;
 }
-.contact-diagnostic .container-diagnostic .briefing-card {
-  /* Estilização dos Chips de Checkbox */
-}
 .contact-diagnostic .container-diagnostic .briefing-card .btn-check:checked + .btn-outline-secondary {
   background-color: #000;
   color: #fff;
   border-color: #000;
+}
+
+.division {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
+  padding: 2rem 0;
+  z-index: 2;
+}
+.division .line {
+  width: 80%;
+  background-color: #000;
+  height: 1.2px;
+  margin: 0;
+  opacity: 0.7;
 }
 
 .faq-section {
@@ -423,7 +438,7 @@ html.lenis, html.lenis body {
   z-index: 2;
   background-color: #f2f2f2;
   box-shadow: inset 0 -20px 10px -10px rgba(0, 0, 0, 0.1);
-  padding-bottom: 5rem;
+  padding: 1rem 0 5rem 0;
 }
 .faq-section .accordion-item {
   border: 1px solid rgba(0, 0, 0, 0.1) !important;
@@ -475,14 +490,12 @@ html.lenis, html.lenis body {
   position: sticky;
   z-index: 2;
   background-color: #242e39;
+  /* Decoração de fundo sutil */
 }
 .lead-magnet .container {
   background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
   border: 1px solid rgba(255, 255, 255, 0.05);
   z-index: 1;
-}
-.lead-magnet {
-  /* Decoração de fundo sutil */
 }
 .lead-magnet .bg-gradient-decoration {
   position: absolute;
@@ -510,9 +523,6 @@ html.lenis, html.lenis body {
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
   font-size: 1rem;
-}
-.lead-magnet .form-control::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.4);
 }
 .lead-magnet .form-control::placeholder {
   color: rgba(255, 255, 255, 0.4);
@@ -656,4 +666,6 @@ html.lenis, html.lenis body {
   .ebook-mockup span {
     transform: translateX(0) !important;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
