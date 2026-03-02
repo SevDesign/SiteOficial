@@ -292,6 +292,7 @@ $transition-speed: 0.4s;
         filter: grayscale(100%);
         opacity: 0.4;
         transition: opacity 0.3s ease;
+        cursor: pointer;
 
         &:hover {
           opacity: 1;

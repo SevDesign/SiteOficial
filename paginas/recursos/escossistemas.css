@@ -1,0 +1,245 @@
+@charset "UTF-8";
+/* --- Estilos da Subpágina Hero --- */
+.hero-subpage {
+  position: relative;
+  background-color: #fcfcfc;
+}
+.hero-subpage .min-vh-75 {
+  min-height: 75vh;
+}
+.hero-subpage .brand-tag {
+  color: var(--bs-primary);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-size: 0.85rem;
+  background: rgba(var(--bs-primary-rgb), 0.1);
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+}
+.hero-subpage {
+  /* O fundo brilhante atrás do mockup para dar profundidade */
+}
+.hero-subpage .glow-backdrop {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(var(--bs-primary-rgb), 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  z-index: 1;
+}
+.hero-subpage {
+  /* A animação de flutuação contínua que já usamos, aplicada ao mockup */
+}
+.hero-subpage .floating-animate {
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.1));
+}
+
+.section-education {
+  /* Espaçamento extra para dar respiro (Whitespace é sinônimo de design premium) */
+}
+.section-education .py-lg-6 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.section-education .visual-box {
+  /* Cria um fundo geométrico suave atrás da imagem */
+}
+.section-education .visual-box::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: 20px;
+  bottom: 20px;
+  border: 2px dashed rgba(var(--bs-danger-rgb), 0.2);
+  border-radius: inherit;
+  z-index: 0;
+}
+.section-education .floating-badge {
+  background-color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  /* Efeito de flutuação sutil */
+  animation: float-small 4s ease-in-out infinite alternate;
+}
+.section-education .badge-danger {
+  color: #dc3545;
+}
+.section-education .badge-warning {
+  color: #fd7e14;
+}
+.section-education .icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+}
+@media (min-width: 992px) {
+  .section-education .pl-lg-5 {
+    padding-left: 3rem !important;
+  }
+}
+
+.section-methodology {
+  background-color: #0f172a !important;
+}
+.section-methodology .py-6 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.section-methodology .glow-bg {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(13, 202, 240, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(30%, -30%);
+  pointer-events: none;
+}
+.section-methodology .method-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+.section-methodology .method-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(13, 202, 240, 0.3);
+  transform: translateY(-5px);
+}
+.section-methodology .code-block {
+  animation: float-reverse 5s ease-in-out infinite alternate;
+  z-index: 3;
+}
+@media (min-width: 992px) {
+  .section-methodology .pr-lg-5 {
+    padding-right: 3rem !important;
+  }
+}
+
+.section-portfolio {
+  background-color: #f8f9fa;
+}
+.section-portfolio .py-lg-6 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.section-portfolio .portfolio-card {
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.section-portfolio .portfolio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+}
+.section-portfolio .portfolio-card:hover .portfolio-img-wrap img {
+  transform: scale(1.05);
+}
+.section-portfolio .portfolio-card:hover .view-case i {
+  transform: translateX(6px);
+}
+.section-portfolio .portfolio-img-wrap {
+  height: 320px;
+  background-color: #e9ecef;
+}
+.section-portfolio .portfolio-img-wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top center;
+     object-position: top center;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.section-portfolio .tracking-wider {
+  letter-spacing: 1.5px;
+}
+.section-portfolio .transition-transform {
+  transition: transform 0.3s ease;
+}
+
+/* --- Seção 5: Call to Action (Fundo do Funil) --- */
+.section-cta {
+  /* Usamos a cor primária da sua marca (ex: um azul vibrante) */
+  background-color: var(--bs-primary) !important;
+}
+.section-cta .py-6 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.section-cta {
+  /* O botão premium (Invertendo as cores para dar destaque) */
+}
+.section-cta .btn-light {
+  background-color: #ffffff;
+  color: var(--bs-primary);
+  border: 2px solid transparent;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  z-index: 3;
+}
+.section-cta .btn-light:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+  background-color: #f8f9fa;
+}
+.section-cta .btn-light:active {
+  transform: translateY(2px);
+}
+.section-cta {
+  /* Tipografia de encerramento */
+}
+.section-cta .lead {
+  font-size: 1.25rem;
+  font-weight: 400;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+.section-cta {
+  /* Ícone do foguete no botão */
+}
+.section-cta .bi-rocket-takeoff {
+  transition: transform 0.3s ease;
+}
+.section-cta {
+  /* Pequeno detalhe de UX: o foguete decola ao passar o mouse */
+}
+.section-cta .btn-light:hover .bi-rocket-takeoff {
+  transform: translate(3px, -3px);
+  display: inline-block;
+}
+
+@keyframes float-reverse {
+  0% {
+    transform: translateY(0) translateX(-50%);
+  }
+  100% {
+    transform: translateY(15px) translateX(-50%);
+  }
+}
+@keyframes float-small {
+  0% {
+    transform: translateY(0) translateX(-50%);
+  }
+  100% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}/*# sourceMappingURL=escossistemas.css.map */
