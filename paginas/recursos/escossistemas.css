@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* --- Estilos da Subpágina Hero --- */
 .hero-subpage {
   position: relative;
   background-color: #fcfcfc;
@@ -16,9 +15,6 @@
   background: rgba(var(--bs-primary-rgb), 0.1);
   padding: 0.5rem 1.2rem;
   border-radius: 50px;
-}
-.hero-subpage {
-  /* O fundo brilhante atrás do mockup para dar profundidade */
 }
 .hero-subpage .glow-backdrop {
   width: 350px;
