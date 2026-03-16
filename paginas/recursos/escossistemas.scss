@@ -1,87 +1,205 @@
 
-.hero-subpage {
-    position: relative;
-    background-color: #fcfcfc; // Fundo levemente off-white para contraste premium
+/* --- Seção 1: Hero Imersivo --- */
+.hero-immersive {
+    min-height: 100vh;
+    background-color: #0b1120; // Azul extremamente escuro (estilo agência premium)
     
-    .min-vh-75 {
-        min-height: 75vh;
-    }
-
-    .brand-tag {
-        color: var(--bs-primary);
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 2.5px;
-        font-size: 0.85rem;
-        background: rgba(var(--bs-primary-rgb), 0.1);
-        padding: 0.5rem 1.2rem;
-        border-radius: 50px;
-    }
-
-    .glow-backdrop {
-        width: 350px;
-        height: 350px;
-        background: radial-gradient(circle, rgba(var(--bs-primary-rgb), 0.15) 0%, rgba(255,255,255,0) 70%);
-        border-radius: 50%;
+    .bg-overlay {
+        background: radial-gradient(circle at 80% 50%, rgba(13, 110, 253, 0.15) 0%, rgba(11, 17, 32, 1) 70%);
         z-index: 1;
     }
 
-    /* A animação de flutuação contínua que já usamos, aplicada ao mockup */
-    .floating-animate {
-        animation: float 6s ease-in-out infinite;
-        filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.1)); // Sombra dinâmica no PNG
+    /* Efeito de brilho nos ícones da lista */
+    .icon-glow {
+        box-shadow: 0 0 20px currentColor; // Usa a própria cor do texto (primary, info, warning) para a sombra
+        transition: transform 0.3s ease;
+    }
+
+    .solution-item:hover .icon-glow {
+        transform: scale(1.1);
+    }
+
+    /* --- Sistema de Animação em Cascata (Staggered Animation) --- */
+    .reveal-text {
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .reveal-item {
+        opacity: 0; // Começa invisível
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    /* Atrasos para criar o efeito cascata: 1, 2, 3... */
+    .delay-1 { animation-delay: 0.4s; }
+    .delay-2 { animation-delay: 0.6s; }
+    .delay-3 { animation-delay: 0.8s; }
+    .delay-4 { animation-delay: 1.2s; } // O botão desce um pouco depois
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-.section-education {
-    /* Espaçamento extra para dar respiro (Whitespace é sinônimo de design premium) */
-    .py-lg-6 {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
+/* --- Seção 2: Diagnóstico Visual --- */
+.section-diagnostic {
+    .py-6 {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
     }
 
-    .visual-box {
-        /* Cria um fundo geométrico suave atrás da imagem */
-        &::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            right: 20px;
-            bottom: 20px;
-            border: 2px dashed rgba(var(--bs-danger-rgb), 0.2);
-            border-radius: inherit;
-            z-index: 0;
+    .tracking-wider { letter-spacing: 1.5px; }
+
+    /* O elemento "VS" redondo no meio */
+    .vs-badge {
+        width: 60px;
+        height: 60px;
+        background: #1e293b; // Cinza muito escuro
+        border: 4px solid #f8f9fa; // Borda da cor do fundo da seção
+        font-family: monospace;
+    }
+
+    .comparison-card {
+        transition: transform 0.4s ease;
+
+        &.bad-card {
+            /* Deixa o card "ruim" levemente opaco para tirar o foco principal dele */
+            opacity: 0.9;
+            filter: grayscale(20%);
+            
+            &:hover {
+                opacity: 1;
+                filter: grayscale(0%);
+            }
+        }
+
+        &.good-card {
+            background: linear-gradient(145deg, var(--bs-primary) 0%, #1e3a8a 100%); // Gradiente premium
+            transform: scale(1.03); // O card bom já começa ligeiramente maior para mostrar hierarquia
+            
+            /* Brilho interno animado (Glass/Glow effect) */
+            .premium-glow {
+                background: radial-gradient(circle at top right, rgba(255,255,255,0.2) 0%, transparent 60%);
+                pointer-events: none;
+            }
+
+            &:hover {
+                transform: scale(1.05); // Aumenta ainda mais no hover
+                box-shadow: 0 25px 50px rgba(13, 110, 253, 0.3) !important;
+            }
         }
     }
 
-    .floating-badge {
-        background-color: white;
-        padding: 0.6rem 1.2rem;
-        border-radius: 50px;
-        font-weight: 600;
-        font-size: 0.85rem;
-        display: flex;
-        align-items: center;
-        /* Efeito de flutuação sutil */
-        animation: float-small 4s ease-in-out infinite alternate;
+    /* Ajuste para mobile: No celular, os cards empilham, então o bom não precisa do scale(1.03) inicial */
+    @media (max-width: 991px) {
+        .good-card { transform: scale(1) !important; }
     }
-    
-    .badge-danger { color: #dc3545; }
-    .badge-warning { color: #fd7e14; }
+}
 
-    .icon-circle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 60px;
-        height: 60px;
-        flex-shrink: 0; // Impede que o círculo amasse se o texto do lado for grande
+/* --- Seção 3: Timeline de Conversão (Refatorada) --- */
+.section-timeline {
+    .py-6 { padding-top: 5rem; padding-bottom: 5rem; }
+    .tracking-wider { letter-spacing: 2px; }
+    .backdrop-blur { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+
+    /* 1. Estrutura Base (Mobile-First) */
+    .custom-timeline {
+        max-width: 1000px;
+        
+        /* A Linha Vertical (No mobile, fica na esquerda) */
+        &::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: rgba(13, 110, 253, 0.25);
+            top: 0;
+            bottom: 0;
+            left: 20px; /* Distância da borda esquerda no celular */
+            margin-left: -1px; /* Centraliza a linha no meio do pixel */
+        }
     }
 
-    @media (min-width: 992px) {
-        .pl-lg-5 {
-            padding-left: 3rem !important;
+    .timeline-item {
+        padding: 10px 0 30px 50px; /* Dá espaço na esquerda para a linha e os ícones */
+        position: relative;
+        width: 100%; /* Ocupa tudo no celular */
+    }
+
+    /* As bolinhas (Nós da linha do tempo) */
+    .timeline-marker {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        left: 20px; /* Alinhado perfeitamente com a linha */
+        top: 30px; /* Altura em relação ao card */
+        transform: translateX(-50%); /* Centraliza exatamente em cima da linha */
+        z-index: 2;
+    }
+
+    /* Efeitos de Hover nos Cards */
+    .step-card {
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        &:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.15) !important;
+        }
+    }
+    .glow-success {
+        box-shadow: 0 0 20px rgba(25, 135, 84, 0.1);
+        &:hover { box-shadow: 0 0 30px rgba(25, 135, 84, 0.3); }
+    }
+
+    /* 2. Responsividade para Desktop (A Mágica) */
+    @media screen and (min-width: 768px) {
+        
+        /* Move a linha principal para o centro exato */
+        .custom-timeline::after {
+            left: 50%;
+        }
+
+        /* Cada card passa a ocupar apenas metade da tela */
+        .timeline-item {
+            width: 50%;
+            padding-bottom: 40px;
+        }
+
+        /* Os cards da ESQUERDA colam na esquerda e ganham respiro na direita */
+        .timeline-item.left {
+            left: 0;
+            padding-left: 0;
+            padding-right: 40px;
+            text-align: right; /* Alinha o texto para perto da linha */
+
+            /* Move os ícones do card da esquerda para a direita (perto da linha) */
+            .icon-wrap {
+                margin-left: auto;
+                margin-right: 0 !important;
+            }
+
+            /* Move a bolinha da esquerda para a borda direita do container */
+            .timeline-marker {
+                left: 100%;
+            }
+        }
+
+        /* Os cards da DIREITA começam do meio da tela pra frente */
+        .timeline-item.right {
+            left: 50%;
+            padding-left: 40px;
+            padding-right: 0;
+            text-align: left;
+
+            /* Move a bolinha da direita para a borda esquerda do container */
+            .timeline-marker {
+                left: 0;
+            }
         }
     }
 }

@@ -1,85 +1,223 @@
 @charset "UTF-8";
-.hero-subpage {
-  position: relative;
-  background-color: #fcfcfc;
+/* --- Seção 1: Hero Imersivo --- */
+.hero-immersive {
+  min-height: 100vh;
+  background-color: #0b1120;
 }
-.hero-subpage .min-vh-75 {
-  min-height: 75vh;
-}
-.hero-subpage .brand-tag {
-  color: var(--bs-primary);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  font-size: 0.85rem;
-  background: rgba(var(--bs-primary-rgb), 0.1);
-  padding: 0.5rem 1.2rem;
-  border-radius: 50px;
-}
-.hero-subpage .glow-backdrop {
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, rgba(var(--bs-primary-rgb), 0.15) 0%, rgba(255, 255, 255, 0) 70%);
-  border-radius: 50%;
+.hero-immersive .bg-overlay {
+  background: radial-gradient(circle at 80% 50%, rgba(13, 110, 253, 0.15) 0%, rgb(11, 17, 32) 70%);
   z-index: 1;
 }
-.hero-subpage {
-  /* A animação de flutuação contínua que já usamos, aplicada ao mockup */
+.hero-immersive {
+  /* Efeito de brilho nos ícones da lista */
 }
-.hero-subpage .floating-animate {
-  animation: float 6s ease-in-out infinite;
-  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.1));
+.hero-immersive .icon-glow {
+  box-shadow: 0 0 20px currentColor;
+  transition: transform 0.3s ease;
+}
+.hero-immersive .solution-item:hover .icon-glow {
+  transform: scale(1.1);
+}
+.hero-immersive {
+  /* --- Sistema de Animação em Cascata (Staggered Animation) --- */
+}
+.hero-immersive .reveal-text {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+.hero-immersive .reveal-item {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+.hero-immersive {
+  /* Atrasos para criar o efeito cascata: 1, 2, 3... */
+}
+.hero-immersive .delay-1 {
+  animation-delay: 0.4s;
+}
+.hero-immersive .delay-2 {
+  animation-delay: 0.6s;
+}
+.hero-immersive .delay-3 {
+  animation-delay: 0.8s;
+}
+.hero-immersive .delay-4 {
+  animation-delay: 1.2s;
 }
 
-.section-education {
-  /* Espaçamento extra para dar respiro (Whitespace é sinônimo de design premium) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.section-education .py-lg-6 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+/* --- Seção 2: Diagnóstico Visual --- */
+.section-diagnostic .py-6 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
-.section-education .visual-box {
-  /* Cria um fundo geométrico suave atrás da imagem */
+.section-diagnostic .tracking-wider {
+  letter-spacing: 1.5px;
 }
-.section-education .visual-box::before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  right: 20px;
-  bottom: 20px;
-  border: 2px dashed rgba(var(--bs-danger-rgb), 0.2);
-  border-radius: inherit;
-  z-index: 0;
+.section-diagnostic {
+  /* O elemento "VS" redondo no meio */
 }
-.section-education .floating-badge {
-  background-color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  display: flex;
-  align-items: center;
-  /* Efeito de flutuação sutil */
-  animation: float-small 4s ease-in-out infinite alternate;
-}
-.section-education .badge-danger {
-  color: #dc3545;
-}
-.section-education .badge-warning {
-  color: #fd7e14;
-}
-.section-education .icon-circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.section-diagnostic .vs-badge {
   width: 60px;
   height: 60px;
-  flex-shrink: 0;
+  background: #1e293b;
+  border: 4px solid #f8f9fa;
+  font-family: monospace;
 }
-@media (min-width: 992px) {
-  .section-education .pl-lg-5 {
-    padding-left: 3rem !important;
+.section-diagnostic .comparison-card {
+  transition: transform 0.4s ease;
+}
+.section-diagnostic .comparison-card.bad-card {
+  /* Deixa o card "ruim" levemente opaco para tirar o foco principal dele */
+  opacity: 0.9;
+  filter: grayscale(20%);
+}
+.section-diagnostic .comparison-card.bad-card:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+.section-diagnostic .comparison-card.good-card {
+  background: linear-gradient(145deg, var(--bs-primary) 0%, #1e3a8a 100%);
+  transform: scale(1.03);
+  /* Brilho interno animado (Glass/Glow effect) */
+}
+.section-diagnostic .comparison-card.good-card .premium-glow {
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+.section-diagnostic .comparison-card.good-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px rgba(13, 110, 253, 0.3) !important;
+}
+.section-diagnostic {
+  /* Ajuste para mobile: No celular, os cards empilham, então o bom não precisa do scale(1.03) inicial */
+}
+@media (max-width: 991px) {
+  .section-diagnostic .good-card {
+    transform: scale(1) !important;
+  }
+}
+
+/* --- Seção 3: Timeline de Conversão (Refatorada) --- */
+.section-timeline .py-6 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.section-timeline .tracking-wider {
+  letter-spacing: 2px;
+}
+.section-timeline .backdrop-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.section-timeline {
+  /* 1. Estrutura Base (Mobile-First) */
+}
+.section-timeline .custom-timeline {
+  max-width: 1000px;
+  /* A Linha Vertical (No mobile, fica na esquerda) */
+}
+.section-timeline .custom-timeline::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background-color: rgba(13, 110, 253, 0.25);
+  top: 0;
+  bottom: 0;
+  left: 20px; /* Distância da borda esquerda no celular */
+  margin-left: -1px; /* Centraliza a linha no meio do pixel */
+}
+.section-timeline .timeline-item {
+  padding: 10px 0 30px 50px; /* Dá espaço na esquerda para a linha e os ícones */
+  position: relative;
+  width: 100%; /* Ocupa tudo no celular */
+}
+.section-timeline {
+  /* As bolinhas (Nós da linha do tempo) */
+}
+.section-timeline .timeline-marker {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  left: 20px; /* Alinhado perfeitamente com a linha */
+  top: 30px; /* Altura em relação ao card */
+  transform: translateX(-50%); /* Centraliza exatamente em cima da linha */
+  z-index: 2;
+}
+.section-timeline {
+  /* Efeitos de Hover nos Cards */
+}
+.section-timeline .step-card {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.section-timeline .step-card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+.section-timeline .glow-success {
+  box-shadow: 0 0 20px rgba(25, 135, 84, 0.1);
+}
+.section-timeline .glow-success:hover {
+  box-shadow: 0 0 30px rgba(25, 135, 84, 0.3);
+}
+.section-timeline {
+  /* 2. Responsividade para Desktop (A Mágica) */
+}
+@media screen and (min-width: 768px) {
+  .section-timeline {
+    /* Move a linha principal para o centro exato */
+  }
+  .section-timeline .custom-timeline::after {
+    left: 50%;
+  }
+  .section-timeline {
+    /* Cada card passa a ocupar apenas metade da tela */
+  }
+  .section-timeline .timeline-item {
+    width: 50%;
+    padding-bottom: 40px;
+  }
+  .section-timeline {
+    /* Os cards da ESQUERDA colam na esquerda e ganham respiro na direita */
+  }
+  .section-timeline .timeline-item.left {
+    left: 0;
+    padding-left: 0;
+    padding-right: 40px;
+    text-align: right; /* Alinha o texto para perto da linha */
+    /* Move os ícones do card da esquerda para a direita (perto da linha) */
+  }
+  .section-timeline .timeline-item.left .icon-wrap {
+    margin-left: auto;
+    margin-right: 0 !important;
+  }
+  .section-timeline .timeline-item.left {
+    /* Move a bolinha da esquerda para a borda direita do container */
+  }
+  .section-timeline .timeline-item.left .timeline-marker {
+    left: 100%;
+  }
+  .section-timeline {
+    /* Os cards da DIREITA começam do meio da tela pra frente */
+  }
+  .section-timeline .timeline-item.right {
+    left: 50%;
+    padding-left: 40px;
+    padding-right: 0;
+    text-align: left;
+    /* Move a bolinha da direita para a borda esquerda do container */
+  }
+  .section-timeline .timeline-item.right .timeline-marker {
+    left: 0;
   }
 }
 
