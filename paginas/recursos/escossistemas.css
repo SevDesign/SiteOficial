@@ -8,18 +8,19 @@
   background: radial-gradient(circle at 80% 50%, rgba(13, 110, 253, 0.15) 0%, rgb(11, 17, 32) 70%);
   z-index: 1;
 }
-.hero-immersive {
-  /* Efeito de brilho nos ícones da lista */
-}
 .hero-immersive .icon-glow {
   box-shadow: 0 0 20px currentColor;
   transition: transform 0.3s ease;
 }
-.hero-immersive .solution-item:hover .icon-glow {
-  transform: scale(1.1);
+.hero-immersive .solutions-list {
+  gap: 2.5rem;
 }
-.hero-immersive {
-  /* --- Sistema de Animação em Cascata (Staggered Animation) --- */
+.hero-immersive .solutions-list .solution-text {
+  font-size: 1.2rem;
+  letter-spacing: 1.4px;
+}
+.hero-immersive .solutions-list .solution-item:hover .icon-glow {
+  transform: scale(1.1);
 }
 .hero-immersive .reveal-text {
   animation: fadeInUp 0.8s ease-out forwards;
@@ -27,9 +28,6 @@
 .hero-immersive .reveal-item {
   opacity: 0;
   animation: fadeInUp 0.6s ease-out forwards;
-}
-.hero-immersive {
-  /* Atrasos para criar o efeito cascata: 1, 2, 3... */
 }
 .hero-immersive .delay-1 {
   animation-delay: 0.4s;
@@ -44,20 +42,10 @@
   animation-delay: 1.2s;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 /* --- Seção 2: Diagnóstico Visual --- */
-.section-diagnostic .py-6 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+.section-diagnostic {
+  padding: 4rem 0 6rem 0;
+  background: linear-gradient(200deg, #f8f9fa 0%, #f8f9fa 70%, #3d4757 120%);
 }
 .section-diagnostic .tracking-wider {
   letter-spacing: 1.5px;
@@ -76,13 +64,11 @@
   transition: transform 0.4s ease;
 }
 .section-diagnostic .comparison-card.bad-card {
-  /* Deixa o card "ruim" levemente opaco para tirar o foco principal dele */
-  opacity: 0.9;
   filter: grayscale(20%);
+  border: #000000 1px solid;
 }
 .section-diagnostic .comparison-card.bad-card:hover {
-  opacity: 1;
-  filter: grayscale(0%);
+  transform: rotate(-6deg);
 }
 .section-diagnostic .comparison-card.good-card {
   background: linear-gradient(145deg, var(--bs-primary) 0%, #1e3a8a 100%);
@@ -221,133 +207,135 @@
   }
 }
 
-.section-methodology {
-  background-color: #0f172a !important;
+/* --- Seção 4: Bento Grid Portfolio --- */
+.section-bento {
+  background-color: #0b1120;
 }
-.section-methodology .py-6 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+.section-bento .py-6 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
-.section-methodology .glow-bg {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(13, 202, 240, 0.15) 0%, transparent 70%);
-  border-radius: 50%;
-  transform: translate(30%, -30%);
-  pointer-events: none;
+.section-bento .tracking-wider {
+  letter-spacing: 2px;
 }
-.section-methodology .method-card {
+.section-bento {
+  /* O Card do Bento Grid */
+}
+.section-bento .bento-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  /* Brilho interno dinâmico */
 }
-.section-methodology .method-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(13, 202, 240, 0.3);
+.section-bento .bento-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.06), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+.section-bento .bento-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(13, 110, 253, 0.4);
   transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
-.section-methodology .code-block {
-  animation: float-reverse 5s ease-in-out infinite alternate;
-  z-index: 3;
+.section-bento .bento-card:hover::before {
+  opacity: 1;
 }
-@media (min-width: 992px) {
-  .section-methodology .pr-lg-5 {
-    padding-right: 3rem !important;
-  }
+.section-bento .bento-card:hover {
+  /* Animações individuais das imagens nos cards */
+}
+.section-bento .bento-card:hover .bento-img-right {
+  transform: translateX(-10px) scale(1.05);
+}
+.section-bento .bento-card:hover .bento-img-bottom {
+  transform: translateY(-10px) scale(1.05);
+}
+.section-bento .bento-card:hover .bento-img-left {
+  transform: translateX(10px) scale(1.05);
+}
+.section-bento .bento-card:hover .bento-img-hover {
+  transform: scale(1.03);
+}
+.section-bento .bento-card:hover .view-link i {
+  transform: translateX(5px);
+}
+.section-bento {
+  /* Comportamento base das imagens de mockup */
+}
+.section-bento img {
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.section-bento .drop-shadow-lg {
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.5));
 }
 
-.section-portfolio {
-  background-color: #f8f9fa;
+/* --- Seção 5: Fast CTA & Navegação --- */
+.section-fast-cta {
+  background-color: #080d17;
 }
-.section-portfolio .py-lg-6 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-.section-portfolio .portfolio-card {
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-.section-portfolio .portfolio-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
-}
-.section-portfolio .portfolio-card:hover .portfolio-img-wrap img {
-  transform: scale(1.05);
-}
-.section-portfolio .portfolio-card:hover .view-case i {
-  transform: translateX(6px);
-}
-.section-portfolio .portfolio-img-wrap {
-  height: 320px;
-  background-color: #e9ecef;
-}
-.section-portfolio .portfolio-img-wrap img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: top center;
-     object-position: top center;
-  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-.section-portfolio .tracking-wider {
+.section-fast-cta .tracking-wider {
   letter-spacing: 1.5px;
 }
-.section-portfolio .transition-transform {
+.section-fast-cta {
+  /* Estilização do Formulário Premium */
+}
+.section-fast-cta .form-control {
+  border-width: 2px;
+  transition: all 0.3s ease;
+}
+.section-fast-cta .form-control::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.section-fast-cta .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.section-fast-cta .form-control:focus {
+  box-shadow: none;
+  border-color: var(--bs-primary);
+  background-color: rgba(13, 110, 253, 0.05) !important;
+  color: white;
+}
+.section-fast-cta .hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.section-fast-cta .hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3) !important;
+}
+.section-fast-cta {
+  /* Card da Próxima Página */
+}
+.section-fast-cta .next-page-card {
+  cursor: pointer;
+}
+.section-fast-cta .next-page-card:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(13, 202, 240, 0.4) !important;
+  transform: translateX(10px);
+}
+.section-fast-cta .next-page-card:hover .icon-wrap {
+  transform: scale(1.1);
   transition: transform 0.3s ease;
 }
-
-/* --- Seção 5: Call to Action (Fundo do Funil) --- */
-.section-cta {
-  /* Usamos a cor primária da sua marca (ex: um azul vibrante) */
-  background-color: var(--bs-primary) !important;
+.section-fast-cta .hover-text-white:hover {
+  color: white !important;
 }
-.section-cta .py-6 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+.section-fast-cta {
+  /* Ajuste da borda divisória no desktop */
 }
-.section-cta {
-  /* O botão premium (Invertendo as cores para dar destaque) */
-}
-.section-cta .btn-light {
-  background-color: #ffffff;
-  color: var(--bs-primary);
-  border: 2px solid transparent;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  position: relative;
-  z-index: 3;
-}
-.section-cta .btn-light:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
-  background-color: #f8f9fa;
-}
-.section-cta .btn-light:active {
-  transform: translateY(2px);
-}
-.section-cta {
-  /* Tipografia de encerramento */
-}
-.section-cta .lead {
-  font-size: 1.25rem;
-  font-weight: 400;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-}
-.section-cta {
-  /* Ícone do foguete no botão */
-}
-.section-cta .bi-rocket-takeoff {
-  transition: transform 0.3s ease;
-}
-.section-cta {
-  /* Pequeno detalhe de UX: o foguete decola ao passar o mouse */
-}
-.section-cta .btn-light:hover .bi-rocket-takeoff {
-  transform: translate(3px, -3px);
-  display: inline-block;
+@media (min-width: 992px) {
+  .section-fast-cta .border-start-lg {
+    border-left: 1px solid;
+  }
 }
 
 @keyframes float-reverse {
@@ -356,6 +344,16 @@
   }
   100% {
     transform: translateY(15px) translateX(-50%);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 @keyframes float-small {

@@ -9,50 +9,43 @@
         z-index: 1;
     }
 
-    /* Efeito de brilho nos ícones da lista */
     .icon-glow {
         box-shadow: 0 0 20px currentColor; // Usa a própria cor do texto (primary, info, warning) para a sombra
         transition: transform 0.3s ease;
     }
 
-    .solution-item:hover .icon-glow {
-        transform: scale(1.1);
+    .solutions-list{
+        gap: 2.5rem;
+
+        .solution-text {
+            font-size: 1.2rem;
+            letter-spacing: 1.4px;
+        }
+
+        .solution-item:hover .icon-glow {
+            transform: scale(1.1);
+        }
     }
 
-    /* --- Sistema de Animação em Cascata (Staggered Animation) --- */
     .reveal-text {
         animation: fadeInUp 0.8s ease-out forwards;
     }
 
     .reveal-item {
-        opacity: 0; // Começa invisível
+        opacity: 0;
         animation: fadeInUp 0.6s ease-out forwards;
     }
 
-    /* Atrasos para criar o efeito cascata: 1, 2, 3... */
     .delay-1 { animation-delay: 0.4s; }
     .delay-2 { animation-delay: 0.6s; }
     .delay-3 { animation-delay: 0.8s; }
     .delay-4 { animation-delay: 1.2s; } // O botão desce um pouco depois
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* --- Seção 2: Diagnóstico Visual --- */
 .section-diagnostic {
-    .py-6 {
-        padding-top: 5rem;
-        padding-bottom: 5rem;
-    }
+    padding: 4rem 0 6rem 0;
+    background: linear-gradient(200deg, #f8f9fa 0%, #f8f9fa 70%, #3d4757 120%); // Gradiente premium #f8f9fa;
 
     .tracking-wider { letter-spacing: 1.5px; }
 
@@ -69,13 +62,11 @@
         transition: transform 0.4s ease;
 
         &.bad-card {
-            /* Deixa o card "ruim" levemente opaco para tirar o foco principal dele */
-            opacity: 0.9;
             filter: grayscale(20%);
+            border: #000000 1px solid;
             
             &:hover {
-                opacity: 1;
-                filter: grayscale(0%);
+                transform: rotate(-6deg);
             }
         }
 
@@ -204,159 +195,137 @@
     }
 }
 
-.section-methodology {
-    background-color: #0f172a !important; // Um azul marinho muito escuro, super moderno
+/* --- Seção 4: Bento Grid Portfolio --- */
+.section-bento {
+    background-color: #0b1120; // Mantém a cor de fundo do Hero para consistência
     
-    .py-6 {
-        padding-top: 5rem;
-        padding-bottom: 5rem;
-    }
+    .py-6 { padding-top: 6rem; padding-bottom: 6rem; }
+    .tracking-wider { letter-spacing: 2px; }
 
-    // A luz radial no fundo para dar clima de "laboratório"
-    .glow-bg {
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, rgba(13, 202, 240, 0.15) 0%, transparent 70%);
-        border-radius: 50%;
-        transform: translate(30%, -30%);
-        pointer-events: none;
-    }
-
-    // Estilo dos cards do grid
-    .method-card {
+    /* O Card do Bento Grid */
+    .bento-card {
         background: rgba(255, 255, 255, 0.03);
         border: 1px solid rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        
+        /* Brilho interno dinâmico */
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.06), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(13, 110, 253, 0.4); // A borda acende em azul
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+
+            &::before {
+                opacity: 1; // Ativa o brilho interno
+            }
+
+            /* Animações individuais das imagens nos cards */
+            .bento-img-right { transform: translateX(-10px) scale(1.05); }
+            .bento-img-bottom { transform: translateY(-10px) scale(1.05); }
+            .bento-img-left { transform: translateX(10px) scale(1.05); }
+            .bento-img-hover { transform: scale(1.03); }
+            
+            .view-link i { transform: translateX(5px); }
+        }
+    }
+
+    /* Comportamento base das imagens de mockup */
+    img {
+        transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .drop-shadow-lg {
+        filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.5));
+    }
+}
+
+/* --- Seção 5: Fast CTA & Navegação --- */
+.section-fast-cta {
+    background-color: #080d17; // Um tom ainda mais escuro para fechar a página
+    
+    .tracking-wider { letter-spacing: 1.5px; }
+
+    /* Estilização do Formulário Premium */
+    .form-control {
+        border-width: 2px;
         transition: all 0.3s ease;
         
-        &:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(13, 202, 240, 0.3); // Borda acende com a cor info
-            transform: translateY(-5px);
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        &:focus {
+            box-shadow: none;
+            border-color: var(--bs-primary);
+            background-color: rgba(13, 110, 253, 0.05) !important;
+            color: white;
         }
     }
 
-    // O bloquinho de código decorativo flutuando na imagem
-    .code-block {
-        animation: float-reverse 5s ease-in-out infinite alternate;
-        z-index: 3;
+    .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3) !important;
+        }
     }
 
+    /* Card da Próxima Página */
+    .next-page-card {
+        cursor: pointer;
+        
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.15) !important;
+            border-color: rgba(13, 202, 240, 0.4) !important; // Acende com a cor info
+            transform: translateX(10px); // Desliza levemente para a direita convidando ao clique
+            
+            .icon-wrap {
+                transform: scale(1.1);
+                transition: transform 0.3s ease;
+            }
+        }
+    }
+
+    .hover-text-white {
+        &:hover {
+            color: white !important;
+        }
+    }
+
+    /* Ajuste da borda divisória no desktop */
     @media (min-width: 992px) {
-        .pr-lg-5 {
-            padding-right: 3rem !important;
+        .border-start-lg {
+            border-left: 1px solid;
         }
     }
 }
 
-.section-portfolio {
-    background-color: #f8f9fa; // Fundo cinza muito claro para contrastar com os cartões brancos
-    
-    .py-lg-6 {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
-    }
-    
-    .portfolio-card {
-        border: 1px solid rgba(0, 0, 0, 0.04);
-        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        
-        // Efeito "Premium" ao passar o rato
-        &:hover {
-            transform: translateY(-10px); // Levanta ligeiramente o cartão
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
-            
-            // Dá um ligeiro zoom na imagem do mockup
-            .portfolio-img-wrap img {
-                transform: scale(1.05);
-            }
-            
-            // Empurra a seta do link para a direita
-            .view-case i {
-                transform: translateX(6px);
-            }
-        }
-    }
-    
-    .portfolio-img-wrap {
-        height: 320px; // Altura fixa para manter a grelha simétrica
-        background-color: #e9ecef;
-        
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; // Garante que a imagem preenche o espaço sem distorcer
-            object-position: top center; // Foca no topo do site/mockup
-            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-    }
-    
-    .tracking-wider {
-        letter-spacing: 1.5px;
-    }
-    
-    .transition-transform {
-        transition: transform 0.3s ease;
-    }
-}
-
-/* --- Seção 5: Call to Action (Fundo do Funil) --- */
-.section-cta {
-    /* Usamos a cor primária da sua marca (ex: um azul vibrante) */
-    background-color: var(--bs-primary) !important;
-    
-    .py-6 {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
-    }
-
-    /* O botão premium (Invertendo as cores para dar destaque) */
-    .btn-light {
-        background-color: #ffffff;
-        color: var(--bs-primary);
-        border: 2px solid transparent;
-        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        position: relative;
-        z-index: 3; // Garante que fique acima do efeito de fundo
-        
-        &:hover {
-            transform: translateY(-5px) scale(1.02); // Cresce levemente e sobe
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important; // Sombra mais intensa
-            background-color: #f8f9fa;
-        }
-
-        &:active {
-            transform: translateY(2px); // Efeito de clique físico
-        }
-    }
-
-    /* Tipografia de encerramento */
-    .lead {
-        font-size: 1.25rem;
-        font-weight: 400;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-        line-height: 1.6;
-    }
-
-    /* Ícone do foguete no botão */
-    .bi-rocket-takeoff {
-        transition: transform 0.3s ease;
-    }
-
-    /* Pequeno detalhe de UX: o foguete decola ao passar o mouse */
-    .btn-light:hover .bi-rocket-takeoff {
-        transform: translate(3px, -3px);
-        display: inline-block;
-    }
-}
-
-
-
-// Animação inversa para dar contraste com a imagem principal
 @keyframes float-reverse {
     0% { transform: translateY(0) translateX(-50%); }
     100% { transform: translateY(15px) translateX(-50%); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes float-small {
