@@ -93,13 +93,13 @@
     }
 }
 
-/* --- Seção 3: Timeline de Conversão (Refatorada) --- */
+/* --- Seção 3: Timeline de Conversão --- */
 .section-timeline {
-    .py-6 { padding-top: 5rem; padding-bottom: 5rem; }
+    padding: 4rem 0 0 0;
+    
     .tracking-wider { letter-spacing: 2px; }
     .backdrop-blur { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
 
-    /* 1. Estrutura Base (Mobile-First) */
     .custom-timeline {
         max-width: 1000px;
         
@@ -122,7 +122,6 @@
         width: 100%; /* Ocupa tudo no celular */
     }
 
-    /* As bolinhas (Nós da linha do tempo) */
     .timeline-marker {
         position: absolute;
         width: 24px;
@@ -134,7 +133,6 @@
         z-index: 2;
     }
 
-    /* Efeitos de Hover nos Cards */
     .step-card {
         transition: transform 0.3s ease, background-color 0.3s ease;
         &:hover {
@@ -142,12 +140,12 @@
             background-color: rgba(255, 255, 255, 0.15) !important;
         }
     }
+    
     .glow-success {
         box-shadow: 0 0 20px rgba(25, 135, 84, 0.1);
         &:hover { box-shadow: 0 0 30px rgba(25, 135, 84, 0.3); }
     }
 
-    /* 2. Responsividade para Desktop (A Mágica) */
     @media screen and (min-width: 768px) {
         
         /* Move a linha principal para o centro exato */
@@ -197,9 +195,8 @@
 
 /* --- Seção 4: Bento Grid Portfolio --- */
 .section-bento {
-    background-color: #0b1120; // Mantém a cor de fundo do Hero para consistência
-    
-    .py-6 { padding-top: 6rem; padding-bottom: 6rem; }
+    padding: 3rem 0;
+
     .tracking-wider { letter-spacing: 2px; }
 
     /* O Card do Bento Grid */

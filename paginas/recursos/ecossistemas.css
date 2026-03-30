@@ -46,12 +46,11 @@
 .section-diagnostic {
   padding: 4rem 0 6rem 0;
   background: linear-gradient(200deg, #f8f9fa 0%, #f8f9fa 70%, #3d4757 120%);
+  /* O elemento "VS" redondo no meio */
+  /* Ajuste para mobile: No celular, os cards empilham, então o bom não precisa do scale(1.03) inicial */
 }
 .section-diagnostic .tracking-wider {
   letter-spacing: 1.5px;
-}
-.section-diagnostic {
-  /* O elemento "VS" redondo no meio */
 }
 .section-diagnostic .vs-badge {
   width: 60px;
@@ -83,19 +82,15 @@
   transform: scale(1.05);
   box-shadow: 0 25px 50px rgba(13, 110, 253, 0.3) !important;
 }
-.section-diagnostic {
-  /* Ajuste para mobile: No celular, os cards empilham, então o bom não precisa do scale(1.03) inicial */
-}
 @media (max-width: 991px) {
   .section-diagnostic .good-card {
     transform: scale(1) !important;
   }
 }
 
-/* --- Seção 3: Timeline de Conversão (Refatorada) --- */
-.section-timeline .py-6 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+/* --- Seção 3: Timeline de Conversão --- */
+.section-timeline {
+  padding: 4rem 0 0 0;
 }
 .section-timeline .tracking-wider {
   letter-spacing: 2px;
@@ -103,9 +98,6 @@
 .section-timeline .backdrop-blur {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-}
-.section-timeline {
-  /* 1. Estrutura Base (Mobile-First) */
 }
 .section-timeline .custom-timeline {
   max-width: 1000px;
@@ -126,9 +118,6 @@
   position: relative;
   width: 100%; /* Ocupa tudo no celular */
 }
-.section-timeline {
-  /* As bolinhas (Nós da linha do tempo) */
-}
 .section-timeline .timeline-marker {
   position: absolute;
   width: 24px;
@@ -138,9 +127,6 @@
   top: 30px; /* Altura em relação ao card */
   transform: translateX(-50%); /* Centraliza exatamente em cima da linha */
   z-index: 2;
-}
-.section-timeline {
-  /* Efeitos de Hover nos Cards */
 }
 .section-timeline .step-card {
   transition: transform 0.3s ease, background-color 0.3s ease;
@@ -155,25 +141,19 @@
 .section-timeline .glow-success:hover {
   box-shadow: 0 0 30px rgba(25, 135, 84, 0.3);
 }
-.section-timeline {
-  /* 2. Responsividade para Desktop (A Mágica) */
-}
 @media screen and (min-width: 768px) {
   .section-timeline {
     /* Move a linha principal para o centro exato */
+    /* Cada card passa a ocupar apenas metade da tela */
+    /* Os cards da ESQUERDA colam na esquerda e ganham respiro na direita */
+    /* Os cards da DIREITA começam do meio da tela pra frente */
   }
   .section-timeline .custom-timeline::after {
     left: 50%;
   }
-  .section-timeline {
-    /* Cada card passa a ocupar apenas metade da tela */
-  }
   .section-timeline .timeline-item {
     width: 50%;
     padding-bottom: 40px;
-  }
-  .section-timeline {
-    /* Os cards da ESQUERDA colam na esquerda e ganham respiro na direita */
   }
   .section-timeline .timeline-item.left {
     left: 0;
@@ -181,19 +161,14 @@
     padding-right: 40px;
     text-align: right; /* Alinha o texto para perto da linha */
     /* Move os ícones do card da esquerda para a direita (perto da linha) */
+    /* Move a bolinha da esquerda para a borda direita do container */
   }
   .section-timeline .timeline-item.left .icon-wrap {
     margin-left: auto;
     margin-right: 0 !important;
   }
-  .section-timeline .timeline-item.left {
-    /* Move a bolinha da esquerda para a borda direita do container */
-  }
   .section-timeline .timeline-item.left .timeline-marker {
     left: 100%;
-  }
-  .section-timeline {
-    /* Os cards da DIREITA começam do meio da tela pra frente */
   }
   .section-timeline .timeline-item.right {
     left: 50%;
@@ -209,17 +184,12 @@
 
 /* --- Seção 4: Bento Grid Portfolio --- */
 .section-bento {
-  background-color: #0b1120;
-}
-.section-bento .py-6 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding: 3rem 0;
+  /* O Card do Bento Grid */
+  /* Comportamento base das imagens de mockup */
 }
 .section-bento .tracking-wider {
   letter-spacing: 2px;
-}
-.section-bento {
-  /* O Card do Bento Grid */
 }
 .section-bento .bento-card {
   background: rgba(255, 255, 255, 0.03);
@@ -246,12 +216,10 @@
   border-color: rgba(13, 110, 253, 0.4);
   transform: translateY(-5px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  /* Animações individuais das imagens nos cards */
 }
 .section-bento .bento-card:hover::before {
   opacity: 1;
-}
-.section-bento .bento-card:hover {
-  /* Animações individuais das imagens nos cards */
 }
 .section-bento .bento-card:hover .bento-img-right {
   transform: translateX(-10px) scale(1.05);
@@ -268,9 +236,6 @@
 .section-bento .bento-card:hover .view-link i {
   transform: translateX(5px);
 }
-.section-bento {
-  /* Comportamento base das imagens de mockup */
-}
 .section-bento img {
   transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -281,19 +246,16 @@
 /* --- Seção 5: Fast CTA & Navegação --- */
 .section-fast-cta {
   background-color: #080d17;
+  /* Estilização do Formulário Premium */
+  /* Card da Próxima Página */
+  /* Ajuste da borda divisória no desktop */
 }
 .section-fast-cta .tracking-wider {
   letter-spacing: 1.5px;
 }
-.section-fast-cta {
-  /* Estilização do Formulário Premium */
-}
 .section-fast-cta .form-control {
   border-width: 2px;
   transition: all 0.3s ease;
-}
-.section-fast-cta .form-control::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.4);
 }
 .section-fast-cta .form-control::placeholder {
   color: rgba(255, 255, 255, 0.4);
@@ -311,9 +273,6 @@
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3) !important;
 }
-.section-fast-cta {
-  /* Card da Próxima Página */
-}
 .section-fast-cta .next-page-card {
   cursor: pointer;
 }
@@ -328,9 +287,6 @@
 }
 .section-fast-cta .hover-text-white:hover {
   color: white !important;
-}
-.section-fast-cta {
-  /* Ajuste da borda divisória no desktop */
 }
 @media (min-width: 992px) {
   .section-fast-cta .border-start-lg {
@@ -374,4 +330,6 @@
   100% {
     transform: translateY(0px);
   }
-}/*# sourceMappingURL=escossistemas.css.map */
+}
+
+/*# sourceMappingURL=ecossistemas.css.map */

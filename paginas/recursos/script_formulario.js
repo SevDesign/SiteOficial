@@ -1,28 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Busca o componente do formulário
-    fetch('formulario-componente.html')
-        .then(response => {
-            if (!response.ok) throw new Error('Falha ao carregar o formulário');
-            return response.text();
-        })
-        .then(htmlString => {
-            // Injeta o HTML na div vazia
-            document.getElementById('container-formulario-global').innerHTML = htmlString;
-            
-            // ATENÇÃO: Como o formulário acabou de ser injetado, 
-            // é AQUI que você deve colocar aquele código do "submit" 
-            // que monta a mensagem do WhatsApp!
-            inicializarEventosDoFormulario(); 
-        })
-        .catch(error => console.error("Erro ao injetar componente:", error));
-});
+document.getElementById('formSiteRapido').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-function inicializarEventosDoFormulario() {
-    const form = document.getElementById('briefingForm');
-    if(form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            // ... (Seu código de pegar dados e abrir o WhatsApp que fizemos antes) ...
-        });
-    }
-}
+    const nome = document.getElementById('nomeRapido').value;
+    const telefone = document.getElementById('whatsRapido').value;
+    
+    // A mágica acontece aqui: você já define o interesse sem perguntar pro cliente
+    const interesse = "Web Design e Ecossistemas Digitais";
+
+    const mensagem = `
+Olá, equipe! 🚀
+Estava navegando na página de *Ecossistemas Digitais* e quero dar o próximo passo.
+
+👤 Meu Nome: ${nome}
+📱 Meu Empreendimento: ${telefone}
+🎯 Interesse: ${interesse}
+
+Gostaria de solicitar um orçamento.
+    `.trim();
+
+    const numeroAgencia = "558894654939";
+    const urlWhatsApp = `https://wa.me/${numeroAgencia}?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(urlWhatsApp, '_blank');
+});
