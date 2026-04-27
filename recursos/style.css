@@ -58,22 +58,30 @@ html.lenis, html.lenis body {
   height: 58vh;
   overflow: hidden;
 }
-.hero .main-view #hero-default {
+.hero .main-view .hero-default {
   display: block;
   animation: fadeIn 0.5s ease-out;
 }
-.hero .main-view #hero-default .brand-tag {
+.hero .main-view .hero-default .brand-tag {
   color: #3461ae;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-.hero .main-view #hero-default .text-outline {
+.hero .main-view .hero-default .hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.hero .main-view .hero-default .text-outline {
   color: transparent;
   -webkit-text-stroke: 2px #000; /* Cria o efeito de contorno */
 }
-.hero .main-view #hero-default .btn-brand {
+.hero .main-view .hero-default .hero-desc {
+  padding-right: 4vw;
+  font-weight: 500;
+}
+.hero .main-view .hero-default .btn-brand {
   color: #3461ae;
   border: #3461ae solid 2px;
   border-radius: 50px;
@@ -82,18 +90,17 @@ html.lenis, html.lenis body {
   font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: 0.06em;
-  position: relative;
   overflow: hidden;
   transition: all 0.3s;
   line-height: 1.4em;
   margin-top: 1rem;
 }
-.hero .main-view #hero-default .btn-brand:hover {
+.hero .main-view .hero-default .btn-brand:hover {
   box-shadow: inset 0 0 5px rgba(27, 117, 253, 0.6), 0 0 9px 3px rgba(76, 168, 211, 0.2);
   font-size: 1.15rem;
   padding: 0.65rem 3rem;
 }
-.hero .main-view #hero-default .btn-brand:before {
+.hero .main-view .hero-default .btn-brand:before {
   content: "";
   position: absolute;
   left: -4em;
@@ -103,7 +110,7 @@ html.lenis, html.lenis body {
   transition: transform 0.4s ease-in-out;
   background: linear-gradient(to right, transparent 1%, rgba(227, 230, 255, 0.479) 40%, rgba(255, 255, 255, 0.603) 60%, transparent 100%);
 }
-.hero .main-view #hero-default .btn-brand:hover:before {
+.hero .main-view .hero-default .btn-brand:hover:before {
   transform: translateX(20rem);
 }
 .hero .main-view .hero-tab {
@@ -193,34 +200,6 @@ html.lenis, html.lenis body {
 }
 .hero .mobile-menu {
   display: none;
-}
-.hero .mobile-menu .mobile-buttons {
-  width: 85%;
-  display: flex;
-  justify-content: space-between;
-}
-.hero .mobile-menu .mobile-buttons button, .hero .mobile-menu .mobile-buttons a {
-  width: 2.6rem;
-  height: 2.6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  border: none;
-  border-radius: 50%;
-  color: #4a7dd6;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-}
-.hero .mobile-menu .mobile-buttons button:hover, .hero .mobile-menu .mobile-buttons a:hover {
-  color: #fff;
-  transform: scale(1.1);
-  background-color: #4a7dd6;
-}
-.hero .mobile-menu .mobile-buttons button.active, .hero .mobile-menu .mobile-buttons a.active {
-  background-color: #4a7dd6;
-  color: #fff;
-  box-shadow: 0 0 5px 5px rgba(74, 125, 214, 0.5);
 }
 
 .portfolio-presentation {
@@ -364,7 +343,7 @@ html.lenis, html.lenis body {
   align-items: center;
   gap: 10px;
   padding: 10px 20px;
-  background: #f8f9fa;
+  background: #eaeaec;
   border-radius: 50px;
   color: #333;
   text-decoration: none;
@@ -403,13 +382,17 @@ html.lenis, html.lenis body {
   color: #e1306c;
 }
 .contact-diagnostic .container-diagnostic .briefing-card {
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.15);
   max-width: 800px;
+}
+.contact-diagnostic .container-diagnostic .briefing-card button {
+  padding: 0.8rem;
 }
 .contact-diagnostic .container-diagnostic .briefing-card .form-control {
   padding: 0.8rem 1.2rem;
   border-radius: 0.75rem;
-  border: 2px solid #eee;
+  border: 1px solid #eaeaea;
+  background-color: #f9f9f9;
 }
 .contact-diagnostic .container-diagnostic .briefing-card .form-control:focus {
   border-color: #4a7dd6;
@@ -586,14 +569,16 @@ html.lenis, html.lenis body {
   }
 }
 /* PEQUENOS MONITORES */
-@media (min-width: 991px) and (max-width: 1400px) {
+@media (max-width: 1400px) {
   .hero {
     padding: 5vh 2rem 0 2rem;
     max-height: 75vh;
     overflow: hidden;
   }
+  .hero .main-view .hero-default .hero-title {
+    font-size: 2.8rem;
+  }
   .hero .main-view .hero-tab .content .brand-tag {
-    font-size: 0.8rem;
     margin-bottom: 0.5rem;
   }
   .hero .main-view .hero-tab .content .text-title {
@@ -601,16 +586,6 @@ html.lenis, html.lenis body {
   }
   .hero .main-view .hero-tab .content .text-subtitle {
     font-size: 1rem;
-  }
-  .hero .vertical-menu {
-    padding-right: 8vw;
-    padding-bottom: 5vh;
-    height: 65vh;
-    align-content: start;
-  }
-  .hero .vertical-menu .menu-buttons {
-    justify-content: space-between;
-    gap: 0;
   }
   .hero .vertical-menu .menu-buttons button, .hero .vertical-menu .menu-buttons a {
     width: 100%;
@@ -620,31 +595,47 @@ html.lenis, html.lenis body {
   }
 }
 /* MOBILE */
-@media (max-width: 991px) {
+@media (max-width: 950px) {
   .hero {
     grid-template-columns: 1fr;
-    padding: 2rem;
-    gap: 0;
+    padding: 2rem 2.5rem;
+    gap: 1.5rem;
   }
-  .brand-tag {
-    width: 100%;
+  .hero .main-view .hero-default {
+    position: relative;
+    display: flex;
     text-align: center;
+    flex-direction: column;
+    justify-items: center;
+    margin-top: 3rem;
+    height: 100%;
   }
-  #hero-title {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 1.5rem;
+  .hero .main-view .hero-default .brand-tag {
+    letter-spacing: 0.5px;
   }
-  .main-view .hero-tab .content .text-title {
-    width: 100%;
-    text-align: center;
-    font-size: 1.7rem;
+  .hero .main-view .hero-default .hero-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
   }
-  .main-view #hero-default #hero-desc, .hero .main-view .hero-tab .content .text-subtitle {
+  .hero .main-view .hero-default .hero-desc {
+    padding-right: 0;
     font-size: 0.9rem;
   }
-  .main-view #hero-default .btn-brand:hover {
-    padding: 0.7rem 2.7rem;
+  .hero .main-view .hero-default .btn-brand {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-wrap: nowrap;
+  }
+  .hero .main-view .hero-tab .content .brand-tag {
+    margin-bottom: 0.5rem;
+  }
+  .hero .main-view .hero-tab .content .text-title {
+    font-size: 2rem;
+  }
+  .hero .main-view .hero-tab .content .text-subtitle {
+    font-size: 1rem;
   }
   .hero .main-view .hero-tab .content .image img {
     height: 35vh;
@@ -653,22 +644,94 @@ html.lenis, html.lenis body {
     display: none;
   }
   .hero .mobile-menu {
-    width: 100%;
     display: flex;
     justify-content: center;
-  }
-  .about-us .image-stack {
-    padding: 0;
-  }
-  .about-us .image-stack .image-main {
     width: 100%;
   }
-  .text-outline {
-    -webkit-text-stroke: 1px #444;
-    color: #444;
+  .hero .mobile-menu .mobile-buttons {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .hero .mobile-menu .mobile-buttons button, .hero .mobile-menu .mobile-buttons a {
+    width: 2.6rem;
+    height: 2.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    color: #4a7dd6;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+  .hero .mobile-menu .mobile-buttons button:hover, .hero .mobile-menu .mobile-buttons a:hover {
+    color: #fff;
+    transform: scale(1.1);
+    background-color: #4a7dd6;
+  }
+  .hero .mobile-menu .mobile-buttons button.active, .hero .mobile-menu .mobile-buttons a.active {
+    background-color: #4a7dd6;
+    color: #fff;
+    box-shadow: 0 0 5px 5px rgba(74, 125, 214, 0.5);
+  }
+  .portfolio-presentation {
+    position: relative;
+    z-index: 2;
+    background-color: #ffffff;
+    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.15);
+    padding: 3rem 0 4rem 0;
+  }
+  .portfolio-presentation .logo-slider .logo-track img {
+    height: 40px;
+    margin: 0 30px;
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+  .portfolio-presentation .portfolio-preview {
+    padding: 0 1rem;
+  }
+  .portfolio-presentation .portfolio-preview .project-card {
+    height: 350px;
+  }
+  .about-us .about-content {
+    font-size: 1rem;
   }
   .contact-diagnostic {
     padding: 3rem 2rem;
+  }
+  .contact-diagnostic .container-diagnostic h2 {
+    font-size: 1.6rem;
+  }
+  .contact-diagnostic .container-diagnostic p {
+    font-size: 1rem;
+  }
+  .contact-diagnostic .container-diagnostic .briefing-card form label {
+    font-size: 0.9rem;
+  }
+  .contact-diagnostic .container-diagnostic .briefing-card form button {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+  .division {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #f2f2f2;
+    padding: 2rem 0;
+    z-index: 2;
+  }
+  .division .line {
+    width: 80%;
+    background-color: #000;
+    height: 1.2px;
+    margin: 0;
+    opacity: 0.7;
+  }
+  .faq-section .accordion-item h2 button, .faq-section .accordion-item .accordion-body {
+    font-size: 0.9rem;
   }
   .ebook-mockup img {
     max-height: 300px;
