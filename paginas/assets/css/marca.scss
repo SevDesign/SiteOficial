@@ -1,0 +1,266 @@
+/* ==========================================================================
+   1. SINGLE SOURCE OF TRUTH (:root Design Tokens)
+   ========================================================================== */
+:root {
+    /* Cores Semânticas */
+    --brand-primary: #0d6efd;
+    --brand-success: #10b981;
+    --brand-danger:  #ef4444;
+
+    /* Padrão Estrito de Padding (A Harmonia Vertical) */
+    --pad-section-desktop: 6rem;   /* 96px */
+    --pad-section-mobile:  3.5rem; /* 56px */
+
+    /* Física de Curvas (Curva Apple) */
+    --ease-tech: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    --slate-50:  #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-400: #94a3b8;
+    --slate-500: #64748b;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+}
+
+/* Utilitários de Cor Gerados Manualmente */
+.bg-slate-50  { background-color: var(--slate-50) !important; }
+.bg-slate-100 { background-color: var(--slate-100) !important; }
+.bg-slate-800 { background-color: var(--slate-800) !important; }
+.bg-slate-900 { background-color: var(--slate-900) !important; }
+
+/* Utilitários de Texto */
+.text-slate-400 { color: #94a3b8 !important; }
+.text-slate-500 { color: #64748b !important; }
+.text-slate-800 { color: #1e293b !important; }
+
+/* O Padronizador de Seções (Resolve as colisões das imagens) */
+.py-section {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+}
+@media (min-width: 992px) {
+    .py-section {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+    }
+}
+
+/* ==========================================================================
+   2. UTILITIES & RESETS BLINDADOS (Garante a Leitura da Página)
+   ========================================================================== */
+
+/* Padronização Global de dobras da página */
+.py-section-clean {
+    padding-top: var(--pad-section-mobile);
+    padding-bottom: var(--pad-section-mobile);
+
+    @media (min-width: 992px) {
+        padding-top: var(--pad-section-desktop);
+        padding-bottom: var(--pad-section-desktop);
+    }
+}
+
+/* Forçando a existência real das cores de fundo */
+.bg-slate-50  { background-color: var(--slate-50)  !important; }
+.bg-slate-100 { background-color: var(--slate-100) !important; }
+.bg-slate-800 { background-color: var(--slate-800) !important; color: #ffffff !important; }
+.bg-slate-900 { background-color: var(--slate-900) !important; color: #ffffff !important; }
+
+.text-slate-400 { color: var(--slate-400) !important; }
+.text-slate-500 { color: var(--slate-500) !important; }
+.text-slate-800 { color: var(--slate-800) !important; }
+.text-slate-900 { color: var(--slate-900) !important; }
+
+
+/* ==========================================================================
+   3. ESPECÍFICOS: SEÇÃO 1 (HERO)
+   ========================================================================== */
+.hero-performance {
+    .min-vh-75 { min-height: calc(75vh);}
+    .text-xs   { font-size: 0.75rem; }
+    .text-xxs  { font-size: 0.65rem; }
+    
+    .tracking-tight { letter-spacing: -1.5px; }
+    .tracking-wide  { letter-spacing: 1px; }
+
+    .text-underline-clean {
+        text-decoration: underline;
+        text-decoration-color: rgba(13, 110, 253, 0.3);
+        text-underline-offset: 6px;
+        text-decoration-thickness: 3px;
+    }
+
+    .shadow-clean {
+        box-shadow: 0 4px 12px rgba(13, 110, 253, 0.15);
+        transition: all 0.2s ease;
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(13, 110, 253, 0.25);
+        }
+    }
+
+    .shadow-card { box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.07); }
+
+    .pulse-dot {
+        width: 8px; height: 8px; border-radius: 50%;
+        display: inline-block;
+        box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.7);
+        animation: pulse-blue 2s infinite var(--ease-tech);
+    }
+
+    .pulse-circle {
+        animation: pulse-scale 2.5s infinite ease-in-out;
+        transform-origin: 400px 10px;
+    }
+}
+
+@keyframes pulse-blue {
+    to { box-shadow: 0 0 0 8px rgba(13, 110, 253, 0); }
+}
+
+@keyframes pulse-scale {
+    0%, 100% { transform: scale(1); opacity: 0.25; }
+    50%      { transform: scale(2.8); opacity: 0; }
+}
+
+
+/* ==========================================================================
+   4. ESPECÍFICOS: SEÇÃO 2 (O ABISMO / DIAGNÓSTICO)
+   ========================================================================== */
+.section-abyss {
+    background-color: var(--slate-50); 
+
+    .icon-sq { width: 42px; height: 42px; flex-shrink: 0; }
+
+    .card-metric {
+        transition: transform 0.3s var(--ease-tech), border-color 0.3s ease;
+        border: 1px solid var(--slate-200);
+        
+        &.bad-side:hover { border-color: #fca5a5; }
+
+        &.good-side {
+            background-color: var(--slate-900);
+            color: #ffffff;
+            border-color: var(--slate-800);
+
+            .tech-glow {
+                width: 320px; height: 320px;
+                background: radial-gradient(circle, rgba(13, 110, 253, 0.18) 0%, transparent 70%);
+                position: absolute; top: 0; right: 0;
+                transform: translate(30%, -30%);
+                pointer-events: none;
+            }
+
+            &:hover {
+                transform: translateY(-4px);
+                border-color: var(--brand-primary);
+            }
+        }
+    }
+
+    .metric-row:not(:last-child) {
+        padding-bottom: 1.1rem;
+        border-bottom: 1px dashed rgba(148, 163, 184, 0.2);
+    }
+}
+
+
+/* ==========================================================================
+   5. ESPECÍFICOS: SEÇÃO 3 (ENGENHARIA)
+   ========================================================================== */
+.section-engineering {
+    .shadow-xxs { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); }
+
+    .pillar-card {
+        background-color: var(--slate-50);
+        border: 1px solid var(--slate-200);
+        transition: all 0.3s var(--ease-tech);
+
+        .icon-clean {
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            width: 46px; height: 46px;
+            background-color: #ffffff;
+            color: var(--brand-primary);
+            border: 1px solid var(--slate-200);
+            transition: all 0.3s ease;
+        }
+
+        &:hover {
+            background-color: #ffffff !important;
+            border-color: rgba(13, 110, 253, 0.4) !important;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.08);
+
+            .icon-clean {
+                background-color: var(--brand-primary);
+                color: #ffffff;
+                border-color: transparent;
+            }
+        }
+    }
+}
+
+
+/* ==========================================================================
+   6. ESPECÍFICOS: SEÇÃO 4 (O RAIO-X DO FUNIL)
+   ========================================================================== */
+.section-xray {
+    background-color: var(--slate-900);
+    color: #ffffff;
+    
+    .tracking-wider { letter-spacing: 1.5px; }
+
+    .xray-card {
+        background-color: var(--slate-800);
+        border: 1px solid var(--slate-700);
+        transition: all 0.3s var(--ease-tech);
+        
+        &:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .card-final-sale {
+        background: linear-gradient(180deg, var(--slate-800) 0%, rgba(16, 185, 129, 0.12) 100%);
+        border-color: rgba(16, 185, 129, 0.4);
+
+        &:hover { border-color: var(--brand-success) !important; }
+    }
+
+    .pipeline-arrow {
+        position: absolute;
+        top: 50%; right: -20px;
+        transform: translateY(-50%);
+        width: 34px; height: 34px;
+        background-color: var(--slate-900);
+        border: 1px solid var(--slate-700);
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        z-index: 5;
+        box-shadow: 0 0 15px rgba(0,0,0,0.8);
+    }
+
+    /* Regra de Ouro Responsiva: No mobile, a seta lateral morre, vira seta pra baixo */
+    @media (max-width: 991px) {
+        .pipeline-arrow { display: none !important; }
+        
+        .pipeline-step:not(:last-child) .xray-card::after {
+            content: "\F282"; 
+            font-family: bootstrap-icons !important;
+            position: absolute;
+            bottom: -28px; left: 50%;
+            transform: translateX(-50%);
+            color: var(--slate-500);
+            font-size: 1.25rem;
+        }
+    }
+}
+
+input::placeholder { color: var(--slate-500) !important; }

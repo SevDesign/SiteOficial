@@ -1,0 +1,117 @@
+/* ==========================================================================
+   1. TOKENS GLOBAIS (Cinematic Dark)
+   ========================================================================== */
+:root {
+    --cine-black: #050505;
+    --cine-dark:  #121212;
+    --cine-gray:  #1e1e1e;
+    --cine-light: #2a2a2a;
+    --brand-primary: #0d6efd;
+    --input-placeholder: #9a9da1;
+
+    /* Padronização de Espaçamento */
+    --pad-section-mobile: 5rem;
+    --pad-section-desktop: 7rem;
+    
+    /* Física de Animação */
+    --ease-cine: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+html, body { display: flex; flex-direction: column;}
+
+/* ==========================================================================
+   2. CLASSES UTILITÁRIAS
+   ========================================================================== */
+.bg-cine-black { background-color: var(--cine-black) !important; }
+.bg-cine-dark  { background-color: var(--cine-dark) !important; }
+.bg-cine-gray  { 
+    background-color: var(--cine-gray) !important; 
+    border: 1px solid var(--cine-light); 
+}
+
+.text-cine-muted { color: #888888 !important; }
+.text-cine-glow  { text-shadow: 0 0 20px rgba(255, 255, 255, 0.15); }
+.tracking-wider  { letter-spacing: 2px; }
+
+/* Margens padronizadas responsivas */
+.py-section {
+    padding-top: var(--pad-section-desktop);
+    padding-bottom: var(--pad-section-desktop);
+
+    @media (min-width: 992px) {
+        .py-section {
+            padding: var(--pad-section-mobile) 2rem !important;
+        }
+    }
+}
+
+/* ==========================================================================
+   3. SEÇÃO 1: HERO
+   ========================================================================== */
+.hero-cinema {
+    .hero-glow {
+        background: radial-gradient(circle at center, rgba(13, 110, 253, 0.1) 0%, rgba(5,5,5,1) 60%);
+        z-index: 1;
+    }
+
+    .showreel-frame {
+        max-width: 900px;
+        aspect-ratio: 21 / 9; /* Proporção Ultrawide/Cinema */
+        background-color: var(--cine-gray);
+    }
+}
+
+/* ==========================================================================
+   4. SEÇÃO 2: ESTEIRA OPERACIONAL
+   ========================================================================== */
+.section-operation {
+    .op-card {
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        
+        &:hover {
+            background-color: var(--cine-light) !important;
+            transform: translateY(-5px);
+        }
+    }
+}
+
+/* ==========================================================================
+   5. SEÇÃO 3: SALA DE PROJEÇÃO (REELS)
+   ========================================================================== */
+.section-portfolio {
+    .reel-card {
+        aspect-ratio: 9 / 16; /* Formato exato do celular */
+        background-color: var(--cine-gray);
+        border-radius: 1rem;
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.4s var(--ease-cine), box-shadow 0.4s var(--ease-cine);
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            border-color: rgba(255, 255, 255, 0.2) !important;
+            
+            img { transform: scale(1.05); }
+            .play-overlay { opacity: 1; }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s var(--ease-cine);
+        }
+    }
+
+    .play-overlay {
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+}
+
+input::placeholder { color: var(--input-placeholder) !important; font-size: 1.1rem; }
