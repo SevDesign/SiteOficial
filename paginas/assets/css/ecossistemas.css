@@ -202,6 +202,9 @@
 .section-bento .tracking-wider {
   letter-spacing: 2px;
 }
+.section-bento #projetos a {
+  text-decoration: none;
+}
 .section-bento {
   /* O Card do Bento Grid */
 }
@@ -211,6 +214,7 @@
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  padding: 2rem 2.5rem;
   /* Brilho interno dinâmico */
 }
 .section-bento .bento-card::before {
@@ -241,7 +245,7 @@
   transform: translateX(-10px) scale(1.05);
 }
 .section-bento .bento-card:hover .bento-img-bottom {
-  transform: translateY(-10px) scale(1.05);
+  transform: translateY(-5px) scale(1.05);
 }
 .section-bento .bento-card:hover .bento-img-left {
   transform: translateX(10px) scale(1.05);
@@ -257,6 +261,7 @@
 }
 .section-bento img {
   transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 6px;
 }
 .section-bento .drop-shadow-lg {
   filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.5));
@@ -344,6 +349,17 @@
   }
 }
 
+.py-section {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+@media (min-width: 992px) {
+  .py-section {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
 @keyframes float-reverse {
   0% {
     transform: translateY(0) translateX(-50%);

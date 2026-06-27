@@ -35,13 +35,13 @@ html, body { display: flex; flex-direction: column;}
 
 /* Margens padronizadas responsivas */
 .py-section {
-    padding-top: var(--pad-section-desktop);
-    padding-bottom: var(--pad-section-desktop);
-
-    @media (min-width: 992px) {
-        .py-section {
-            padding: var(--pad-section-mobile) 2rem !important;
-        }
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+}
+@media (min-width: 992px) {
+    .py-section {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
     }
 }
 

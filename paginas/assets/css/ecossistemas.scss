@@ -199,6 +199,7 @@
     border-bottom: none !important;
 
     .tracking-wider { letter-spacing: 2px; }
+    #projetos a {text-decoration: none;}
 
     /* O Card do Bento Grid */
     .bento-card {
@@ -207,6 +208,8 @@
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
         transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        padding: 2rem 2.5rem;
+
         
         /* Brilho interno dinâmico */
         &::before {
@@ -231,17 +234,19 @@
 
             /* Animações individuais das imagens nos cards */
             .bento-img-right { transform: translateX(-10px) scale(1.05); }
-            .bento-img-bottom { transform: translateY(-10px) scale(1.05); }
+            .bento-img-bottom { transform: translateY(-5px) scale(1.05); }
             .bento-img-left { transform: translateX(10px) scale(1.05); }
             .bento-img-hover { transform: scale(1.03); }
             
             .view-link i { transform: translateX(5px); }
+
         }
     }
 
     /* Comportamento base das imagens de mockup */
     img {
         transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        border-radius: 6px;
     }
 
     .drop-shadow-lg {
@@ -330,6 +335,17 @@
         .border-start-lg {
             border-left: 1px solid;
         }
+    }
+}
+
+.py-section {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+}
+@media (min-width: 992px) {
+    .py-section {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
     }
 }
 

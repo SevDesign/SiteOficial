@@ -6,7 +6,7 @@
     <title>SevDesign</title>
     
     <!-- Links (CSS, font-awesome, bootstrap)-->
-    <link rel="stylesheet" href="recursos/style.css">
+    <link rel="stylesheet" href="assets/style.css">
     <link rel="icon" type="image/svg+xml" href="imagens/svg_icon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -215,7 +215,7 @@
                         </p>
 
                         <div class="social-links-about d-flex gap-3">
-                            <a href="https://www.instagram.com/sev.market/" target="_blank" class="social-badge">
+                            <a href="https://www.instagram.com/sev.market_/" target="_blank" class="social-badge">
                                 <i class="bi bi-instagram"></i> <span>Veja nossa vitrine</span>
                             </a>
                             <!--a href="#" class="social-badge">
@@ -250,7 +250,7 @@
                         </div>
                         <div>
                             <h6 class="mb-1 fw-bold">Atendimento Prioritário</h6>
-                            <a href="#" class="text-decoration-none text-muted">Fale diretamente conosco</a>
+                            <p class="text-decoration-none text-muted">Fale diretamente conosco</p>
                         </div>
                     </div>
 
@@ -260,49 +260,49 @@
                         </div>
                         <div> 
                             <h6 class="mb-1 fw-bold">Contato Comercial</h6>
-                            <a href="#" class="text-decoration-none text-muted">@sev.market_</a>
+                            <p class="text-decoration-none text-muted">@sev.market_</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-7 col-xxl-6 d-flex justify-content-center">
                     <div class="briefing-card bg-white p-4 p-md-5 rounded-4">
-                        <form id="briefingForm">
+                        <form id="mainForm">
                             <div class="row g-3">
                                 
                                 <div class="col-md-12">
-                                    <label class="form-label fw-bold">Como podemos te chamar?</label>
-                                    <input type="text" id="nome" class="form-control" placeholder="Seu nome" required>
+                                    <label class="form-label fw-bold">Como podemos te chamar? *</label>
+                                    <input type="text" name="nome" class="form-control" placeholder="Seu nome" required>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="form-label fw-bold">Seu melhor WhatsApp</label>
-                                    <input type="tel" id="telefone" class="form-control" placeholder="" required>
+                                    <label class="form-label fw-bold">Outro Contato</label>
+                                    <input type="tel" name="contato" class="form-control" placeholder="Opcional">
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="form-label fw-bold">Seu Nicho de Atuação</label>
-                                    <input type="text" id="nicho" class="form-control" placeholder="Ex: Clínica Médica" required>
+                                    <label class="form-label fw-bold">Seu Nicho de Atuação *</label>
+                                    <input type="text" name="nicho" class="form-control" placeholder="Ex: Clínica Médica" required>
                                 </div>
 
                                 <div class="col-md-12">
                                     <label class="form-label fw-bold">Qual o seu Instagram ou Site atual?</label>
-                                    <input type="text" id="insta" class="form-control" placeholder="@seu.instagram ou www.seusite.com.br">
+                                    <input type="text" name="instaSite" class="form-control" placeholder="@seu.instagram ou www.seusite.com.br">
                                 </div>
 
                                 <div class="col-md-12 mt-3">
                                     <label class="form-label fw-bold">O que sua empresa mais precisa hoje?</label>
                                     <div class="d-flex flex-wrap gap-2">
-                                        <input type="checkbox" class="btn-check" id="web" autocomplete="off">
+                                        <input type="checkbox" class="btn-check" name="necessidades" value="Site/Landing Page" id="web" autocomplete="off">
                                         <label class="btn btn-outline-secondary btn-sm rounded-pill" for="web">Site/Landing Page</label>
                                         
-                                        <input type="checkbox" class="btn-check" id="video" autocomplete="off">
-                                        <label class="btn btn-outline-secondary btn-sm rounded-pill" for="video">Produção Audiovisual</label>
+                                        <input type="checkbox" class="btn-check" name="necessidades" value="Produção Audiovisual" id="audiovisual" autocomplete="off">
+                                        <label class="btn btn-outline-secondary btn-sm rounded-pill" for="audiovisual">Produção Audiovisual</label>
                                         
-                                        <input type="checkbox" class="btn-check" id="trafego" autocomplete="off">
+                                        <input type="checkbox" class="btn-check" name="necessidades" value="Tráfego Pago" id="trafego" autocomplete="off">
                                         <label class="btn btn-outline-secondary btn-sm rounded-pill" for="trafego">Tráfego Pago</label>
 
-                                        <input type="checkbox" class="btn-check" id="branding" autocomplete="off">
+                                        <input type="checkbox" class="btn-check" name="necessidades" value="Posicionamento/Branding" id="branding" autocomplete="off">
                                         <label class="btn btn-outline-secondary btn-sm rounded-pill" for="branding">Posicionamento/Branding</label>
                                     </div>
                                 </div>
@@ -464,10 +464,10 @@
     -->
 
     <!-- Scripts (JS, lenis, Tailwind, Bootstrap) -->
-    <script src="recursos/script_hero.js" type="module"></script>
-    <script src="recursos/script_forms.js" type="module"></script>
-    <script src="recursos/script_scroll.js" type="module"></script>
-    <script src="recursos/script_slider.js" type="module"></script>
+    <script src="assets/script_hero.js" type="module"></script>
+    <script src="assets/script_forms.js" type="module"></script>
+    <script src="assets/script_scroll.js" type="module"></script>
+    <script src="assets/script_slider.js" type="module"></script>
     <!--script src="https://cdn.tailwindcss.com"></script-->
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
