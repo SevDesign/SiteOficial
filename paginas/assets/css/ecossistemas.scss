@@ -196,6 +196,7 @@
 /* --- Seção 4: Bento Grid Portfolio --- */
 .section-bento {
     padding: 3rem 0;
+    border-bottom: none !important;
 
     .tracking-wider { letter-spacing: 2px; }
 
@@ -248,6 +249,28 @@
     }
 }
 
+/* --- Seção de Microserviços Expansível --- */
+.section-microservices {
+    padding: 4rem 0;
+    background-color: #0b1120; // Garante o mesmo tom escuro padrão
+    height: calc(100% + 10px);
+    transition-duration: 1s;
+
+    .micro-card {
+        background-color: rgba(30, 41, 59, 0.4); // Slate-800 com opacidade para efeito glass
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+            border-color: rgba(13, 110, 253, 0.4) !important; // Acende com a cor primária
+            box-shadow: 0 10px 25px -5px rgba(13, 110, 253, 0.15);
+            background-color: rgba(30, 41, 59, 0.6) !important;
+        }
+    }
+}
+
 /* --- Seção 5: Fast CTA & Navegação --- */
 .section-fast-cta {
     background-color: #080d17; // Um tom ainda mais escuro para fechar a página
@@ -261,6 +284,7 @@
         
         &::placeholder {
             color: rgba(255, 255, 255, 0.4);
+            font-size: 1.1rem;
         }
 
         &:focus {

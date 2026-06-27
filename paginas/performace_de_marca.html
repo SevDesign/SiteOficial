@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Performance de Marca | Agência</title>
+    <title>Performance de Marca</title>
     
     <link rel="icon" type="image/svg+xml" href="../imagens/svg_icon.svg">
     <link rel="stylesheet" href="/paginas/assets/css/marca.css"> 
@@ -317,14 +317,15 @@
                     <h2 class="h1 fw-bold mb-4">Vamos acionar a sua <span class="text-primary">tração de vendas.</span></h2>
                     <p class="text-slate-400 mb-4">Preencha abaixo. Nossa equipe retornará rapidamente com um diagnóstico preliminar do seu posicionamento.</p>
 
-                    <form id="formPerformanceRapido">
+                    <form>
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <input type="text" id="nomePerf" class="form-control form-control-lg bg-slate-800 text-white border-slate-700" placeholder="Seu Nome" required>
+                                <input type="text" name="nome" class="form-control form-control-lg bg-slate-800 text-white border-slate-700" placeholder="Seu Nome" required>
                             </div>
                             <div class="col-md-6">
-                                <input type="tel" id="whatsPerf" class="form-control form-control-lg bg-slate-800 text-white border-slate-700" placeholder="Seu WhatsApp" style="color: var(--slate-400); " required>
+                                <input type="tel" name="empreendimento" name="empreendimento" class="form-control form-control-lg bg-slate-800 text-white border-slate-700" placeholder="Seu WhatsApp" style="color: var(--slate-400); " required>
                             </div>
+                            <input type="hidden" name="pagina" value="Performace de Marca">
                             <div class="col-12 mt-3">
                                 <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold py-3 shadow">
                                     Solicitar Plano de Tração <i class="bi bi-whatsapp ms-2"></i>
@@ -353,7 +354,7 @@
         </div>
     </section>
 
-    <script src="./assets/js/script_marca.js"></script>
+    <script src="./assets/js/script_form.js" type="module"></script>
     <script src="./assets/js/script_scroll.js" type="module"></script>
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
 </body>

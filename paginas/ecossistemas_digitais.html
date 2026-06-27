@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecossistema Virtual</title>
+    <title>Ecossistemas Digitais</title>
 
     <!-- Links (CSS, font-awesome, bootstrap)-->
     <link rel="icon" type="image/svg+xml" href="../imagens/svg_icon.svg">
@@ -283,28 +283,14 @@
                         Explore como a nossa engenharia de conversão transformou a presença digital destas marcas.
                     </p>
                 </div>
-                <div class="col-lg-6 d-flex align-items-end justify-content-lg-end mt-4 mt-lg-0">
-                    <a href="#contato" class="btn btn-outline-light rounded-pill px-4 py-2 fw-bold">
-                        Quero o meu projeto aqui <i class="bi bi-arrow-right ms-2"></i>
+                <div class="col-lg-6 d-flex align-items-end justify-content-lg-end mt-4 mt-lg-0 gap-3">
+                    <a id="toggle-projetos-microservicos" class="btn btn-outline-light rounded-pill px-4 py-2 fw-bold">
+                        Visualizar Microserviços <i class="bi bi-arrow-down ms-2"></i>
                     </a>
-                    <!-- Feat:
-                        Trocar label = "Visualizar mais microserviços"
-                        Abrir = uma seção abaixo, escondida anteriormente, com cards
-                        Cards = Icone, Titulo, Descricao
-
-                        Catalogos e portifólios
-                        Pedidos por cardápios interativos
-                        Calculadoras e Simuladores de Negócio
-                        Sistemas de Agendamento Inteligente
-                        Funis e Quiz de Qualificação
-                        Áreas de Membros Exclusivas
-                        Páginas de Lançamento e Eventos
-                        Hubs de Bio Proprietários
-                    -->
                 </div>
             </div>
 
-            <div class="row g-4">
+            <div id="projetos" class="row g-4">
                 
                 <div class="col-lg-8">
                     <div class="bento-card p-4 p-lg-5 rounded-4 h-100 position-relative group overflow-hidden">
@@ -370,6 +356,97 @@
                     </div>
                 </div>
 
+            </div> 
+            
+            <div id="microservicos" class="container position-relative z-2 d-none">
+                <div class="text-center mb-5 pb-2">
+                    <span class="text-primary text-xs fw-bold text-uppercase tracking-wider d-block mb-2">Engenharia Sob Demanda</span>
+                    <h3 class="display-6 fw-bold text-white">Soluções modulares de alta performance</h3>
+                </div>
+        
+                <div class="row g-4">
+                    
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="micro-card p-4 rounded-4 border border-secondary border-opacity-25 h-100 transition-all">
+                            <div class="micro-icon mb-3 text-primary d-flex align-items-center justify-content-center bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-3" style="width: 44px; height: 44px;">
+                                <i class="bi bi-journal-album fs-5"></i>
+                            </div>
+                            <h4 class="h6 fw-bold text-white mb-2">Catálogos e Portfólios</h4>
+                            <p class="text-white-50 text-xs mb-0">Arquiteturas visuais limpas e imersivas projetadas para expor produtos ou projetos com alto valor percebido.</p>
+                        </div>
+                    </div>
+        
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="micro-card p-4 rounded-4 border border-secondary border-opacity-25 h-100 transition-all">
+                            <div class="micro-icon mb-3 text-primary d-flex align-items-center justify-content-center bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-3" style="width: 44px; height: 44px;">
+                                <i class="bi bi-cart3 fs-5"></i>
+                            </div>
+                            <h4 class="h6 fw-bold text-white mb-2">Cardápios Interativos</h4>
+                            <p class="text-white-50 text-xs mb-0">Sistemas de autosserviço com roteamento direto para automação de pedidos simplificados via WhatsApp.</p>
+                        </div>
+                    </div>
+        
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="micro-card p-4 rounded-4 border border-secondary border-opacity-25 h-100 transition-all">
+                            <div class="micro-icon mb-3 text-primary d-flex align-items-center justify-content-center bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-3" style="width: 44px; height: 44px;">
+                                <i class="bi bi-calculator fs-5"></i>
+                            </div>
+                            <h4 class="h6 fw-bold text-white mb-2">Calculadoras e Simuladores</h4>
+                            <p class="text-white-50 text-xs mb-0">Ferramentas de lógica computacional para simular orçamentos complexos ou demonstrar ROI ao vivo.</p>
+                        </div>
+                    </div>
+        
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="micro-card p-4 rounded-4 border border-secondary border-opacity-25 h-100 transition-all">
+                            <div class="micro-icon mb-3 text-primary d-flex align-items-center justify-content-center bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-3" style="width: 44px; height: 44px;">
+                                <i class="bi bi-calendar-check fs-5"></i>
+                            </div>
+                            <h4 class="h6 fw-bold text-white mb-2">Agendamento Inteligente</h4>
+                            <p class="text-white-50 text-xs mb-0">Motores de reserva sincronizados com agendas corporativas (Google Calendar) com travas de segurança anti-conflito.</p>
+                        </div>
+                    </div>
+        
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="micro-card p-4 rounded-4 border border-secondary border-opacity-25 h-100 transition-all">
+                            <div class="micro-icon mb-3 text-primary d-flex align-items-center justify-content-center bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-3" style="width: 44px; height: 44px;">
+                                <i class="bi bi-patch-question fs-5"></i>
+                            </div>
+                            <h4 class="h6 fw-bold text-white mb-2">Funis e Quiz de Qualificação</h4>
+                            <p class="text-white-50 text-xs mb-0">Formulários multi-etapas inteligentes para filtrar curiosos e entregar leads totalmente segmentados ao comercial.</p>
+                        </div>
+                    </div>
+        
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="micro-card p-4 rounded-4 border border-secondary border-opacity-25 h-100 transition-all">
+                            <div class="micro-icon mb-3 text-primary d-flex align-items-center justify-content-center bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-3" style="width: 44px; height: 44px;">
+                                <i class="bi bi-shield-lock fs-5"></i>
+                            </div>
+                            <h4 class="h6 fw-bold text-white mb-2">Áreas de Membros Exclusivas</h4>
+                            <p class="text-white-50 text-xs mb-0">Estruturas restritas com autenticação de login (Mini-LMS) para hospedagem segura de treinamentos e mentorias.</p>
+                        </div>
+                    </div>
+        
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="micro-card p-4 rounded-4 border border-secondary border-opacity-25 h-100 transition-all">
+                            <div class="micro-icon mb-3 text-primary d-flex align-items-center justify-content-center bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-3" style="width: 44px; height: 44px;">
+                                <i class="bi bi-rocket-takeoff fs-5"></i>
+                            </div>
+                            <h4 class="h6 fw-bold text-white mb-2">Páginas de Lançamento</h4>
+                            <p class="text-white-50 text-xs mb-0">Páginas de altíssima resistência a picos de tráfego, equipadas com contadores e gatilhos de escassez sazonais.</p>
+                        </div>
+                    </div>
+        
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="micro-card p-4 rounded-4 border border-secondary border-opacity-25 h-100 transition-all">
+                            <div class="micro-icon mb-3 text-primary d-flex align-items-center justify-content-center bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-3" style="width: 44px; height: 44px;">
+                                <i class="bi bi-link-45deg fs-5"></i>
+                            </div>
+                            <h4 class="h6 fw-bold text-white mb-2">Hubs de Bio Proprietários</h4>
+                            <p class="text-white-50 text-xs mb-0">Substitutos premium para ferramentas amadoras de links na bio. Hospedagem mobile-first no domínio do cliente.</p>
+                        </div>
+                    </div>
+        
+                </div>
             </div>
         </div>
     </section>
@@ -391,14 +468,15 @@
                         Entre em contato abaixo. Nossa equipe retornará rapidamente pelo WhatsApp com uma análise do seu projeto.
                     </p>
 
-                    <form id="formSiteRapido" class="fast-form position-relative">
+                    <form class="fast-form position-relative">
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <input type="text" id="nomeRapido" class="form-control form-control-lg bg-transparent text-white border-secondary focus-primary" placeholder="Seu Nome" required>
+                                <input type="text" name="nome" class="form-control form-control-lg bg-transparent text-white border-secondary focus-primary" placeholder="Seu Nome" required>
                             </div>
                             <div class="col-md-6">
-                                <input type="tel" id="whatsRapido" class="form-control form-control-lg bg-transparent text-white border-secondary focus-primary" placeholder="Seu Empreendimento" required>
+                                <input type="tel" name="empreendimento" class="form-control form-control-lg bg-transparent text-white border-secondary focus-primary" placeholder="Seu Empreendimento" required>
                             </div>
+                            <input type="hidden" name="pagina" value="Ecossistemas Digitais">
                             <div class="col-12 mt-4">
                                 <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold rounded-3 shadow-lg d-flex justify-content-center align-items-center gap-2 transition-transform hover-lift">
                                     Entrar em contato <i class="bi bi-whatsapp"></i>
@@ -434,8 +512,10 @@
         </div>
     </section>
 
+    <script src="./assets/js/page_ecossistemas.js"></script>
+    <script src="./assets/js/script_form.js" type="module"></script>
     <script src="./assets/js/script_scroll.js" type="module"></script>
-    <script src="./assets/js/script_ecossistemas.js" type="module"></script>
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

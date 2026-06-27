@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produção de Autoridade | Agência</title>
+    <title>Produção de Autoridade</title>
     
     <link rel="stylesheet" href="/paginas/assets/css/autoridade.css"> 
     <link rel="icon" type="image/svg+xml" href="../imagens/svg_icon.svg">
@@ -161,20 +161,15 @@
                     <h2 class="display-6 fw-bold mb-4">Vídeo bom não é gasto de marketing, é <span class="text-primary text-decoration-underline">filtro de cliente caro.</span></h2>
                     <p class="text-cine-muted mb-4">Suba a régua do seu mercado. Deixe os dados abaixo para recebermos o seu perfil e agendarmos uma análise gratuita.</p>
 
-                    <form id="formAudiovisualRapido" class="text-start">
+                    <form class="text-start">
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <input type="text" id="nomeAudio" class="form-control form-control-lg bg-cine-gray text-white border-secondary border-opacity-50 shadow-none" placeholder="Seu Nome" required>
+                                <input type="text" name="nome" class="form-control form-control-lg bg-cine-gray text-white border-secondary border-opacity-50 shadow-none" placeholder="Seu Nome" required>
                             </div>
                             <div class="col-md-6">
-                                <input type="tel" id="whatsAudio" class="form-control form-control-lg bg-cine-gray border-secondary border-opacity-50 shadow-none" placeholder="WhatsApp" required>
+                                <input type="tel" name="empreendimento" class="form-control form-control-lg bg-cine-gray border-secondary border-opacity-50 shadow-none" placeholder="Empreendimento" required>
                             </div>
-                            <div class="col-12">
-                                <div class="input-group input-group-lg">
-                                    <span class="input-group-text bg-cine-gray border-secondary border-opacity-50 text-cine-muted">@</span>
-                                    <input type="text" id="instaAudio" class="form-control bg-cine-gray text-white border-secondary border-opacity-50 shadow-none" placeholder="Instagram da sua empresa" required>
-                                </div>
-                            </div>
+                            <input type="hidden" name="pagina" value="Produção de Autoridade">
                             <div class="col-12 mt-3">
                                 <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold py-3 shadow">
                                     Solicitar Análise de Perfil <i class="bi bi-camera-reels ms-2"></i>
@@ -201,7 +196,7 @@
         </div>
     </section>
 
-    <script src="./assets/js/script_autoridade.js"></script>
+    <script src="./assets/js/script_form.js"></script>
     <script src="./assets/js/script_scroll.js" type="module"></script>
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
 </body>
