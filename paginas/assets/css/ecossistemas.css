@@ -302,12 +302,46 @@
   transition: all 0.3s ease;
 }
 .section-fast-cta .form-control::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.4) !important;
+  opacity: 1 !important;
   font-size: 1.1rem;
 }
 .section-fast-cta .form-control::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.4) !important;
+  opacity: 1 !important;
   font-size: 1.1rem;
+}
+.section-fast-cta .form-control::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+  opacity: 1 !important;
+}
+.section-fast-cta .form-control {
+  /* Chrome, Edge, Safari */
+}
+.section-fast-cta .form-control::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+  opacity: 1 !important;
+}
+.section-fast-cta .form-control {
+  /* Firefox */
+}
+.section-fast-cta .form-control:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+  opacity: 1 !important;
+}
+.section-fast-cta .form-control {
+  /* Internet Explorer */
+}
+.section-fast-cta .form-control::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+  opacity: 1 !important;
+}
+.section-fast-cta .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+  opacity: 1 !important;
+}
+.section-fast-cta .form-control {
+  /* Padrão moderno */
 }
 .section-fast-cta .form-control:focus {
   box-shadow: none;

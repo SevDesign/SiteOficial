@@ -278,7 +278,7 @@
 
 /* --- Seção 5: Fast CTA & Navegação --- */
 .section-fast-cta {
-    background-color: #080d17; // Um tom ainda mais escuro para fechar a página
+    background-color: #080d17;
     
     .tracking-wider { letter-spacing: 1.5px; }
 
@@ -288,9 +288,30 @@
         transition: all 0.3s ease;
         
         &::placeholder {
-            color: rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, .4) !important;
+            opacity: 1 !important;
             font-size: 1.1rem;
         }
+
+        &::-webkit-input-placeholder { 
+            color: rgba(255, 255, 255, 0.4) !important; 
+            opacity: 1 !important; 
+        } /* Chrome, Edge, Safari */
+
+        &::-moz-placeholder { 
+            color: rgba(255, 255, 255, 0.4) !important; 
+            opacity: 1 !important; 
+        } /* Firefox */
+
+        &:-ms-input-placeholder { 
+            color: rgba(255, 255, 255, 0.4) !important; 
+            opacity: 1 !important; 
+        } /* Internet Explorer */
+
+        &::placeholder { 
+            color: rgba(255, 255, 255, 0.4) !important; 
+            opacity: 1 !important; 
+        } /* Padrão moderno */
 
         &:focus {
             box-shadow: none;
@@ -337,6 +358,8 @@
         }
     }
 }
+
+
 
 .py-section {
     padding-top: 5rem !important;
