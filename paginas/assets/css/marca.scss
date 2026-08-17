@@ -139,7 +139,7 @@
         transition: transform 0.3s var(--ease-tech), border-color 0.3s ease;
         border: 1px solid var(--slate-200);
         
-        &.bad-side:hover { border-color: #fca5a5; }
+        &.bad-side:hover { border-color: #fca5a5; transform: rotate(-5deg); }
 
         &.good-side {
             background-color: var(--slate-900);

@@ -64,6 +64,9 @@ html, body {
 /* ==========================================================================
    3. SEÇÃO 1: HERO
    ========================================================================== */
+.hero-cinema {
+  max-width: 100%;
+}
 .hero-cinema .hero-glow {
   background: radial-gradient(circle at center, rgba(13, 110, 253, 0.1) 0%, rgb(5, 5, 5) 60%);
   z-index: 1;

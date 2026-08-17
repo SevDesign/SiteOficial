@@ -55,7 +55,7 @@ $transition-speed: 0.4s;
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    background-image: url("../imagens/logo_de_fundo.png");
+    background-image: url("../imagens/branding/hero_wallpaper.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -261,12 +261,12 @@ $transition-speed: 0.4s;
       display: flex;
       align-items: center;
       width: max-content;
-      animation: scroll 18s linear infinite;
+      animation: scroll 12s linear infinite;
 
       img {
         height: 65px;
         margin: 0 50px;
-        filter: grayscale(100%);
+        filter: grayscale(90%);
         opacity: 0.4;
         transition: opacity 0.3s ease;
         cursor: pointer;
@@ -615,7 +615,7 @@ $transition-speed: 0.4s;
 /* Animação do Slider */
 @keyframes scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-20%); }
+  100% { transform: translateX(-25%); }
 }
 
 // Animações

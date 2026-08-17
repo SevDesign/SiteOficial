@@ -195,6 +195,7 @@
 }
 .section-abyss .card-metric.bad-side:hover {
   border-color: #fca5a5;
+  transform: rotate(-5deg);
 }
 .section-abyss .card-metric.good-side {
   background-color: var(--slate-900);
