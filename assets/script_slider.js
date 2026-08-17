@@ -9,6 +9,8 @@ clientes.forEach(logo => {
             link = 'https://sevdesign.github.io/LinkPage-PsiSandyBraga/';
         else if (logo.dataset.target == 'nutri')
             link = 'https://sevdesign.github.io/AragaoNutri/';
+        else if (logo.dataset.target == 'kids')
+            link = 'https://sevdesign.github.io/Monte-Castelo-Links/';
         else
             link = null;
 
