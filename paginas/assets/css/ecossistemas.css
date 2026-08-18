@@ -430,4 +430,8 @@
   100% {
     transform: translateY(0px);
   }
+}
+/* CORREÇÕES DE ACESSIBILIDADE */
+.text-secondary-sev {
+  color: #495057 !important;
 }/*# sourceMappingURL=ecossistemas.css.map */

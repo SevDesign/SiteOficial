@@ -398,3 +398,9 @@
     50% { transform: translateY(-20px); }
     100% { transform: translateY(0px); }
 }
+
+/* CORREÇÕES DE ACESSIBILIDADE */
+
+.text-secondary-sev  {
+    color: #495057 !important;
+}

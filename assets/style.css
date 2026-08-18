@@ -756,4 +756,8 @@ html.lenis, html.lenis body {
   .ebook-mockup span {
     transform: translateX(0) !important;
   }
+}
+/* CORREÇÕES DE ACESSIBILIDADE */
+.text-secondary-sev {
+  color: #495057 !important;
 }/*# sourceMappingURL=style.css.map */
