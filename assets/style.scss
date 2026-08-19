@@ -193,30 +193,30 @@ $transition-speed: 0.4s;
         padding: 1rem 1.5rem;
         background-color: white;
         color: #444;
-        border: 1px solid transparent; // Borda invisível para não dar "pulo" no hover
+        border: 1px solid transparent;
         border-radius: 0.75rem;
         font-weight: 600;
         text-align: left;
         font-size: 1.1rem;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); // Sombra bem sutil
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         text-decoration: none;
         cursor: pointer;
 
         &:hover {
-          transform: translateX(10px); // O botão "sai" levemente para a direita
+          transform: translateX(10px);
           color: #000;
           box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
 
         &.active {
           background-color: #fff;
-          border-color: #3461ae; // Cor de destaque (ex: Azul Bootstrap)
+          border-color: #3461ae;
           color: #4a7dd6;
           font-weight: 700;
           box-shadow: 0 10px 20px rgba(13, 110, 253, 0.15);
           
-          // Uma barrinha lateral para dar charme
+         
           &::before {
             content: '';
             width: 4px;
@@ -269,7 +269,7 @@ $transition-speed: 0.4s;
         height: 65px;
         width: auto;
         margin: 0 50px;
-        filter: grayscale(90%);
+        filter: grayscale(50%);
         opacity: 0.4;
         transition: opacity 0.3s ease;
         cursor: pointer;
@@ -289,13 +289,13 @@ $transition-speed: 0.4s;
     height: 450px;
     border-radius: 1.5rem;
     overflow: hidden;
-    background: #000; // Fundo preto para as imagens translúcidas ficarem legíveis
+    background: #000;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.7; // Começa um pouco translúcida como você pediu
+      opacity: 0.7;
       transition: all $transition-speed ease;
     }
 
@@ -306,14 +306,14 @@ $transition-speed: 0.4s;
       align-items: center;
       justify-content: center;
       padding: 2rem;
-      background: rgba(0, 0, 0, 0.2); // Sombra suave sobre a imagem
+      background: rgba(0, 0, 0, 0.2);
       transition: background 0.3s ease;
 
       .glass-header {
         text-align: center;
         padding: 1.5rem;
         background: $glass-bg;
-        backdrop-filter: blur(12px); // O efeito de vidro
+        backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         border: 1px solid $glass-border;
         border-radius: 1.25rem;
@@ -330,7 +330,7 @@ $transition-speed: 0.4s;
 
         .view-more {
           font-size: 0.85rem;
-          opacity: 0; // Escondido inicialmente
+          opacity: 0;
           display: block;
           transition: all 0.3s ease;
           transform: translateY(10px);
@@ -342,18 +342,18 @@ $transition-speed: 0.4s;
     &:hover {
       img {
         transform: scale(1.05);
-        opacity: 0.9; // A imagem fica mais nítida ao focar
+        opacity: 0.9;
       }
 
       .card-overlay {
-        background: rgba(0, 0, 0, 0.1); // Clareia o fundo para destacar a imagem
+        background: rgba(0, 0, 0, 0.1);
 
         .glass-header {
-          transform: translateY(-10px); // Sobe levemente o card de vidro
+          transform: translateY(-10px);
           
           .view-more {
             opacity: 1;
-            transform: translateY(0); // Revela o "Ver Projetos"
+            transform: translateY(0);
           }
         }
       }
@@ -394,7 +394,7 @@ $transition-speed: 0.4s;
       right: 0;
       width: 45%;
       z-index: 2;
-      border: 8px solid #fff; // Cria um respiro entre as imagens
+      border: 8px solid #fff;
     }
   }
 
@@ -506,7 +506,7 @@ $transition-speed: 0.4s;
   .accordion-item {
     border: 1px solid rgba(0, 0, 0, 0.1) !important;
     margin-bottom: 1rem;
-    border-radius: 1rem !important; // Força o arredondamento em todas as pontas
+    border-radius: 1rem !important;
     background-color: #fff;
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
 
@@ -523,9 +523,9 @@ $transition-speed: 0.4s;
     color: #333;
     background-color: transparent !important;
     border-radius: 1rem !important;
-    box-shadow: none !important; // Remove o brilho azul de foco do Bootstrap
+    box-shadow: none !important;
     
-    // Quando o item está aberto (NÃO colapsado)
+   
     &:not(.collapsed) {
       color: #4a7dd6;
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -533,12 +533,12 @@ $transition-speed: 0.4s;
       border-bottom-right-radius: 0 !important;
 
       &::after {
-        // Muda a cor do ícone de seta quando aberto
+       
         filter: hue-rotate(150deg); 
       }
     }
 
-    // Ajuste do ícone de seta
+   
     &::after {
       background-size: 1.2rem;
       transition: transform 0.3s ease;
@@ -547,7 +547,7 @@ $transition-speed: 0.4s;
 
   .accordion-collapse {
     border: none;
-    // Garante que o conteúdo seja exibido corretamente durante e após a animação
+   
     &.show {
       visibility: visible;
     }
@@ -555,7 +555,7 @@ $transition-speed: 0.4s;
 
   .accordion-body {
     padding: 1.5rem;
-    color: #666; // Cor do texto secundário
+    color: #666;
     line-height: 1.6;
     background-color: #fcfcfc;
   }
@@ -638,13 +638,13 @@ $transition-speed: 0.4s;
   }
   to {
     opacity: 0;
-    transform: translateY(-20px); // Sobe sumindo
+    transform: translateY(-20px);
   }
 }
 
 @keyframes float {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); } // Flutua para cima
+    50% { transform: translateY(-15px); }
     100% { transform: translateY(0px); }
 }
 
