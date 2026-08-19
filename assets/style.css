@@ -233,6 +233,7 @@ html.lenis, html.lenis body {
 }
 .portfolio-presentation .logo-slider .logo-track img {
   height: 65px;
+  width: auto;
   margin: 0 50px;
   filter: grayscale(90%);
   opacity: 0.4;
