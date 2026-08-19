@@ -46,23 +46,19 @@ $transition-speed: 0.4s;
   height: 75vh;
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    background-image: url("../imagens/branding/faxada_da_empresa_2k.webp");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    opacity: 0.1;
-    z-index: -1;
-    pointer-events: none;
+  .hero-bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;      /* Faz a imagem preencher todo o espaço sem distorcer */
+      object-position: center; /* Centraliza o corte da imagem */
+      opacity: 0.1;
+      z-index: -1;             /* Joga a imagem para trás dos textos */
+      pointer-events: none;    /* Impede que o usuário consiga clicar ou arrastar a imagem */
   }
-  
+
   .main-view {
     height: 58vh;
     overflow: hidden;
