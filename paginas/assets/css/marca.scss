@@ -264,3 +264,14 @@
 }
 
 input::placeholder { color: var(--slate-500) !important; }
+
+
+/* CORREÇÕES DE ACESSIBILIDADE */
+
+.text-success-sev  {
+    color: #198754 !important;
+}
+
+.text-danger-sev  {
+    color: #dc2739 !important;
+}
