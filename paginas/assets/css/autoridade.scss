@@ -7,7 +7,7 @@
     --cine-gray:  #1e1e1e;
     --cine-light: #2a2a2a;
     --brand-primary: #0d6efd;
-    --input-placeholder: #9a9da1;
+    --input-placeholder: #abaeb2;
 
     /* Padronização de Espaçamento */
     --pad-section-mobile: 5rem;
@@ -117,3 +117,9 @@ html, body { display: flex; flex-direction: column;}
 }
 
 input::placeholder { color: var(--input-placeholder) !important; font-size: 1.1rem; }
+
+/* CORREÇÕES DE ACESSIBILIDADE */
+
+.text-primary-sev {
+    color: #3fc2ff !important;
+}
