@@ -56,7 +56,6 @@ html.lenis, html.lenis body {
 }
 .hero .main-view {
   height: 58vh;
-  overflow: hidden;
 }
 .hero .main-view .hero-default {
   display: block;

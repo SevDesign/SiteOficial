@@ -14,7 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(raf);
 
     // 2. Lógica da Hero (Simplificada)
-    const heroHeight = () => window.innerHeight * 0.75; // 75vh
+    const heroHeight = () => document.querySelector('.hero').offsetHeight;
+    const heroHeight2 = document.querySelector('.hero').offsetHeight;
+    console.log('Altura da Hero (JS):', heroHeight2);
     let isTransitioning = false;
 
     window.addEventListener('wheel', (e) => {
