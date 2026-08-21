@@ -36,6 +36,8 @@ html.lenis, html.lenis body {
   background-color: #ececec;
   overflow: hidden;
   height: 75vh;
+  min-height: -moz-max-content;
+  min-height: max-content;
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 .hero .hero-bg-img {
@@ -227,7 +229,7 @@ html.lenis, html.lenis body {
   align-items: center;
   width: -moz-max-content;
   width: max-content;
-  animation: scroll 12s linear infinite;
+  animation: scroll 18s linear infinite;
 }
 .portfolio-presentation .logo-slider .logo-track img {
   height: 65px;

@@ -44,6 +44,7 @@ $transition-speed: 0.4s;
   background-color: #ececec;
   overflow: hidden;
   height: 75vh;
+  min-height: max-content;
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 
   .hero-bg-img {
@@ -263,7 +264,7 @@ $transition-speed: 0.4s;
       display: flex;
       align-items: center;
       width: max-content;
-      animation: scroll 12s linear infinite;
+      animation: scroll 18s linear infinite;
 
       img {
         height: 65px;
