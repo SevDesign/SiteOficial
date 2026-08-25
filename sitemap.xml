@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Página Inicial (Home) -->
+  <url>
+    <loc>https://sevdesign.github.io/SiteOficial/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Subpágina: Ecossistemas -->
+  <url>
+    <loc>https://sevdesign.github.io/SiteOficial/paginas/ecossistemas_digitais.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Subpágina: Performance -->
+  <url>
+    <loc>https://sevdesign.github.io/SiteOficial/paginas/performace_de_marca.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Subpágina: Autoridade -->
+  <url>
+    <loc>https://sevdesign.github.io/SiteOficial/paginas/producao_de_autoridade.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
