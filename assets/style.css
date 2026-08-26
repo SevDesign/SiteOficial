@@ -722,9 +722,6 @@ html.lenis, html.lenis body {
   .contact-diagnostic {
     padding: 3rem 2rem;
   }
-  .contact-diagnostic .container-diagnostic h2 {
-    font-size: 1.6rem;
-  }
   .contact-diagnostic .container-diagnostic p {
     font-size: 1rem;
   }
