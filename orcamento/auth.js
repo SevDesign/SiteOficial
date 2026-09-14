@@ -16,7 +16,8 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         'botike': 'boutique.html',
         'roupa': 'boutique.html',
         'moda': 'boutique.html',
-        'moda fermina': 'boutique.html'
+        'moda fermina': 'boutique.html',
+        'poker': 'boutique.html'
     };
 
     if (rotas[inputValue]) {
