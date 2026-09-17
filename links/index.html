@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Links oficiais da Agência. Solicite seu orçamento ou acesse nosso portfólio.">
+    <title>Links | Agência SevMarket</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HQE2S23LQJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HQE2S23LQJ');
+    </script>
+
+    <!-- Bootstrap 5 & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* ==========================================================================
+           VARIÁVEIS E BASE (IDENTIDADE PREMIUM)
+           ========================================================================== */
+        :root {
+            --bg-color: #0b1120;
+            --bg-glow: #1a2235;
+            --text-primary: #ffffff;
+            --text-muted: #a0aec0;
+            --accent-color: #4a7dd6; /* O azul que você usou no preloader */
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background: var(--bg-color);
+            background-image: radial-gradient(circle at top, var(--bg-glow), var(--bg-color) 70%);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Previne o bounce effect feio do iOS no scroll */
+            overscroll-behavior-y: none; 
+        }
+
+        .links-container {
+            width: 100%;
+            max-width: 480px; /* Largura ideal para simular tela de celular */
+            padding: 2rem 1.5rem;
+            margin: 0 auto;
+        }
+
+        /* ==========================================================================
+           COMPONENTES VISUAIS
+           ========================================================================== */
+        .profile-img {
+            width: 96px;
+            height: 96px;
+            object-fit: contain;
+            border-radius: 50%;
+            padding: 8px;
+            background: radial-gradient(circle, #ffffff, #242e3f);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1rem;
+        }
+
+        .agency-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.25rem;
+        }
+
+        .agency-bio {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.5;
+        }
+
+        /* Os Botões / Links */
+        .link-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 1.25rem 1rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        .link-card i {
+            position: absolute;
+            left: 1.5rem;
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+
+        /* Botão Destaque (WhatsApp) */
+        .link-card.highlight {
+            background: rgba(74, 125, 214, 0.1);
+            border-color: rgba(74, 125, 214, 0.4);
+            color: #fff;
+        }
+        
+        .link-card.highlight i {
+            color: var(--accent-color);
+        }
+
+        /* Efeitos de Hover */
+        .link-card:hover, .link-card:active {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
+        }
+
+        .link-card.highlight:hover {
+            background: var(--accent-color);
+            box-shadow: 0 10px 25px rgba(74, 125, 214, 0.4);
+            border-color: var(--accent-color);
+        }
+
+        .link-card.highlight:hover i {
+            color: #fff;
+        }
+
+        /* Rodapé Redes Sociais */
+        .social-row {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--text-primary);
+            transform: scale(1.1);
+        }
+
+        /* ==========================================================================
+           ANIMAÇÕES DE ENTRADA (CASCATA)
+           ========================================================================== */
+        .animate-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="links-container text-center">
+        
+        <!-- Cabeçalho de Perfil -->
+        <header class="animate-up" style="animation-delay: 0.1s;">
+            <!-- Substitua pelo caminho real da sua logo -->
+            <img src="../imagens/branding/logo_preloader.webp" alt="Logo SevMarket" class="profile-img" width="96" height="96">
+            <h1 class="agency-name">Marketing e Acessoria</h1>
+            <p class="agency-bio">Sua imagem na tela dita o valor do seu contrato na mesa. Direção visual para marcas premium.</p>
+        </header>
+
+        <nav>
+            <a href="https://wa.me/5588994654939?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20produção%20de%20autoridade." target="_blank" rel="noopener noreferrer" class="link-card highlight animate-up track-click" style="animation-delay: 0.2s;">
+                <i class="bi bi-whatsapp"></i>
+                Falar no WhatsApp
+            </a>
+
+            <a href="../orcamento/index.html" class="link-card animate-up track-click" style="animation-delay: 0.3s;">
+                <i class="bi bi-file-earmark-text"></i>
+                Visualizar Orçamento
+            </a>
+
+            <a href="../index.html" class="link-card animate-up track-click" style="animation-delay: 0.4s;">
+                <i class="bi bi-globe"></i>
+                Acessar Site Completo
+            </a>
+            
+            <a href="https://wa.me/5588994654939?text=Olá,%20gostaria%20de%20de%20solicitar%20uma%20consultoria%20gratuita." target="_blank" rel="noopener noreferrer" class="link-card animate-up track-click" style="animation-delay: 0.5s;">
+                <i class="bi bi-headset"></i>
+                Consultoria Gratuita
+            </a>
+        </nav>
+
+        <footer class="social-row animate-up" style="animation-delay: 0.6s;">
+            <a href="https://www.instagram.com/sev.market_/" target="_blank" rel="noopener noreferrer" class="social-link track-click" aria-label="Instagram" title="sev.market_">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="mailto:sevdesign7@gmail.com" class="social-link track-click" aria-label="E-mail" title="sevdesign7@gmail.com">
+                <i class="bi bi-envelope"></i>
+            </a>
+        </footer>
+
+    </main>
+
+    <script>
+        document.querySelectorAll('.track-click').forEach(button => {
+            button.addEventListener('click', function() {
+                const buttonName = this.innerText.trim();
+                // Dispara a informação direto para o seu painel do Google
+                gtag('event', 'click_bio_link', {
+                    'link_name': buttonName,
+                    'link_url': this.href
+                });
+            });
+        });
+    </script>
+</body>
+</html>
