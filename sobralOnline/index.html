@@ -1,181 +1,490 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobral Online - Links Oficiais</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Sobral Online • Central Oficial de Links</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              red: '#D31118',
+              darkRed: '#9E0B10',
+              crimson: '#C8102E',
+              bg: '#0E0E11',
+              card: '#18181D',
+              cardHover: '#222229',
+              border: '#2A2A33'
+            }
+          },
+          animation: {
+            'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'shimmer': 'shimmer 2.5s infinite linear',
+          },
+          keyframes: {
+            shimmer: {
+              '0%': { transform: 'translateX(-100%)' },
+              '100%': { transform: 'translateX(100%)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
     body {
-      background-color: #7b7b7b;
-      display: flex;
-      justify-content: center;
-      padding: 24px 16px;
-      color: #333;
+      background-color: #0E0E11;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(211, 17, 24, 0.22) 0%, rgba(14, 14, 17, 0) 55%),
+        radial-gradient(circle at 90% 30%, rgba(200, 16, 46, 0.08) 0%, rgba(14, 14, 17, 0) 40%);
+      background-attachment: fixed;
+      -webkit-tap-highlight-color: transparent;
     }
-    .container {
-      width: 100%;
-      max-width: 480px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+
+    /* Efeito de brilho no anel de story */
+    .story-ring {
+      background: linear-gradient(135deg, #FF2A32 0%, #D31118 50%, #ff7b00 100%);
+      padding: 3px;
     }
-    .profile-img {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 16px;
+
+    /* Botão principal com brilho sutil passando */
+    .cta-primary {
+      background: linear-gradient(135deg, #E31820 0%, #9E0B10 100%);
+      box-shadow: 0 10px 25px -5px rgba(211, 17, 24, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.12) inset;
     }
-    .handle {
-      color: #fff;
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 8px;
+    .cta-primary:active {
+      transform: scale(0.985);
     }
-    .bio {
-      color: #f1f1f1;
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-      line-height: 1.4;
+
+    /* Microinteração nos cards */
+    .interactive-card {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .social-links {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .social-links a {
-      color: #fff;
-      font-size: 1.4rem;
-      text-decoration: none;
-      transition: transform 0.2s ease;
-    }
-    .social-links a:hover {
-      transform: scale(1.15);
-    }
-    .banner-card {
-      width: 100%;
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-    .banner-card img {
-      width: 100%;
-      display: block;
-    }
-    .banner-card p {
-      padding: 12px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #444;
-    }
-    .links-list {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .link-item {
-      display: flex;
-      align-items: center;
-      background: #fff;
-      color: #333;
-      text-decoration: none;
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .link-item:hover {
+    .interactive-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      border-color: rgba(211, 17, 24, 0.45);
+      box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.6);
     }
-    .link-item img {
-      width: 44px;
-      height: 44px;
-      border-radius: 6px;
-      object-fit: cover;
-      margin-right: 12px;
+    .interactive-card:active {
+      transform: scale(0.98);
     }
-    .link-item.center-text {
-      justify-content: center;
-      padding: 16px;
+
+    /* Scrollbar oculta para visual de app */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0E0E11;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2A2A33;
+      border-radius: 4px;
     }
   </style>
 </head>
-<body>
+<body class="text-white antialiased min-h-screen flex flex-col items-center justify-start py-6 px-4 select-none">
 
-  <div class="container">
-    <!-- Imagem de Perfil -->
-    <img src="URL_DA_LOGO_DO_SOBRAL_ONLINE" alt="Sobral Online" class="profile-img">
-
-    <div class="handle">@sobralonline</div>
-    <p class="bio">Seja bem-vindo ao Sobral Online, clique nos links abaixo para falar conosco 😃 🚀</p>
-
-    <!-- Redes Sociais -->
-    <div class="social-links">
-      <a href="URL_FACEBOOK" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-      <a href="URL_INSTAGRAM" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-      <a href="URL_WHATSAPP_GERAL" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-      <a href="mailto:contato@sobralonline.com.br"><i class="fa-regular fa-envelope"></i></a>
-      <a href="URL_X" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-      <a href="URL_THREADS" target="_blank"><i class="fa-brands fa-threads"></i></a>
-      <a href="URL_TIKTOK" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-    </div>
-
-    <!-- Banner Destaque (Ex: Corrida) -->
-    <a href="URL_INSCRICAO_CORRIDA" target="_blank" class="banner-card">
-      <img src="URL_IMAGEM_BANNER_CORRIDA" alt="Sobral Online Run">
-      <p>Faça sua inscrição para a 1ª Edição do Sobral Online Run</p>
-    </a>
-
-    <!-- Lista de Links -->
-    <div class="links-list">
-      <a href="https://sobralonline.com.br" target="_blank" class="link-item center-text">
-        Acesse nosso site
-      </a>
-
-      <a href="https://wa.me/NUMERO_JONAS" target="_blank" class="link-item">
-        <img src="URL_FOTO_JONAS" alt="Jonas Deison">
-        <span>Fale com o repórter Jonas Deison - Sobral e região</span>
-      </a>
-
-      <a href="https://wa.me/NUMERO_WIILIAM" target="_blank" class="link-item">
-        <img src="URL_FOTO_WIILIAM" alt="Wiiliam Brenner">
-        <span>Fale com o repórter Wiiliam Brenner - Ibiapaba</span>
-      </a>
-
-      <a href="https://wa.me/NUMERO_MIKAEL" target="_blank" class="link-item">
-        <img src="URL_FOTO_MIKAEL" alt="Mikael">
-        <span>Fale com o repórter Mikael - Sobral</span>
-      </a>
-
-      <a href="https://wa.me/NUMERO_DUDUZINHO" target="_blank" class="link-item">
-        <img src="URL_FOTO_DUDUZINHO" alt="Duduzinho">
-        <span>Fale com o repórter Duduzinho - Itapipoca</span>
-      </a>
-
-      <a href="https://wa.me/NUMERO_COMERCIAL" target="_blank" class="link-item center-text">
-        Comercial
-      </a>
+  <!-- Toast de Notificação (Feedback de Demonstração) -->
+  <div id="demo-toast" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 -translate-y-4 transition-all duration-300 w-[92%] max-w-[400px]">
+    <div class="bg-zinc-900/95 backdrop-blur-md border border-red-500/40 text-white px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3">
+      <div class="w-8 h-8 rounded-full bg-red-600/20 border border-red-500/40 flex items-center justify-center shrink-0 text-red-400">
+        <i class="fa-solid fa-bolt text-sm"></i>
+      </div>
+      <div class="flex-1 min-w-0">
+        <p id="toast-title" class="text-xs font-bold text-red-400 uppercase tracking-wider">Protótipo Interativo</p>
+        <p id="toast-desc" class="text-xs text-zinc-200 truncate">Link de demonstração pronto para integração.</p>
+      </div>
     </div>
   </div>
 
+  <!-- Container Principal Mobile-First (App Shell) -->
+  <main class="w-full max-w-[440px] flex flex-col items-center">
+
+    <!-- 1. HEADER DE AUTORIDADE -->
+    <header class="w-full flex flex-col items-center text-center mb-6">
+      
+      <!-- Badge Ao Vivo -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/60 border border-red-500/30 backdrop-blur-sm mb-5 shadow-sm">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+        </span>
+        <span class="text-[11px] font-display font-bold tracking-wider uppercase text-red-200">
+          AO VIVO • PORTAL OFICIAL DA ZONA NORTE
+        </span>
+      </div>
+
+      <!-- Logo Estilizada com Anel de Story -->
+      <div class="relative mb-3.5 group cursor-pointer" onclick="triggerDemo('Stories Recentes • Sobral Online')">
+        <div class="story-ring rounded-full w-24 h-24 flex items-center justify-center shadow-xl shadow-red-950/50 transition-transform duration-300 group-hover:scale-105">
+          <div class="w-full h-full rounded-full bg-[#D31118] border-[3px] border-[#0E0E11] flex items-center justify-center relative overflow-hidden">
+            <!-- Brilho de fundo da logo -->
+            <div class="absolute -top-6 -left-6 w-16 h-16 bg-white/15 rounded-full blur-md"></div>
+            <!-- SVG Customizado da Marca (Balão + S estilizado) -->
+            <svg class="w-14 h-14 text-white drop-shadow" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 12C29.0132 12 12 28.5655 12 49C12 69.4345 29.0132 86 50 86C58.282 86 65.9488 83.4184 72.2225 79.0247L85.5 84.5L80.5621 71.538C85.2528 65.2498 88 57.4508 88 49C88 28.5655 70.9868 12 50 12Z" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M60 36C60 36 55.5 31 47.5 31C39.5 31 35 35.5 35 41C35 51 63 47 63 59.5C63 66 56.5 70 48 70C39.5 70 34 64.5 34 64.5" stroke="white" stroke-width="8.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <!-- Mini Badge "24h" no canto do avatar -->
+        <span class="absolute -bottom-1 right-0 bg-zinc-900 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-zinc-700 shadow">
+          24h
+        </span>
+      </div>
+
+      <!-- Nome + Selo Verificado -->
+      <div class="flex items-center justify-center gap-1.5 mb-0.5">
+        <h1 class="font-display text-2xl font-extrabold tracking-tight text-white">
+          Sobral Online
+        </h1>
+        <!-- Selo Azul Verificado Oficial -->
+        <svg class="w-5 h-5 text-[#0095F6] shrink-0" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"/>
+        </svg>
+      </div>
+
+      <p class="text-xs font-medium text-zinc-400 mb-3">@sobralonline • CEO @jonasdeison</p>
+
+      <!-- Prova Social -->
+      <div class="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-300 mb-5">
+        <span class="flex items-center gap-1.5 font-semibold text-white">
+          <i class="fa-solid fa-users text-red-500 text-[11px]"></i> +715 mil seguidores
+        </span>
+        <span class="text-zinc-600">•</span>
+        <span class="flex items-center gap-1 text-zinc-300">
+          <i class="fa-solid fa-bolt text-amber-400 text-[11px]"></i> Jornalismo 24h
+        </span>
+      </div>
+
+      <!-- Barra de Redes Sociais -->
+      <div class="flex items-center justify-center gap-2.5 flex-wrap">
+        <button onclick="triggerDemo('Instagram Oficial (@sobralonline)')" aria-label="Instagram" class="w-10 h-10 rounded-full bg-brand-card hover:bg-brand-red border border-brand-border hover:border-red-500 flex items-center justify-center text-zinc-200 hover:text-white transition-all duration-200 active:scale-90">
+          <i class="fa-brands fa-instagram text-base"></i>
+        </button>
+        <button onclick="triggerDemo('Facebook • Sobral Online')" aria-label="Facebook" class="w-10 h-10 rounded-full bg-brand-card hover:bg-brand-red border border-brand-border hover:border-red-500 flex items-center justify-center text-zinc-200 hover:text-white transition-all duration-200 active:scale-90">
+          <i class="fa-brands fa-facebook-f text-sm"></i>
+        </button>
+        <button onclick="triggerDemo('Plantão Geral no WhatsApp')" aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-brand-card hover:bg-emerald-600 border border-brand-border hover:border-emerald-500 flex items-center justify-center text-zinc-200 hover:text-white transition-all duration-200 active:scale-90">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+        </button>
+        <button onclick="triggerDemo('TikTok Oficial (@sobralonline)')" aria-label="TikTok" class="w-10 h-10 rounded-full bg-brand-card hover:bg-brand-red border border-brand-border hover:border-red-500 flex items-center justify-center text-zinc-200 hover:text-white transition-all duration-200 active:scale-90">
+          <i class="fa-brands fa-tiktok text-sm"></i>
+        </button>
+        <button onclick="triggerDemo('X / Twitter (@sobralonline)')" aria-label="X" class="w-10 h-10 rounded-full bg-brand-card hover:bg-brand-red border border-brand-border hover:border-red-500 flex items-center justify-center text-zinc-200 hover:text-white transition-all duration-200 active:scale-90">
+          <i class="fa-brands fa-x-twitter text-sm"></i>
+        </button>
+        <button onclick="triggerDemo('Threads (@sobralonline)')" aria-label="Threads" class="w-10 h-10 rounded-full bg-brand-card hover:bg-brand-red border border-brand-border hover:border-red-500 flex items-center justify-center text-zinc-200 hover:text-white transition-all duration-200 active:scale-90">
+          <i class="fa-brands fa-threads text-base"></i>
+        </button>
+        <button onclick="triggerDemo('E-mail da Redação')" aria-label="E-mail" class="w-10 h-10 rounded-full bg-brand-card hover:bg-brand-red border border-brand-border hover:border-red-500 flex items-center justify-center text-zinc-200 hover:text-white transition-all duration-200 active:scale-90">
+          <i class="fa-regular fa-envelope text-sm"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- 2. CTA PRINCIPAL EM DESTAQUE (PORTAL DE NOTÍCIAS) -->
+    <section class="w-full mb-5">
+      <button onclick="triggerDemo('Redirecionando para sobralonline.com.br')" class="cta-primary w-full rounded-2xl p-4 text-left relative overflow-hidden group transition-all duration-300">
+        <!-- Efeito Shimmer de Luz -->
+        <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent group-hover:animate-shimmer pointer-events-none"></div>
+        
+        <div class="flex items-center justify-between gap-3.5 relative z-10">
+          <div class="w-12 h-12 rounded-xl bg-black/25 border border-white/15 flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-newspaper text-xl text-white"></i>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-1.5 mb-0.5">
+              <span class="text-[10px] font-extrabold uppercase tracking-wider bg-white/20 text-white px-2 py-0.5 rounded">
+                MATÉRIAS COMPLETAS
+              </span>
+            </div>
+            <h2 class="font-display font-bold text-base text-white leading-snug truncate">
+              Acessar Portal de Notícias
+            </h2>
+            <p class="text-xs text-red-100/90 truncate">
+              Últimas notícias de Sobral e Região em tempo real
+            </p>
+          </div>
+          <div class="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center shrink-0 group-hover:translate-x-1 transition-transform">
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-white"></i>
+          </div>
+        </div>
+      </button>
+    </section>
+
+    <!-- 3. CARD DE EVENTO EM DESTAQUE (SOBRAL ONLINE RUN) -->
+    <section class="w-full mb-6">
+      <div onclick="triggerDemo('Página de Inscrição • 1ª Sobral Online Run')" class="interactive-card cursor-pointer w-full rounded-2xl bg-brand-card border border-brand-border overflow-hidden shadow-lg group">
+        <div class="relative h-40 w-full overflow-hidden bg-zinc-900">
+          <img 
+            src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=900&q=80" 
+            alt="1ª Edição Sobral Online Run" 
+            onerror="this.src='https://placehold.co/800x400/9E0B10/FFFFFF?text=Sobral+Online+Run'"
+            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-85"
+          >
+          <!-- Overlay Gradiente -->
+          <div class="absolute inset-0 bg-gradient-to-t from-[#18181D] via-[#18181D]/40 to-transparent"></div>
+          
+          <!-- Tag Superior -->
+          <div class="absolute top-3 left-3 flex items-center gap-1.5 bg-brand-red text-white text-[10px] font-display font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md shadow-md">
+            <i class="fa-solid fa-person-running"></i> INSCRIÇÕES ABERTAS
+          </div>
+
+          <!-- Tag Kit Atleta -->
+          <div class="absolute top-3 right-3 bg-black/60 backdrop-blur-md border border-white/15 text-zinc-200 text-[10px] font-semibold px-2.5 py-1 rounded-md">
+            Kit Camisa + Medalha
+          </div>
+
+          <!-- Título sobre a imagem -->
+          <div class="absolute bottom-2.5 left-3.5 right-3.5">
+            <h3 class="font-display font-extrabold text-lg text-white leading-tight drop-shadow">
+              1ª Edição Sobral Online Run
+            </h3>
+            <p class="text-xs text-zinc-300">
+              Garanta seu kit oficial no maior evento esportivo da região
+            </p>
+          </div>
+        </div>
+
+        <div class="px-4 py-3 bg-brand-card flex items-center justify-between border-t border-white/5">
+          <span class="text-xs font-semibold text-zinc-300 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Vagas limitadas por lote
+          </span>
+          <span class="text-xs font-display font-bold text-red-400 group-hover:text-red-300 flex items-center gap-1.5">
+            Garantir Minha Inscrição <i class="fa-solid fa-arrow-right text-[11px] group-hover:translate-x-1 transition-transform"></i>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SEÇÃO: PLANTÃO DE JORNALISMO (FALE COM UM REPÓRTER) -->
+    <section class="w-full mb-6">
+      <div class="flex items-center justify-between px-1 mb-3">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-tower-broadcast text-brand-red text-sm"></i>
+          <h2 class="font-display font-bold text-xs uppercase tracking-wider text-zinc-300">
+            Plantão de Jornalismo • Envie sua Pauta
+          </h2>
+        </div>
+        <span class="text-[11px] text-emerald-400 font-medium flex items-center gap-1">
+          <i class="fa-brands fa-whatsapp"></i> Online
+        </span>
+      </div>
+
+      <div class="flex flex-col gap-2.5">
+        
+        <!-- Repórter 1: Jonas Deison -->
+        <button onclick="triggerDemo('WhatsApp • Repórter Jonas Deison (Sobral e Região)')" class="interactive-card w-full bg-brand-card hover:bg-brand-cardHover border border-brand-border rounded-2xl p-3 flex items-center gap-3.5 text-left group">
+          <div class="relative shrink-0">
+            <img 
+              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" 
+              alt="Jonas Deison"
+              onerror="this.src='https://placehold.co/100x100/D31118/FFFFFF?text=JD'"
+              class="w-13 h-13 w-[52px] h-[52px] rounded-xl object-cover border border-white/10"
+            >
+            <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-emerald-500 border-2 border-brand-card rounded-full"></span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-1.5 mb-0.5">
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-red-500/15 text-red-400 border border-red-500/20">
+                Sobral e Região
+              </span>
+              <span class="text-[10px] text-zinc-400 font-medium">• Direção / Plantão</span>
+            </div>
+            <h3 class="font-display font-bold text-sm text-white truncate">
+              Repórter Jonas Deison
+            </h3>
+            <p class="text-xs text-zinc-400 truncate">
+              Enviar denúncia, vídeo ou flagrante agora
+            </p>
+          </div>
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/25 group-hover:bg-emerald-500 group-hover:text-white text-emerald-400 flex items-center justify-center shrink-0 transition-colors">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+          </div>
+        </button>
+
+        <!-- Repórter 2: Wiiliam Brenner -->
+        <button onclick="triggerDemo('WhatsApp • Repórter Wiiliam Brenner (Ibiapaba)')" class="interactive-card w-full bg-brand-card hover:bg-brand-cardHover border border-brand-border rounded-2xl p-3 flex items-center gap-3.5 text-left group">
+          <div class="relative shrink-0">
+            <img 
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" 
+              alt="Wiiliam Brenner"
+              id="img-wiiliam"
+              class="w-[52px] h-[52px] rounded-xl object-cover border border-white/10 hidden"
+            >
+            <img 
+              src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80" 
+              alt="Wiiliam Brenner"
+              onerror="this.src='https://placehold.co/100x100/D31118/FFFFFF?text=WB'"
+              class="w-[52px] h-[52px] rounded-xl object-cover border border-white/10"
+            >
+            <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-emerald-500 border-2 border-brand-card rounded-full"></span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-1.5 mb-0.5">
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 border border-zinc-700">
+                Serra da Ibiapaba
+              </span>
+            </div>
+            <h3 class="font-display font-bold text-sm text-white truncate">
+              Repórter Wiiliam Brenner
+            </h3>
+            <p class="text-xs text-zinc-400 truncate">
+              Fale direto com a cobertura na Serra
+            </p>
+          </div>
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/25 group-hover:bg-emerald-500 group-hover:text-white text-emerald-400 flex items-center justify-center shrink-0 transition-colors">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+          </div>
+        </button>
+
+        <!-- Repórter 3: Mikael -->
+        <button onclick="triggerDemo('WhatsApp • Repórter Mikael (Sobral)')" class="interactive-card w-full bg-brand-card hover:bg-brand-cardHover border border-brand-border rounded-2xl p-3 flex items-center gap-3.5 text-left group">
+          <div class="relative shrink-0">
+            <img 
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" 
+              alt="Repórter Mikael"
+              onerror="this.src='https://placehold.co/100x100/D31118/FFFFFF?text=MK'"
+              class="w-[52px] h-[52px] rounded-xl object-cover border border-white/10"
+            >
+            <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-emerald-500 border-2 border-brand-card rounded-full"></span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-1.5 mb-0.5">
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 border border-zinc-700">
+                Sobral • Cobertura Local
+              </span>
+            </div>
+            <h3 class="font-display font-bold text-sm text-white truncate">
+              Repórter Mikael
+            </h3>
+            <p class="text-xs text-zinc-400 truncate">
+              Ocorrências e informações nos bairros
+            </p>
+          </div>
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/25 group-hover:bg-emerald-500 group-hover:text-white text-emerald-400 flex items-center justify-center shrink-0 transition-colors">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+          </div>
+        </button>
+
+        <!-- Repórter 4: Duduzinho -->
+        <button onclick="triggerDemo('WhatsApp • Repórter Duduzinho (Itapipoca)')" class="interactive-card w-full bg-brand-card hover:bg-brand-cardHover border border-brand-border rounded-2xl p-3 flex items-center gap-3.5 text-left group">
+          <div class="relative shrink-0">
+            <img 
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" 
+              alt="Repórter Duduzinho"
+              onerror="this.src='https://placehold.co/100x100/D31118/FFFFFF?text=DZ'"
+              class="w-[52px] h-[52px] rounded-xl object-cover border border-white/10"
+            >
+            <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-emerald-500 border-2 border-brand-card rounded-full"></span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-1.5 mb-0.5">
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 border border-zinc-700">
+                Itapipoca e Região
+              </span>
+            </div>
+            <h3 class="font-display font-bold text-sm text-white truncate">
+              Repórter Duduzinho
+            </h3>
+            <p class="text-xs text-zinc-400 truncate">
+              Plantão regional e cobertura de eventos
+            </p>
+          </div>
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/25 group-hover:bg-emerald-500 group-hover:text-white text-emerald-400 flex items-center justify-center shrink-0 transition-colors">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+          </div>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- 5. SEÇÃO COMERCIAL / ANUNCIE -->
+    <section class="w-full mb-8">
+      <button onclick="triggerDemo('WhatsApp • Setor Comercial & Mídia Kit')" class="interactive-card w-full rounded-2xl p-4 text-left relative overflow-hidden bg-gradient-to-br from-zinc-900 via-[#1B1618] to-zinc-900 border border-amber-500/30 shadow-lg group">
+        <!-- Detalhe luminoso dourado/vermelho -->
+        <div class="absolute -right-8 -top-8 w-28 h-28 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="flex items-center justify-between gap-3.5 relative z-10">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center shrink-0 text-amber-400">
+            <i class="fa-solid fa-chart-line text-lg"></i>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-1.5 mb-0.5">
+              <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-400">
+                PUBLICIDADE & PARCERIAS
+              </span>
+            </div>
+            <h3 class="font-display font-bold text-sm text-white truncate">
+              Anuncie no Sobral Online
+            </h3>
+            <p class="text-xs text-zinc-400 truncate">
+              Fale com o Comercial e alcance milhares de clientes
+            </p>
+          </div>
+          <div class="px-3 py-1.5 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-bold shrink-0 group-hover:bg-amber-500 group-hover:text-black transition-colors">
+            Mídia Kit
+          </div>
+        </div>
+      </button>
+    </section>
+
+    <!-- 6. RODAPÉ LIMPO (SEM MARCA D'ÁGUA DE TERCEIROS) -->
+    <footer class="w-full text-center pt-2 pb-4 border-t border-white/5">
+      <p class="text-[11px] text-zinc-500 font-medium">
+        © <span id="current-year"></span> Sobral Online • Todos os direitos reservados
+      </p>
+      <p class="text-[10px] text-zinc-600 mt-0.5">
+        O maior portal de comunicação da Zona Norte do Ceará
+      </p>
+    </footer>
+
+  </main>
+
+  <script>
+    // Atualiza ano automaticamente
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Controle do Toast de demonstração para apresentação comercial
+    let toastTimeout;
+    function triggerDemo(destinationName) {
+      const toast = document.getElementById('demo-toast');
+      const desc = document.getElementById('toast-desc');
+      
+      desc.textContent = destinationName + ' (pronto para conectar)';
+      
+      toast.classList.remove('opacity-0', '-translate-y-4');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', '-translate-y-4');
+      }, 2600);
+    }
+  </script>
 </body>
 </html>
+
+
